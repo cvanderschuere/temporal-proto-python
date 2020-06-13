@@ -6,7 +6,8 @@ PROTO_SERVICES = $(wildcard $(PROTO_ROOT)/*/*/service.proto)
 
 
 all:
+	rm -rf temporal
 	$(foreach PROTO_DIR,$(PROTO_DIRS),\
-		docker run -v `pwd`:/defs namely/protoc-all:1.29_1 -i proto -d $(PROTO_DIR)  -o temporal_proto -l python;\
+		docker run -v `pwd`:/defs namely/protoc-all:1.29_1 -i proto -d $(PROTO_DIR)  -o . -l python;\
 	)
 	
