@@ -12,5 +12,6 @@ setuptools.setup(
     install_requires=[
         'setuptools',
         'protobuf',
+        'grpcio-tools',
     ]
 )
