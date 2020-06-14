@@ -20,192 +20,192 @@ class WorkflowServiceStub(object):
             channel: A grpc.Channel.
         """
         self.RegisterNamespace = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RegisterNamespace',
+                '/workflowservice.WorkflowService/RegisterNamespace',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RegisterNamespaceRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RegisterNamespaceResponse.FromString,
                 )
         self.DescribeNamespace = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/DescribeNamespace',
+                '/workflowservice.WorkflowService/DescribeNamespace',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeNamespaceRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeNamespaceResponse.FromString,
                 )
         self.ListNamespaces = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ListNamespaces',
+                '/workflowservice.WorkflowService/ListNamespaces',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListNamespacesRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListNamespacesResponse.FromString,
                 )
         self.UpdateNamespace = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/UpdateNamespace',
+                '/workflowservice.WorkflowService/UpdateNamespace',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.UpdateNamespaceRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.UpdateNamespaceResponse.FromString,
                 )
         self.DeprecateNamespace = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/DeprecateNamespace',
+                '/workflowservice.WorkflowService/DeprecateNamespace',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DeprecateNamespaceRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DeprecateNamespaceResponse.FromString,
                 )
         self.StartWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/StartWorkflowExecution',
+                '/workflowservice.WorkflowService/StartWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.StartWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.StartWorkflowExecutionResponse.FromString,
                 )
         self.GetWorkflowExecutionHistory = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/GetWorkflowExecutionHistory',
+                '/workflowservice.WorkflowService/GetWorkflowExecutionHistory',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetWorkflowExecutionHistoryRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetWorkflowExecutionHistoryResponse.FromString,
                 )
         self.PollForDecisionTask = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/PollForDecisionTask',
+                '/workflowservice.WorkflowService/PollForDecisionTask',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForDecisionTaskRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForDecisionTaskResponse.FromString,
                 )
         self.RespondDecisionTaskCompleted = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondDecisionTaskCompleted',
+                '/workflowservice.WorkflowService/RespondDecisionTaskCompleted',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskCompletedRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskCompletedResponse.FromString,
                 )
         self.RespondDecisionTaskFailed = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondDecisionTaskFailed',
+                '/workflowservice.WorkflowService/RespondDecisionTaskFailed',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskFailedRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskFailedResponse.FromString,
                 )
         self.PollForActivityTask = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/PollForActivityTask',
+                '/workflowservice.WorkflowService/PollForActivityTask',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForActivityTaskRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForActivityTaskResponse.FromString,
                 )
         self.RecordActivityTaskHeartbeat = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeat',
+                '/workflowservice.WorkflowService/RecordActivityTaskHeartbeat',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatResponse.FromString,
                 )
         self.RecordActivityTaskHeartbeatById = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeatById',
+                '/workflowservice.WorkflowService/RecordActivityTaskHeartbeatById',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatByIdRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatByIdResponse.FromString,
                 )
         self.RespondActivityTaskCompleted = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCompleted',
+                '/workflowservice.WorkflowService/RespondActivityTaskCompleted',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedResponse.FromString,
                 )
         self.RespondActivityTaskCompletedById = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCompletedById',
+                '/workflowservice.WorkflowService/RespondActivityTaskCompletedById',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedByIdRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedByIdResponse.FromString,
                 )
         self.RespondActivityTaskFailed = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskFailed',
+                '/workflowservice.WorkflowService/RespondActivityTaskFailed',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedResponse.FromString,
                 )
         self.RespondActivityTaskFailedById = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskFailedById',
+                '/workflowservice.WorkflowService/RespondActivityTaskFailedById',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedByIdRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedByIdResponse.FromString,
                 )
         self.RespondActivityTaskCanceled = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCanceled',
+                '/workflowservice.WorkflowService/RespondActivityTaskCanceled',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledResponse.FromString,
                 )
         self.RespondActivityTaskCanceledById = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCanceledById',
+                '/workflowservice.WorkflowService/RespondActivityTaskCanceledById',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledByIdRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledByIdResponse.FromString,
                 )
         self.RequestCancelWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RequestCancelWorkflowExecution',
+                '/workflowservice.WorkflowService/RequestCancelWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RequestCancelWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RequestCancelWorkflowExecutionResponse.FromString,
                 )
         self.SignalWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/SignalWorkflowExecution',
+                '/workflowservice.WorkflowService/SignalWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWorkflowExecutionResponse.FromString,
                 )
         self.SignalWithStartWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/SignalWithStartWorkflowExecution',
+                '/workflowservice.WorkflowService/SignalWithStartWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWithStartWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWithStartWorkflowExecutionResponse.FromString,
                 )
         self.ResetWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ResetWorkflowExecution',
+                '/workflowservice.WorkflowService/ResetWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetWorkflowExecutionResponse.FromString,
                 )
         self.TerminateWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/TerminateWorkflowExecution',
+                '/workflowservice.WorkflowService/TerminateWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.TerminateWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.TerminateWorkflowExecutionResponse.FromString,
                 )
         self.ListOpenWorkflowExecutions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ListOpenWorkflowExecutions',
+                '/workflowservice.WorkflowService/ListOpenWorkflowExecutions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListOpenWorkflowExecutionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListOpenWorkflowExecutionsResponse.FromString,
                 )
         self.ListClosedWorkflowExecutions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ListClosedWorkflowExecutions',
+                '/workflowservice.WorkflowService/ListClosedWorkflowExecutions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListClosedWorkflowExecutionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListClosedWorkflowExecutionsResponse.FromString,
                 )
         self.ListWorkflowExecutions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ListWorkflowExecutions',
+                '/workflowservice.WorkflowService/ListWorkflowExecutions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListWorkflowExecutionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListWorkflowExecutionsResponse.FromString,
                 )
         self.ListArchivedWorkflowExecutions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ListArchivedWorkflowExecutions',
+                '/workflowservice.WorkflowService/ListArchivedWorkflowExecutions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListArchivedWorkflowExecutionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListArchivedWorkflowExecutionsResponse.FromString,
                 )
         self.ScanWorkflowExecutions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ScanWorkflowExecutions',
+                '/workflowservice.WorkflowService/ScanWorkflowExecutions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ScanWorkflowExecutionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ScanWorkflowExecutionsResponse.FromString,
                 )
         self.CountWorkflowExecutions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/CountWorkflowExecutions',
+                '/workflowservice.WorkflowService/CountWorkflowExecutions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.CountWorkflowExecutionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.CountWorkflowExecutionsResponse.FromString,
                 )
         self.GetSearchAttributes = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/GetSearchAttributes',
+                '/workflowservice.WorkflowService/GetSearchAttributes',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetSearchAttributesRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetSearchAttributesResponse.FromString,
                 )
         self.RespondQueryTaskCompleted = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/RespondQueryTaskCompleted',
+                '/workflowservice.WorkflowService/RespondQueryTaskCompleted',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondQueryTaskCompletedRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondQueryTaskCompletedResponse.FromString,
                 )
         self.ResetStickyTaskList = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ResetStickyTaskList',
+                '/workflowservice.WorkflowService/ResetStickyTaskList',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetStickyTaskListRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetStickyTaskListResponse.FromString,
                 )
         self.QueryWorkflow = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/QueryWorkflow',
+                '/workflowservice.WorkflowService/QueryWorkflow',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.QueryWorkflowRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.QueryWorkflowResponse.FromString,
                 )
         self.DescribeWorkflowExecution = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/DescribeWorkflowExecution',
+                '/workflowservice.WorkflowService/DescribeWorkflowExecution',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeWorkflowExecutionRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeWorkflowExecutionResponse.FromString,
                 )
         self.DescribeTaskList = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/DescribeTaskList',
+                '/workflowservice.WorkflowService/DescribeTaskList',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeTaskListRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeTaskListResponse.FromString,
                 )
         self.GetClusterInfo = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/GetClusterInfo',
+                '/workflowservice.WorkflowService/GetClusterInfo',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetClusterInfoRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetClusterInfoResponse.FromString,
                 )
         self.ListTaskListPartitions = channel.unary_unary(
-                '/temporal.workflowservice.v1.WorkflowService/ListTaskListPartitions',
+                '/workflowservice.WorkflowService/ListTaskListPartitions',
                 request_serializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListTaskListPartitionsRequest.SerializeToString,
                 response_deserializer=temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListTaskListPartitionsResponse.FromString,
                 )
@@ -758,7 +758,7 @@ def add_WorkflowServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'temporal.workflowservice.v1.WorkflowService', rpc_method_handlers)
+            'temporal.workflowservice.WorkflowService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -782,7 +782,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RegisterNamespace',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RegisterNamespace',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RegisterNamespaceRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RegisterNamespaceResponse.FromString,
             options, channel_credentials,
@@ -798,7 +798,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/DescribeNamespace',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/DescribeNamespace',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeNamespaceRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeNamespaceResponse.FromString,
             options, channel_credentials,
@@ -814,7 +814,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ListNamespaces',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ListNamespaces',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListNamespacesRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListNamespacesResponse.FromString,
             options, channel_credentials,
@@ -830,7 +830,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/UpdateNamespace',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/UpdateNamespace',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.UpdateNamespaceRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.UpdateNamespaceResponse.FromString,
             options, channel_credentials,
@@ -846,7 +846,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/DeprecateNamespace',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/DeprecateNamespace',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DeprecateNamespaceRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DeprecateNamespaceResponse.FromString,
             options, channel_credentials,
@@ -862,7 +862,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/StartWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/StartWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.StartWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.StartWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -878,7 +878,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/GetWorkflowExecutionHistory',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/GetWorkflowExecutionHistory',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetWorkflowExecutionHistoryRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetWorkflowExecutionHistoryResponse.FromString,
             options, channel_credentials,
@@ -894,7 +894,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/PollForDecisionTask',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/PollForDecisionTask',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForDecisionTaskRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForDecisionTaskResponse.FromString,
             options, channel_credentials,
@@ -910,7 +910,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondDecisionTaskCompleted',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondDecisionTaskCompleted',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskCompletedRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskCompletedResponse.FromString,
             options, channel_credentials,
@@ -926,7 +926,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondDecisionTaskFailed',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondDecisionTaskFailed',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskFailedRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondDecisionTaskFailedResponse.FromString,
             options, channel_credentials,
@@ -942,7 +942,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/PollForActivityTask',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/PollForActivityTask',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForActivityTaskRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.PollForActivityTaskResponse.FromString,
             options, channel_credentials,
@@ -958,7 +958,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeat',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RecordActivityTaskHeartbeat',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatResponse.FromString,
             options, channel_credentials,
@@ -974,7 +974,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RecordActivityTaskHeartbeatById',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RecordActivityTaskHeartbeatById',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatByIdRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RecordActivityTaskHeartbeatByIdResponse.FromString,
             options, channel_credentials,
@@ -990,7 +990,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCompleted',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondActivityTaskCompleted',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedResponse.FromString,
             options, channel_credentials,
@@ -1006,7 +1006,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCompletedById',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondActivityTaskCompletedById',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedByIdRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCompletedByIdResponse.FromString,
             options, channel_credentials,
@@ -1022,7 +1022,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskFailed',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondActivityTaskFailed',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedResponse.FromString,
             options, channel_credentials,
@@ -1038,7 +1038,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskFailedById',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondActivityTaskFailedById',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedByIdRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskFailedByIdResponse.FromString,
             options, channel_credentials,
@@ -1054,7 +1054,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCanceled',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondActivityTaskCanceled',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledResponse.FromString,
             options, channel_credentials,
@@ -1070,7 +1070,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondActivityTaskCanceledById',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondActivityTaskCanceledById',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledByIdRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondActivityTaskCanceledByIdResponse.FromString,
             options, channel_credentials,
@@ -1086,7 +1086,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RequestCancelWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RequestCancelWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RequestCancelWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RequestCancelWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -1102,7 +1102,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/SignalWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/SignalWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -1118,7 +1118,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/SignalWithStartWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/SignalWithStartWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWithStartWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.SignalWithStartWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -1134,7 +1134,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ResetWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ResetWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -1150,7 +1150,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/TerminateWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/TerminateWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.TerminateWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.TerminateWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -1166,7 +1166,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ListOpenWorkflowExecutions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ListOpenWorkflowExecutions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListOpenWorkflowExecutionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListOpenWorkflowExecutionsResponse.FromString,
             options, channel_credentials,
@@ -1182,7 +1182,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ListClosedWorkflowExecutions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ListClosedWorkflowExecutions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListClosedWorkflowExecutionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListClosedWorkflowExecutionsResponse.FromString,
             options, channel_credentials,
@@ -1198,7 +1198,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ListWorkflowExecutions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ListWorkflowExecutions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListWorkflowExecutionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListWorkflowExecutionsResponse.FromString,
             options, channel_credentials,
@@ -1214,7 +1214,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ListArchivedWorkflowExecutions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ListArchivedWorkflowExecutions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListArchivedWorkflowExecutionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListArchivedWorkflowExecutionsResponse.FromString,
             options, channel_credentials,
@@ -1230,7 +1230,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ScanWorkflowExecutions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ScanWorkflowExecutions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ScanWorkflowExecutionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ScanWorkflowExecutionsResponse.FromString,
             options, channel_credentials,
@@ -1246,7 +1246,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/CountWorkflowExecutions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/CountWorkflowExecutions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.CountWorkflowExecutionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.CountWorkflowExecutionsResponse.FromString,
             options, channel_credentials,
@@ -1262,7 +1262,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/GetSearchAttributes',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/GetSearchAttributes',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetSearchAttributesRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetSearchAttributesResponse.FromString,
             options, channel_credentials,
@@ -1278,7 +1278,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/RespondQueryTaskCompleted',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/RespondQueryTaskCompleted',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondQueryTaskCompletedRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.RespondQueryTaskCompletedResponse.FromString,
             options, channel_credentials,
@@ -1294,7 +1294,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ResetStickyTaskList',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ResetStickyTaskList',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetStickyTaskListRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ResetStickyTaskListResponse.FromString,
             options, channel_credentials,
@@ -1310,7 +1310,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/QueryWorkflow',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/QueryWorkflow',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.QueryWorkflowRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.QueryWorkflowResponse.FromString,
             options, channel_credentials,
@@ -1326,7 +1326,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/DescribeWorkflowExecution',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/DescribeWorkflowExecution',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeWorkflowExecutionRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeWorkflowExecutionResponse.FromString,
             options, channel_credentials,
@@ -1342,7 +1342,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/DescribeTaskList',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/DescribeTaskList',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeTaskListRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.DescribeTaskListResponse.FromString,
             options, channel_credentials,
@@ -1358,7 +1358,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/GetClusterInfo',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/GetClusterInfo',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetClusterInfoRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.GetClusterInfoResponse.FromString,
             options, channel_credentials,
@@ -1374,7 +1374,7 @@ class WorkflowService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/temporal.workflowservice.v1.WorkflowService/ListTaskListPartitions',
+        return grpc.experimental.unary_unary(request, target, '/workflowservice.WorkflowService/ListTaskListPartitions',
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListTaskListPartitionsRequest.SerializeToString,
             temporal_dot_workflowservice_dot_v1_dot_request__response__pb2.ListTaskListPartitionsResponse.FromString,
             options, channel_credentials,
