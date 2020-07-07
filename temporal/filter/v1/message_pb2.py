@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/filter/v1/message.proto',
   package='temporal.filter.v1',
   syntax='proto3',
-  serialized_options=b'\n\033io.temporal.proto.filter.v1B\014MessageProtoP\001Z.go.temporal.io/temporal-proto/filter/v1;filter',
-  serialized_pb=b'\n temporal/filter/v1/message.proto\x12\x12temporal.filter.v1\x1a temporal/enums/v1/workflow.proto\">\n\x17WorkflowExecutionFilter\x12\x13\n\x0bworkflow_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\"\"\n\x12WorkflowTypeFilter\x12\x0c\n\x04name\x18\x01 \x01(\t\"=\n\x0fStartTimeFilter\x12\x15\n\rearliest_time\x18\x01 \x01(\x03\x12\x13\n\x0blatest_time\x18\x02 \x01(\x03\"J\n\x0cStatusFilter\x12:\n\x06status\x18\x01 \x01(\x0e\x32*.temporal.enums.v1.WorkflowExecutionStatusB]\n\x1bio.temporal.proto.filter.v1B\x0cMessageProtoP\x01Z.go.temporal.io/temporal-proto/filter/v1;filterb\x06proto3'
+  serialized_options=b'\n\025io.temporal.filter.v1B\014MessageProtoP\001Z.go.temporal.io/temporal-proto/filter/v1;filter',
+  serialized_pb=b'\n temporal/filter/v1/message.proto\x12\x12temporal.filter.v1\x1a temporal/enums/v1/workflow.proto\">\n\x17WorkflowExecutionFilter\x12\x13\n\x0bworkflow_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\"\"\n\x12WorkflowTypeFilter\x12\x0c\n\x04name\x18\x01 \x01(\t\"=\n\x0fStartTimeFilter\x12\x15\n\rearliest_time\x18\x01 \x01(\x03\x12\x13\n\x0blatest_time\x18\x02 \x01(\x03\"J\n\x0cStatusFilter\x12:\n\x06status\x18\x01 \x01(\x0e\x32*.temporal.enums.v1.WorkflowExecutionStatusBW\n\x15io.temporal.filter.v1B\x0cMessageProtoP\x01Z.go.temporal.io/temporal-proto/filter/v1;filterb\x06proto3'
   ,
   dependencies=[temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,])
 

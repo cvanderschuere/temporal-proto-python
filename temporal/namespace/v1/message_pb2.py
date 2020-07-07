@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/namespace/v1/message.proto',
   package='temporal.namespace.v1',
   syntax='proto3',
-  serialized_options=b'\n\036io.temporal.proto.namespace.v1B\014MessageProtoP\001Z4go.temporal.io/temporal-proto/namespace/v1;namespace',
-  serialized_pb=b'\n#temporal/namespace/v1/message.proto\x12\x15temporal.namespace.v1\x1a!temporal/enums/v1/namespace.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xf2\x01\n\rNamespaceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x32\n\x06status\x18\x02 \x01(\x0e\x32\".temporal.enums.v1.NamespaceStatus\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x13\n\x0bowner_email\x18\x04 \x01(\t\x12<\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32..temporal.namespace.v1.NamespaceInfo.DataEntry\x12\n\n\x02id\x18\x06 \x01(\t\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x86\x03\n\x16NamespaceConfiguration\x12\x33\n+workflow_execution_retention_period_in_days\x18\x01 \x01(\x05\x12/\n\x0b\x65mit_metric\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x0c\x62\x61\x64_binaries\x18\x03 \x01(\x0b\x32\".temporal.namespace.v1.BadBinaries\x12\x42\n\x17history_archival_status\x18\x04 \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12\x1e\n\x16history_archival_u_r_i\x18\x05 \x01(\t\x12\x45\n\x1avisibility_archival_status\x18\x06 \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12!\n\x19visibility_archival_u_r_i\x18\x07 \x01(\t\"\xa8\x01\n\x0b\x42\x61\x64\x42inaries\x12\x42\n\x08\x62inaries\x18\x01 \x03(\x0b\x32\x30.temporal.namespace.v1.BadBinaries.BinariesEntry\x1aU\n\rBinariesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.temporal.namespace.v1.BadBinaryInfo:\x02\x38\x01\"L\n\rBadBinaryInfo\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x19\n\x11\x63reated_time_nano\x18\x03 \x01(\x03\"\xb0\x01\n\x13UpdateNamespaceInfo\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x13\n\x0bowner_email\x18\x02 \x01(\t\x12\x42\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x34.temporal.namespace.v1.UpdateNamespaceInfo.DataEntry\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x66\n\x1eio.temporal.proto.namespace.v1B\x0cMessageProtoP\x01Z4go.temporal.io/temporal-proto/namespace/v1;namespaceb\x06proto3'
+  serialized_options=b'\n\030io.temporal.namespace.v1B\014MessageProtoP\001Z4go.temporal.io/temporal-proto/namespace/v1;namespace',
+  serialized_pb=b'\n#temporal/namespace/v1/message.proto\x12\x15temporal.namespace.v1\x1a!temporal/enums/v1/namespace.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xf2\x01\n\rNamespaceInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x32\n\x06status\x18\x02 \x01(\x0e\x32\".temporal.enums.v1.NamespaceStatus\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x13\n\x0bowner_email\x18\x04 \x01(\t\x12<\n\x04\x64\x61ta\x18\x05 \x03(\x0b\x32..temporal.namespace.v1.NamespaceInfo.DataEntry\x12\n\n\x02id\x18\x06 \x01(\t\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfb\x02\n\x0fNamespaceConfig\x12\x33\n+workflow_execution_retention_period_in_days\x18\x01 \x01(\x05\x12/\n\x0b\x65mit_metric\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x0c\x62\x61\x64_binaries\x18\x03 \x01(\x0b\x32\".temporal.namespace.v1.BadBinaries\x12\x42\n\x17history_archival_status\x18\x04 \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12\x1c\n\x14history_archival_uri\x18\x05 \x01(\t\x12\x45\n\x1avisibility_archival_status\x18\x06 \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12\x1f\n\x17visibility_archival_uri\x18\x07 \x01(\t\"\xa8\x01\n\x0b\x42\x61\x64\x42inaries\x12\x42\n\x08\x62inaries\x18\x01 \x03(\x0b\x32\x30.temporal.namespace.v1.BadBinaries.BinariesEntry\x1aU\n\rBinariesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x33\n\x05value\x18\x02 \x01(\x0b\x32$.temporal.namespace.v1.BadBinaryInfo:\x02\x38\x01\"K\n\rBadBinaryInfo\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12\x10\n\x08operator\x18\x02 \x01(\t\x12\x18\n\x10\x63reate_time_nano\x18\x03 \x01(\x03\"\xb0\x01\n\x13UpdateNamespaceInfo\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x13\n\x0bowner_email\x18\x02 \x01(\t\x12\x42\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x34.temporal.namespace.v1.UpdateNamespaceInfo.DataEntry\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42`\n\x18io.temporal.namespace.v1B\x0cMessageProtoP\x01Z4go.temporal.io/temporal-proto/namespace/v1;namespaceb\x06proto3'
   ,
   dependencies=[temporal_dot_enums_dot_v1_dot_namespace__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -130,57 +130,57 @@ _NAMESPACEINFO = _descriptor.Descriptor(
 )
 
 
-_NAMESPACECONFIGURATION = _descriptor.Descriptor(
-  name='NamespaceConfiguration',
-  full_name='temporal.namespace.v1.NamespaceConfiguration',
+_NAMESPACECONFIG = _descriptor.Descriptor(
+  name='NamespaceConfig',
+  full_name='temporal.namespace.v1.NamespaceConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='workflow_execution_retention_period_in_days', full_name='temporal.namespace.v1.NamespaceConfiguration.workflow_execution_retention_period_in_days', index=0,
+      name='workflow_execution_retention_period_in_days', full_name='temporal.namespace.v1.NamespaceConfig.workflow_execution_retention_period_in_days', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='emit_metric', full_name='temporal.namespace.v1.NamespaceConfiguration.emit_metric', index=1,
+      name='emit_metric', full_name='temporal.namespace.v1.NamespaceConfig.emit_metric', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='bad_binaries', full_name='temporal.namespace.v1.NamespaceConfiguration.bad_binaries', index=2,
+      name='bad_binaries', full_name='temporal.namespace.v1.NamespaceConfig.bad_binaries', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='history_archival_status', full_name='temporal.namespace.v1.NamespaceConfiguration.history_archival_status', index=3,
+      name='history_archival_status', full_name='temporal.namespace.v1.NamespaceConfig.history_archival_status', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='history_archival_u_r_i', full_name='temporal.namespace.v1.NamespaceConfiguration.history_archival_u_r_i', index=4,
+      name='history_archival_uri', full_name='temporal.namespace.v1.NamespaceConfig.history_archival_uri', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='visibility_archival_status', full_name='temporal.namespace.v1.NamespaceConfiguration.visibility_archival_status', index=5,
+      name='visibility_archival_status', full_name='temporal.namespace.v1.NamespaceConfig.visibility_archival_status', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='visibility_archival_u_r_i', full_name='temporal.namespace.v1.NamespaceConfiguration.visibility_archival_u_r_i', index=6,
+      name='visibility_archival_uri', full_name='temporal.namespace.v1.NamespaceConfig.visibility_archival_uri', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -199,7 +199,7 @@ _NAMESPACECONFIGURATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=375,
-  serialized_end=765,
+  serialized_end=754,
 )
 
 
@@ -236,8 +236,8 @@ _BADBINARIES_BINARIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=851,
-  serialized_end=936,
+  serialized_start=840,
+  serialized_end=925,
 )
 
 _BADBINARIES = _descriptor.Descriptor(
@@ -266,8 +266,8 @@ _BADBINARIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=936,
+  serialized_start=757,
+  serialized_end=925,
 )
 
 
@@ -293,7 +293,7 @@ _BADBINARYINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='created_time_nano', full_name='temporal.namespace.v1.BadBinaryInfo.created_time_nano', index=2,
+      name='create_time_nano', full_name='temporal.namespace.v1.BadBinaryInfo.create_time_nano', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -311,8 +311,8 @@ _BADBINARYINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=938,
-  serialized_end=1014,
+  serialized_start=927,
+  serialized_end=1002,
 )
 
 
@@ -393,24 +393,24 @@ _UPDATENAMESPACEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1017,
-  serialized_end=1193,
+  serialized_start=1005,
+  serialized_end=1181,
 )
 
 _NAMESPACEINFO_DATAENTRY.containing_type = _NAMESPACEINFO
 _NAMESPACEINFO.fields_by_name['status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._NAMESPACESTATUS
 _NAMESPACEINFO.fields_by_name['data'].message_type = _NAMESPACEINFO_DATAENTRY
-_NAMESPACECONFIGURATION.fields_by_name['emit_metric'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
-_NAMESPACECONFIGURATION.fields_by_name['bad_binaries'].message_type = _BADBINARIES
-_NAMESPACECONFIGURATION.fields_by_name['history_archival_status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._ARCHIVALSTATUS
-_NAMESPACECONFIGURATION.fields_by_name['visibility_archival_status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._ARCHIVALSTATUS
+_NAMESPACECONFIG.fields_by_name['emit_metric'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_NAMESPACECONFIG.fields_by_name['bad_binaries'].message_type = _BADBINARIES
+_NAMESPACECONFIG.fields_by_name['history_archival_status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._ARCHIVALSTATUS
+_NAMESPACECONFIG.fields_by_name['visibility_archival_status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._ARCHIVALSTATUS
 _BADBINARIES_BINARIESENTRY.fields_by_name['value'].message_type = _BADBINARYINFO
 _BADBINARIES_BINARIESENTRY.containing_type = _BADBINARIES
 _BADBINARIES.fields_by_name['binaries'].message_type = _BADBINARIES_BINARIESENTRY
 _UPDATENAMESPACEINFO_DATAENTRY.containing_type = _UPDATENAMESPACEINFO
 _UPDATENAMESPACEINFO.fields_by_name['data'].message_type = _UPDATENAMESPACEINFO_DATAENTRY
 DESCRIPTOR.message_types_by_name['NamespaceInfo'] = _NAMESPACEINFO
-DESCRIPTOR.message_types_by_name['NamespaceConfiguration'] = _NAMESPACECONFIGURATION
+DESCRIPTOR.message_types_by_name['NamespaceConfig'] = _NAMESPACECONFIG
 DESCRIPTOR.message_types_by_name['BadBinaries'] = _BADBINARIES
 DESCRIPTOR.message_types_by_name['BadBinaryInfo'] = _BADBINARYINFO
 DESCRIPTOR.message_types_by_name['UpdateNamespaceInfo'] = _UPDATENAMESPACEINFO
@@ -431,12 +431,12 @@ NamespaceInfo = _reflection.GeneratedProtocolMessageType('NamespaceInfo', (_mess
 _sym_db.RegisterMessage(NamespaceInfo)
 _sym_db.RegisterMessage(NamespaceInfo.DataEntry)
 
-NamespaceConfiguration = _reflection.GeneratedProtocolMessageType('NamespaceConfiguration', (_message.Message,), {
-  'DESCRIPTOR' : _NAMESPACECONFIGURATION,
+NamespaceConfig = _reflection.GeneratedProtocolMessageType('NamespaceConfig', (_message.Message,), {
+  'DESCRIPTOR' : _NAMESPACECONFIG,
   '__module__' : 'temporal.namespace.v1.message_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.namespace.v1.NamespaceConfiguration)
+  # @@protoc_insertion_point(class_scope:temporal.namespace.v1.NamespaceConfig)
   })
-_sym_db.RegisterMessage(NamespaceConfiguration)
+_sym_db.RegisterMessage(NamespaceConfig)
 
 BadBinaries = _reflection.GeneratedProtocolMessageType('BadBinaries', (_message.Message,), {
 

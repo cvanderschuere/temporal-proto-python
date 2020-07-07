@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/query/v1/message.proto',
   package='temporal.query.v1',
   syntax='proto3',
-  serialized_options=b'\n\032io.temporal.proto.query.v1B\014MessageProtoP\001Z,go.temporal.io/temporal-proto/query/v1;query',
-  serialized_pb=b'\n\x1ftemporal/query/v1/message.proto\x12\x11temporal.query.v1\x1a\x1dtemporal/enums/v1/query.proto\x1a temporal/enums/v1/workflow.proto\x1a temporal/common/v1/message.proto\"U\n\rWorkflowQuery\x12\x12\n\nquery_type\x18\x01 \x01(\t\x12\x30\n\nquery_args\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\"\x93\x01\n\x13WorkflowQueryResult\x12\x37\n\x0bresult_type\x18\x01 \x01(\x0e\x32\".temporal.enums.v1.QueryResultType\x12,\n\x06\x61nswer\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x15\n\rerror_message\x18\x03 \x01(\t\"K\n\rQueryRejected\x12:\n\x06status\x18\x01 \x01(\x0e\x32*.temporal.enums.v1.WorkflowExecutionStatusBZ\n\x1aio.temporal.proto.query.v1B\x0cMessageProtoP\x01Z,go.temporal.io/temporal-proto/query/v1;queryb\x06proto3'
+  serialized_options=b'\n\024io.temporal.query.v1B\014MessageProtoP\001Z,go.temporal.io/temporal-proto/query/v1;query',
+  serialized_pb=b'\n\x1ftemporal/query/v1/message.proto\x12\x11temporal.query.v1\x1a\x1dtemporal/enums/v1/query.proto\x1a temporal/enums/v1/workflow.proto\x1a temporal/common/v1/message.proto\"U\n\rWorkflowQuery\x12\x12\n\nquery_type\x18\x01 \x01(\t\x12\x30\n\nquery_args\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\"\x93\x01\n\x13WorkflowQueryResult\x12\x37\n\x0bresult_type\x18\x01 \x01(\x0e\x32\".temporal.enums.v1.QueryResultType\x12,\n\x06\x61nswer\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x15\n\rerror_message\x18\x03 \x01(\t\"K\n\rQueryRejected\x12:\n\x06status\x18\x01 \x01(\x0e\x32*.temporal.enums.v1.WorkflowExecutionStatusBT\n\x14io.temporal.query.v1B\x0cMessageProtoP\x01Z,go.temporal.io/temporal-proto/query/v1;queryb\x06proto3'
   ,
   dependencies=[temporal_dot_enums_dot_v1_dot_query__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,])
 

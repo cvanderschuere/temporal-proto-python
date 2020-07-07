@@ -16,7 +16,7 @@ from temporal.enums.v1 import namespace_pb2 as temporal_dot_enums_dot_v1_dot_nam
 from temporal.enums.v1 import failed_cause_pb2 as temporal_dot_enums_dot_v1_dot_failed__cause__pb2
 from temporal.enums.v1 import common_pb2 as temporal_dot_enums_dot_v1_dot_common__pb2
 from temporal.enums.v1 import query_pb2 as temporal_dot_enums_dot_v1_dot_query__pb2
-from temporal.enums.v1 import task_list_pb2 as temporal_dot_enums_dot_v1_dot_task__list__pb2
+from temporal.enums.v1 import task_queue_pb2 as temporal_dot_enums_dot_v1_dot_task__queue__pb2
 from temporal.common.v1 import message_pb2 as temporal_dot_common_dot_v1_dot_message__pb2
 from temporal.history.v1 import message_pb2 as temporal_dot_history_dot_v1_dot_message__pb2
 from temporal.workflow.v1 import message_pb2 as temporal_dot_workflow_dot_v1_dot_message__pb2
@@ -26,7 +26,7 @@ from temporal.filter.v1 import message_pb2 as temporal_dot_filter_dot_v1_dot_mes
 from temporal.namespace.v1 import message_pb2 as temporal_dot_namespace_dot_v1_dot_message__pb2
 from temporal.query.v1 import message_pb2 as temporal_dot_query_dot_v1_dot_message__pb2
 from temporal.replication.v1 import message_pb2 as temporal_dot_replication_dot_v1_dot_message__pb2
-from temporal.tasklist.v1 import message_pb2 as temporal_dot_tasklist_dot_v1_dot_message__pb2
+from temporal.taskqueue.v1 import message_pb2 as temporal_dot_taskqueue_dot_v1_dot_message__pb2
 from temporal.version.v1 import message_pb2 as temporal_dot_version_dot_v1_dot_message__pb2
 
 
@@ -34,10 +34,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/workflowservice/v1/request_response.proto',
   package='temporal.workflowservice.v1',
   syntax='proto3',
-  serialized_options=b'\n$io.temporal.proto.workflowservice.v1B\024RequestResponseProtoP\001Z@go.temporal.io/temporal-proto/workflowservice/v1;workflowservice',
-  serialized_pb=b'\n2temporal/workflowservice/v1/request_response.proto\x12\x1btemporal.workflowservice.v1\x1a temporal/enums/v1/workflow.proto\x1a!temporal/enums/v1/namespace.proto\x1a$temporal/enums/v1/failed_cause.proto\x1a\x1etemporal/enums/v1/common.proto\x1a\x1dtemporal/enums/v1/query.proto\x1a!temporal/enums/v1/task_list.proto\x1a temporal/common/v1/message.proto\x1a!temporal/history/v1/message.proto\x1a\"temporal/workflow/v1/message.proto\x1a\"temporal/decision/v1/message.proto\x1a!temporal/failure/v1/message.proto\x1a temporal/filter/v1/message.proto\x1a#temporal/namespace/v1/message.proto\x1a\x1ftemporal/query/v1/message.proto\x1a%temporal/replication/v1/message.proto\x1a\"temporal/tasklist/v1/message.proto\x1a!temporal/version/v1/message.proto\"\x84\x05\n\x18RegisterNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x13\n\x0bowner_email\x18\x03 \x01(\t\x12\x33\n+workflow_execution_retention_period_in_days\x18\x04 \x01(\x05\x12\x13\n\x0b\x65mit_metric\x18\x05 \x01(\x08\x12J\n\x08\x63lusters\x18\x06 \x03(\x0b\x32\x38.temporal.replication.v1.ClusterReplicationConfiguration\x12\x1b\n\x13\x61\x63tive_cluster_name\x18\x07 \x01(\t\x12M\n\x04\x64\x61ta\x18\x08 \x03(\x0b\x32?.temporal.workflowservice.v1.RegisterNamespaceRequest.DataEntry\x12\x16\n\x0esecurity_token\x18\t \x01(\t\x12\x1b\n\x13is_global_namespace\x18\n \x01(\x08\x12\x42\n\x17history_archival_status\x18\x0b \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12\x1e\n\x16history_archival_u_r_i\x18\x0c \x01(\t\x12\x45\n\x1avisibility_archival_status\x18\r \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12!\n\x19visibility_archival_u_r_i\x18\x0e \x01(\t\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1b\n\x19RegisterNamespaceResponse\"C\n\x15ListNamespacesRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"}\n\x16ListNamespacesResponse\x12J\n\nnamespaces\x18\x01 \x03(\x0b\x32\x36.temporal.workflowservice.v1.DescribeNamespaceResponse\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"4\n\x18\x44\x65scribeNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\xb5\x02\n\x19\x44\x65scribeNamespaceResponse\x12<\n\x0enamespace_info\x18\x01 \x01(\x0b\x32$.temporal.namespace.v1.NamespaceInfo\x12\x44\n\rconfiguration\x18\x02 \x01(\x0b\x32-.temporal.namespace.v1.NamespaceConfiguration\x12]\n\x19replication_configuration\x18\x03 \x01(\x0b\x32:.temporal.replication.v1.NamespaceReplicationConfiguration\x12\x18\n\x10\x66\x61ilover_version\x18\x04 \x01(\x03\x12\x1b\n\x13is_global_namespace\x18\x05 \x01(\x08\"\xc0\x02\n\x16UpdateNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12@\n\x0cupdated_info\x18\x02 \x01(\x0b\x32*.temporal.namespace.v1.UpdateNamespaceInfo\x12\x44\n\rconfiguration\x18\x03 \x01(\x0b\x32-.temporal.namespace.v1.NamespaceConfiguration\x12]\n\x19replication_configuration\x18\x04 \x01(\x0b\x32:.temporal.replication.v1.NamespaceReplicationConfiguration\x12\x16\n\x0esecurity_token\x18\x05 \x01(\t\x12\x19\n\x11\x64\x65lete_bad_binary\x18\x06 \x01(\t\"\xb3\x02\n\x17UpdateNamespaceResponse\x12<\n\x0enamespace_info\x18\x01 \x01(\x0b\x32$.temporal.namespace.v1.NamespaceInfo\x12\x44\n\rconfiguration\x18\x02 \x01(\x0b\x32-.temporal.namespace.v1.NamespaceConfiguration\x12]\n\x19replication_configuration\x18\x03 \x01(\x0b\x32:.temporal.replication.v1.NamespaceReplicationConfiguration\x12\x18\n\x10\x66\x61ilover_version\x18\x04 \x01(\x03\x12\x1b\n\x13is_global_namespace\x18\x05 \x01(\x08\"A\n\x19\x44\x65precateNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0esecurity_token\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65precateNamespaceResponse\"\xae\x05\n\x1dStartWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x31\n\ttask_list\x18\x04 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x06 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x07 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x08 \x01(\x05\x12\x10\n\x08identity\x18\t \x01(\t\x12\x12\n\nrequest_id\x18\n \x01(\t\x12J\n\x18workflow_id_reuse_policy\x18\x0b \x01(\x0e\x32(.temporal.enums.v1.WorkflowIdReusePolicy\x12\x35\n\x0cretry_policy\x18\x0c \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x15\n\rcron_schedule\x18\r \x01(\t\x12&\n\x04memo\x18\x0e \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x0f \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12*\n\x06header\x18\x10 \x01(\x0b\x32\x1a.temporal.common.v1.Header\"0\n\x1eStartWorkflowExecutionResponse\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\xa6\x02\n\"GetWorkflowExecutionHistoryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x19\n\x11maximum_page_size\x18\x03 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x04 \x01(\x0c\x12\x1a\n\x12wait_for_new_event\x18\x05 \x01(\x08\x12L\n\x19history_event_filter_type\x18\x06 \x01(\x0e\x32).temporal.enums.v1.HistoryEventFilterType\x12\x15\n\rskip_archival\x18\x07 \x01(\x08\"\xb2\x01\n#GetWorkflowExecutionHistoryResponse\x12-\n\x07history\x18\x01 \x01(\x0b\x32\x1c.temporal.history.v1.History\x12\x31\n\x0braw_history\x18\x02 \x03(\x0b\x32\x1c.temporal.common.v1.DataBlob\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\x10\n\x08\x61rchived\x18\x04 \x01(\x08\"\x8d\x01\n\x1aPollForDecisionTaskRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x31\n\ttask_list\x18\x02 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x17\n\x0f\x62inary_checksum\x18\x04 \x01(\t\"\xb8\x05\n\x1bPollForDecisionTaskResponse\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12!\n\x19previous_started_event_id\x18\x04 \x01(\x03\x12\x18\n\x10started_event_id\x18\x05 \x01(\x03\x12\x0f\n\x07\x61ttempt\x18\x06 \x01(\x03\x12\x1a\n\x12\x62\x61\x63klog_count_hint\x18\x07 \x01(\x03\x12-\n\x07history\x18\x08 \x01(\x0b\x32\x1c.temporal.history.v1.History\x12\x17\n\x0fnext_page_token\x18\t \x01(\x0c\x12/\n\x05query\x18\n \x01(\x0b\x32 .temporal.query.v1.WorkflowQuery\x12\x44\n\x1cworkflow_execution_task_list\x18\x0b \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12\x1b\n\x13scheduled_timestamp\x18\x0c \x01(\x03\x12\x19\n\x11started_timestamp\x18\r \x01(\x03\x12V\n\x07queries\x18\x0e \x03(\x0b\x32\x45.temporal.workflowservice.v1.PollForDecisionTaskResponse.QueriesEntry\x1aP\n\x0cQueriesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .temporal.query.v1.WorkflowQuery:\x02\x38\x01\"\xf5\x03\n#RespondDecisionTaskCompletedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x31\n\tdecisions\x18\x02 \x03(\x0b\x32\x1e.temporal.decision.v1.Decision\x12\x10\n\x08identity\x18\x03 \x01(\t\x12J\n\x11sticky_attributes\x18\x04 \x01(\x0b\x32/.temporal.tasklist.v1.StickyExecutionAttributes\x12 \n\x18return_new_decision_task\x18\x05 \x01(\x08\x12&\n\x1e\x66orce_create_new_decision_task\x18\x06 \x01(\x08\x12\x17\n\x0f\x62inary_checksum\x18\x07 \x01(\t\x12i\n\rquery_results\x18\x08 \x03(\x0b\x32R.temporal.workflowservice.v1.RespondDecisionTaskCompletedRequest.QueryResultsEntry\x1a[\n\x11QueryResultsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.temporal.query.v1.WorkflowQueryResult:\x02\x38\x01\"w\n$RespondDecisionTaskCompletedResponse\x12O\n\rdecision_task\x18\x01 \x01(\x0b\x32\x38.temporal.workflowservice.v1.PollForDecisionTaskResponse\"\xcb\x01\n RespondDecisionTaskFailedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x39\n\x05\x63\x61use\x18\x02 \x01(\x0e\x32*.temporal.enums.v1.DecisionTaskFailedCause\x12-\n\x07\x66\x61ilure\x18\x03 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x04 \x01(\t\x12\x17\n\x0f\x62inary_checksum\x18\x05 \x01(\t\"#\n!RespondDecisionTaskFailedResponse\"\xb8\x01\n\x1aPollForActivityTaskRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x31\n\ttask_list\x18\x02 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x42\n\x12task_list_metadata\x18\x04 \x01(\x0b\x32&.temporal.tasklist.v1.TaskListMetadata\"\xcc\x05\n\x1bPollForActivityTaskResponse\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x1a\n\x12workflow_namespace\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x41\n\x12workflow_execution\x18\x04 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\ractivity_type\x18\x05 \x01(\x0b\x32 .temporal.common.v1.ActivityType\x12\x13\n\x0b\x61\x63tivity_id\x18\x06 \x01(\t\x12*\n\x06header\x18\x07 \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12+\n\x05input\x18\x08 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x37\n\x11heartbeat_details\x18\t \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x1b\n\x13scheduled_timestamp\x18\n \x01(\x03\x12+\n#scheduled_timestamp_of_this_attempt\x18\x0b \x01(\x03\x12\x19\n\x11started_timestamp\x18\x0c \x01(\x03\x12\x0f\n\x07\x61ttempt\x18\r \x01(\x05\x12)\n!schedule_to_close_timeout_seconds\x18\x0e \x01(\x05\x12&\n\x1estart_to_close_timeout_seconds\x18\x0f \x01(\x05\x12!\n\x19heartbeat_timeout_seconds\x18\x10 \x01(\x05\x12\x35\n\x0cretry_policy\x18\x11 \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\"y\n\"RecordActivityTaskHeartbeatRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"?\n#RecordActivityTaskHeartbeatResponse\x12\x18\n\x10\x63\x61ncel_requested\x18\x01 \x01(\x08\"\xb6\x01\n&RecordActivityTaskHeartbeatByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12-\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x06 \x01(\t\"C\n\'RecordActivityTaskHeartbeatByIdResponse\x12\x18\n\x10\x63\x61ncel_requested\x18\x01 \x01(\x08\"y\n#RespondActivityTaskCompletedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12,\n\x06result\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"&\n$RespondActivityTaskCompletedResponse\"\xb6\x01\n\'RespondActivityTaskCompletedByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12,\n\x06result\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x06 \x01(\t\"*\n(RespondActivityTaskCompletedByIdResponse\"w\n RespondActivityTaskFailedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12-\n\x07\x66\x61ilure\x18\x02 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x03 \x01(\t\"#\n!RespondActivityTaskFailedResponse\"\xb4\x01\n$RespondActivityTaskFailedByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12-\n\x07\x66\x61ilure\x18\x05 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x06 \x01(\t\"\'\n%RespondActivityTaskFailedByIdResponse\"y\n\"RespondActivityTaskCanceledRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"%\n#RespondActivityTaskCanceledResponse\"\xb6\x01\n&RespondActivityTaskCanceledByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12-\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x06 \x01(\t\")\n\'RespondActivityTaskCanceledByIdResponse\"\xa3\x01\n%RequestCancelWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"(\n&RequestCancelWorkflowExecutionResponse\"\xef\x01\n\x1eSignalWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x13\n\x0bsignal_name\x18\x03 \x01(\t\x12+\n\x05input\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x05 \x01(\t\x12\x12\n\nrequest_id\x18\x06 \x01(\t\x12\x0f\n\x07\x63ontrol\x18\x07 \x01(\t\"!\n\x1fSignalWorkflowExecutionResponse\"\x92\x06\n\'SignalWithStartWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x31\n\ttask_list\x18\x04 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x06 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x07 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x08 \x01(\x05\x12\x10\n\x08identity\x18\t \x01(\t\x12\x12\n\nrequest_id\x18\n \x01(\t\x12J\n\x18workflow_id_reuse_policy\x18\x0b \x01(\x0e\x32(.temporal.enums.v1.WorkflowIdReusePolicy\x12\x13\n\x0bsignal_name\x18\x0c \x01(\t\x12\x32\n\x0csignal_input\x18\r \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x0f\n\x07\x63ontrol\x18\x0e \x01(\t\x12\x35\n\x0cretry_policy\x18\x0f \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x15\n\rcron_schedule\x18\x10 \x01(\t\x12&\n\x04memo\x18\x11 \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x12 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12*\n\x06header\x18\x13 \x01(\x0b\x32\x1a.temporal.common.v1.Header\":\n(SignalWithStartWorkflowExecutionResponse\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\xbb\x01\n\x1dResetWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12 \n\x18\x64\x65\x63ision_finish_event_id\x18\x04 \x01(\x03\x12\x12\n\nrequest_id\x18\x05 \x01(\t\"0\n\x1eResetWorkflowExecutionResponse\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\xca\x01\n!TerminateWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12-\n\x07\x64\x65tails\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x05 \x01(\t\"$\n\"TerminateWorkflowExecutionResponse\"\xbd\x02\n!ListOpenWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x19\n\x11maximum_page_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12>\n\x11start_time_filter\x18\x04 \x01(\x0b\x32#.temporal.filter.v1.StartTimeFilter\x12G\n\x10\x65xecution_filter\x18\x05 \x01(\x0b\x32+.temporal.filter.v1.WorkflowExecutionFilterH\x00\x12=\n\x0btype_filter\x18\x06 \x01(\x0b\x32&.temporal.filter.v1.WorkflowTypeFilterH\x00\x42\t\n\x07\x66ilters\"~\n\"ListOpenWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"\xfa\x02\n#ListClosedWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x19\n\x11maximum_page_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12>\n\x11start_time_filter\x18\x04 \x01(\x0b\x32#.temporal.filter.v1.StartTimeFilter\x12G\n\x10\x65xecution_filter\x18\x05 \x01(\x0b\x32+.temporal.filter.v1.WorkflowExecutionFilterH\x00\x12=\n\x0btype_filter\x18\x06 \x01(\x0b\x32&.temporal.filter.v1.WorkflowTypeFilterH\x00\x12\x39\n\rstatus_filter\x18\x07 \x01(\x0b\x32 .temporal.filter.v1.StatusFilterH\x00\x42\t\n\x07\x66ilters\"\x80\x01\n$ListClosedWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"m\n\x1dListWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\r\n\x05query\x18\x04 \x01(\t\"z\n\x1eListWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"u\n%ListArchivedWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\r\n\x05query\x18\x04 \x01(\t\"\x82\x01\n&ListArchivedWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"m\n\x1dScanWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\r\n\x05query\x18\x04 \x01(\t\"z\n\x1eScanWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"B\n\x1e\x43ountWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\"0\n\x1f\x43ountWorkflowExecutionsResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\"\x1c\n\x1aGetSearchAttributesRequest\"\xc1\x01\n\x1bGetSearchAttributesResponse\x12P\n\x04keys\x18\x01 \x03(\x0b\x32\x42.temporal.workflowservice.v1.GetSearchAttributesResponse.KeysEntry\x1aP\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x32\n\x05value\x18\x02 \x01(\x0e\x32#.temporal.enums.v1.IndexedValueType:\x02\x38\x01\"\x82\x02\n RespondQueryTaskCompletedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12:\n\x0e\x63ompleted_type\x18\x02 \x01(\x0e\x32\".temporal.enums.v1.QueryResultType\x12\x32\n\x0cquery_result\x18\x03 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x15\n\rerror_message\x18\x04 \x01(\t\x12\x43\n\x13worker_version_info\x18\x05 \x01(\x0b\x32&.temporal.version.v1.WorkerVersionInfo\"#\n!RespondQueryTaskCompletedResponse\"i\n\x1aResetStickyTaskListRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\"\x1d\n\x1bResetStickyTaskListResponse\"\xdd\x01\n\x14QueryWorkflowRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12/\n\x05query\x18\x03 \x01(\x0b\x32 .temporal.query.v1.WorkflowQuery\x12G\n\x16query_reject_condition\x18\x04 \x01(\x0e\x32\'.temporal.enums.v1.QueryRejectCondition\"\x85\x01\n\x15QueryWorkflowResponse\x12\x32\n\x0cquery_result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x38\n\x0equery_rejected\x18\x02 \x01(\x0b\x32 .temporal.query.v1.QueryRejected\"o\n DescribeWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\"\xda\x02\n!DescribeWorkflowExecutionResponse\x12U\n\x17\x65xecution_configuration\x18\x01 \x01(\x0b\x32\x34.temporal.workflow.v1.WorkflowExecutionConfiguration\x12L\n\x17workflow_execution_info\x18\x02 \x01(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x45\n\x12pending_activities\x18\x03 \x03(\x0b\x32).temporal.workflow.v1.PendingActivityInfo\x12I\n\x10pending_children\x18\x04 \x03(\x0b\x32/.temporal.workflow.v1.PendingChildExecutionInfo\"\xba\x01\n\x17\x44\x65scribeTaskListRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x31\n\ttask_list\x18\x02 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12\x37\n\x0etask_list_type\x18\x03 \x01(\x0e\x32\x1f.temporal.enums.v1.TaskListType\x12 \n\x18include_task_list_status\x18\x04 \x01(\x08\"\x8d\x01\n\x18\x44\x65scribeTaskListResponse\x12\x31\n\x07pollers\x18\x01 \x03(\x0b\x32 .temporal.tasklist.v1.PollerInfo\x12>\n\x10task_list_status\x18\x02 \x01(\x0b\x32$.temporal.tasklist.v1.TaskListStatus\"\x17\n\x15GetClusterInfoRequest\"c\n\x16GetClusterInfoResponse\x12I\n\x16supported_sdk_versions\x18\x01 \x01(\x0b\x32).temporal.version.v1.SupportedSDKVersions\"e\n\x1dListTaskListPartitionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x31\n\ttask_list\x18\x02 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\"\xd0\x01\n\x1eListTaskListPartitionsResponse\x12V\n\x1d\x61\x63tivity_task_list_partitions\x18\x01 \x03(\x0b\x32/.temporal.tasklist.v1.TaskListPartitionMetadata\x12V\n\x1d\x64\x65\x63ision_task_list_partitions\x18\x02 \x03(\x0b\x32/.temporal.tasklist.v1.TaskListPartitionMetadataB\x80\x01\n$io.temporal.proto.workflowservice.v1B\x14RequestResponseProtoP\x01Z@go.temporal.io/temporal-proto/workflowservice/v1;workflowserviceb\x06proto3'
+  serialized_options=b'\n\036io.temporal.workflowservice.v1B\024RequestResponseProtoP\001Z@go.temporal.io/temporal-proto/workflowservice/v1;workflowservice',
+  serialized_pb=b'\n2temporal/workflowservice/v1/request_response.proto\x12\x1btemporal.workflowservice.v1\x1a temporal/enums/v1/workflow.proto\x1a!temporal/enums/v1/namespace.proto\x1a$temporal/enums/v1/failed_cause.proto\x1a\x1etemporal/enums/v1/common.proto\x1a\x1dtemporal/enums/v1/query.proto\x1a\"temporal/enums/v1/task_queue.proto\x1a temporal/common/v1/message.proto\x1a!temporal/history/v1/message.proto\x1a\"temporal/workflow/v1/message.proto\x1a\"temporal/decision/v1/message.proto\x1a!temporal/failure/v1/message.proto\x1a temporal/filter/v1/message.proto\x1a#temporal/namespace/v1/message.proto\x1a\x1ftemporal/query/v1/message.proto\x1a%temporal/replication/v1/message.proto\x1a#temporal/taskqueue/v1/message.proto\x1a!temporal/version/v1/message.proto\"\xf9\x04\n\x18RegisterNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x13\n\x0bowner_email\x18\x03 \x01(\t\x12\x33\n+workflow_execution_retention_period_in_days\x18\x04 \x01(\x05\x12\x13\n\x0b\x65mit_metric\x18\x05 \x01(\x08\x12\x43\n\x08\x63lusters\x18\x06 \x03(\x0b\x32\x31.temporal.replication.v1.ClusterReplicationConfig\x12\x1b\n\x13\x61\x63tive_cluster_name\x18\x07 \x01(\t\x12M\n\x04\x64\x61ta\x18\x08 \x03(\x0b\x32?.temporal.workflowservice.v1.RegisterNamespaceRequest.DataEntry\x12\x16\n\x0esecurity_token\x18\t \x01(\t\x12\x1b\n\x13is_global_namespace\x18\n \x01(\x08\x12\x42\n\x17history_archival_status\x18\x0b \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12\x1c\n\x14history_archival_uri\x18\x0c \x01(\t\x12\x45\n\x1avisibility_archival_status\x18\r \x01(\x0e\x32!.temporal.enums.v1.ArchivalStatus\x12\x1f\n\x17visibility_archival_uri\x18\x0e \x01(\t\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1b\n\x19RegisterNamespaceResponse\"C\n\x15ListNamespacesRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"}\n\x16ListNamespacesResponse\x12J\n\nnamespaces\x18\x01 \x03(\x0b\x32\x36.temporal.workflowservice.v1.DescribeNamespaceResponse\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"4\n\x18\x44\x65scribeNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\x99\x02\n\x19\x44\x65scribeNamespaceResponse\x12<\n\x0enamespace_info\x18\x01 \x01(\x0b\x32$.temporal.namespace.v1.NamespaceInfo\x12\x36\n\x06\x63onfig\x18\x02 \x01(\x0b\x32&.temporal.namespace.v1.NamespaceConfig\x12O\n\x12replication_config\x18\x03 \x01(\x0b\x32\x33.temporal.replication.v1.NamespaceReplicationConfig\x12\x18\n\x10\x66\x61ilover_version\x18\x04 \x01(\x03\x12\x1b\n\x13is_global_namespace\x18\x05 \x01(\x08\"\xa3\x02\n\x16UpdateNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12?\n\x0bupdate_info\x18\x02 \x01(\x0b\x32*.temporal.namespace.v1.UpdateNamespaceInfo\x12\x36\n\x06\x63onfig\x18\x03 \x01(\x0b\x32&.temporal.namespace.v1.NamespaceConfig\x12O\n\x12replication_config\x18\x04 \x01(\x0b\x32\x33.temporal.replication.v1.NamespaceReplicationConfig\x12\x16\n\x0esecurity_token\x18\x05 \x01(\t\x12\x19\n\x11\x64\x65lete_bad_binary\x18\x06 \x01(\t\"\x97\x02\n\x17UpdateNamespaceResponse\x12<\n\x0enamespace_info\x18\x01 \x01(\x0b\x32$.temporal.namespace.v1.NamespaceInfo\x12\x36\n\x06\x63onfig\x18\x02 \x01(\x0b\x32&.temporal.namespace.v1.NamespaceConfig\x12O\n\x12replication_config\x18\x03 \x01(\x0b\x32\x33.temporal.replication.v1.NamespaceReplicationConfig\x12\x18\n\x10\x66\x61ilover_version\x18\x04 \x01(\x03\x12\x1b\n\x13is_global_namespace\x18\x05 \x01(\x08\"A\n\x19\x44\x65precateNamespaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x16\n\x0esecurity_token\x18\x02 \x01(\t\"\x1c\n\x1a\x44\x65precateNamespaceResponse\"\xb1\x05\n\x1dStartWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x34\n\ntask_queue\x18\x04 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x06 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x07 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x08 \x01(\x05\x12\x10\n\x08identity\x18\t \x01(\t\x12\x12\n\nrequest_id\x18\n \x01(\t\x12J\n\x18workflow_id_reuse_policy\x18\x0b \x01(\x0e\x32(.temporal.enums.v1.WorkflowIdReusePolicy\x12\x35\n\x0cretry_policy\x18\x0c \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x15\n\rcron_schedule\x18\r \x01(\t\x12&\n\x04memo\x18\x0e \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x0f \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12*\n\x06header\x18\x10 \x01(\x0b\x32\x1a.temporal.common.v1.Header\"0\n\x1eStartWorkflowExecutionResponse\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\xa6\x02\n\"GetWorkflowExecutionHistoryRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x19\n\x11maximum_page_size\x18\x03 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x04 \x01(\x0c\x12\x1a\n\x12wait_for_new_event\x18\x05 \x01(\x08\x12L\n\x19history_event_filter_type\x18\x06 \x01(\x0e\x32).temporal.enums.v1.HistoryEventFilterType\x12\x15\n\rskip_archival\x18\x07 \x01(\x08\"\xb2\x01\n#GetWorkflowExecutionHistoryResponse\x12-\n\x07history\x18\x01 \x01(\x0b\x32\x1c.temporal.history.v1.History\x12\x31\n\x0braw_history\x18\x02 \x03(\x0b\x32\x1c.temporal.common.v1.DataBlob\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\x10\n\x08\x61rchived\x18\x04 \x01(\x08\"\x90\x01\n\x1aPollForDecisionTaskRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x34\n\ntask_queue\x18\x02 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x17\n\x0f\x62inary_checksum\x18\x04 \x01(\t\"\xbb\x05\n\x1bPollForDecisionTaskResponse\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12!\n\x19previous_started_event_id\x18\x04 \x01(\x03\x12\x18\n\x10started_event_id\x18\x05 \x01(\x03\x12\x0f\n\x07\x61ttempt\x18\x06 \x01(\x03\x12\x1a\n\x12\x62\x61\x63klog_count_hint\x18\x07 \x01(\x03\x12-\n\x07history\x18\x08 \x01(\x0b\x32\x1c.temporal.history.v1.History\x12\x17\n\x0fnext_page_token\x18\t \x01(\x0c\x12/\n\x05query\x18\n \x01(\x0b\x32 .temporal.query.v1.WorkflowQuery\x12G\n\x1dworkflow_execution_task_queue\x18\x0b \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12\x1b\n\x13scheduled_timestamp\x18\x0c \x01(\x03\x12\x19\n\x11started_timestamp\x18\r \x01(\x03\x12V\n\x07queries\x18\x0e \x03(\x0b\x32\x45.temporal.workflowservice.v1.PollForDecisionTaskResponse.QueriesEntry\x1aP\n\x0cQueriesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12/\n\x05value\x18\x02 \x01(\x0b\x32 .temporal.query.v1.WorkflowQuery:\x02\x38\x01\"\xf6\x03\n#RespondDecisionTaskCompletedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x31\n\tdecisions\x18\x02 \x03(\x0b\x32\x1e.temporal.decision.v1.Decision\x12\x10\n\x08identity\x18\x03 \x01(\t\x12K\n\x11sticky_attributes\x18\x04 \x01(\x0b\x32\x30.temporal.taskqueue.v1.StickyExecutionAttributes\x12 \n\x18return_new_decision_task\x18\x05 \x01(\x08\x12&\n\x1e\x66orce_create_new_decision_task\x18\x06 \x01(\x08\x12\x17\n\x0f\x62inary_checksum\x18\x07 \x01(\t\x12i\n\rquery_results\x18\x08 \x03(\x0b\x32R.temporal.workflowservice.v1.RespondDecisionTaskCompletedRequest.QueryResultsEntry\x1a[\n\x11QueryResultsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x35\n\x05value\x18\x02 \x01(\x0b\x32&.temporal.query.v1.WorkflowQueryResult:\x02\x38\x01\"w\n$RespondDecisionTaskCompletedResponse\x12O\n\rdecision_task\x18\x01 \x01(\x0b\x32\x38.temporal.workflowservice.v1.PollForDecisionTaskResponse\"\xcb\x01\n RespondDecisionTaskFailedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x39\n\x05\x63\x61use\x18\x02 \x01(\x0e\x32*.temporal.enums.v1.DecisionTaskFailedCause\x12-\n\x07\x66\x61ilure\x18\x03 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x04 \x01(\t\x12\x17\n\x0f\x62inary_checksum\x18\x05 \x01(\t\"#\n!RespondDecisionTaskFailedResponse\"\xbe\x01\n\x1aPollForActivityTaskRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x34\n\ntask_queue\x18\x02 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x45\n\x13task_queue_metadata\x18\x04 \x01(\x0b\x32(.temporal.taskqueue.v1.TaskQueueMetadata\"\xcc\x05\n\x1bPollForActivityTaskResponse\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12\x1a\n\x12workflow_namespace\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x41\n\x12workflow_execution\x18\x04 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\ractivity_type\x18\x05 \x01(\x0b\x32 .temporal.common.v1.ActivityType\x12\x13\n\x0b\x61\x63tivity_id\x18\x06 \x01(\t\x12*\n\x06header\x18\x07 \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12+\n\x05input\x18\x08 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x37\n\x11heartbeat_details\x18\t \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x1b\n\x13scheduled_timestamp\x18\n \x01(\x03\x12+\n#scheduled_timestamp_of_this_attempt\x18\x0b \x01(\x03\x12\x19\n\x11started_timestamp\x18\x0c \x01(\x03\x12\x0f\n\x07\x61ttempt\x18\r \x01(\x05\x12)\n!schedule_to_close_timeout_seconds\x18\x0e \x01(\x05\x12&\n\x1estart_to_close_timeout_seconds\x18\x0f \x01(\x05\x12!\n\x19heartbeat_timeout_seconds\x18\x10 \x01(\x05\x12\x35\n\x0cretry_policy\x18\x11 \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\"y\n\"RecordActivityTaskHeartbeatRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"?\n#RecordActivityTaskHeartbeatResponse\x12\x18\n\x10\x63\x61ncel_requested\x18\x01 \x01(\x08\"\xb6\x01\n&RecordActivityTaskHeartbeatByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12-\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x06 \x01(\t\"C\n\'RecordActivityTaskHeartbeatByIdResponse\x12\x18\n\x10\x63\x61ncel_requested\x18\x01 \x01(\x08\"y\n#RespondActivityTaskCompletedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12,\n\x06result\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"&\n$RespondActivityTaskCompletedResponse\"\xb6\x01\n\'RespondActivityTaskCompletedByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12,\n\x06result\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x06 \x01(\t\"*\n(RespondActivityTaskCompletedByIdResponse\"w\n RespondActivityTaskFailedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12-\n\x07\x66\x61ilure\x18\x02 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x03 \x01(\t\"#\n!RespondActivityTaskFailedResponse\"\xb4\x01\n$RespondActivityTaskFailedByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12-\n\x07\x66\x61ilure\x18\x05 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x06 \x01(\t\"\'\n%RespondActivityTaskFailedByIdResponse\"y\n\"RespondActivityTaskCanceledRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"%\n#RespondActivityTaskCanceledResponse\"\xb6\x01\n&RespondActivityTaskCanceledByIdRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x0e\n\x06run_id\x18\x03 \x01(\t\x12\x13\n\x0b\x61\x63tivity_id\x18\x04 \x01(\t\x12-\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x06 \x01(\t\")\n\'RespondActivityTaskCanceledByIdResponse\"\xa3\x01\n%RequestCancelWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x12\n\nrequest_id\x18\x04 \x01(\t\"(\n&RequestCancelWorkflowExecutionResponse\"\xef\x01\n\x1eSignalWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x13\n\x0bsignal_name\x18\x03 \x01(\t\x12+\n\x05input\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x05 \x01(\t\x12\x12\n\nrequest_id\x18\x06 \x01(\t\x12\x0f\n\x07\x63ontrol\x18\x07 \x01(\t\"!\n\x1fSignalWorkflowExecutionResponse\"\x95\x06\n\'SignalWithStartWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x34\n\ntask_queue\x18\x04 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x06 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x07 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x08 \x01(\x05\x12\x10\n\x08identity\x18\t \x01(\t\x12\x12\n\nrequest_id\x18\n \x01(\t\x12J\n\x18workflow_id_reuse_policy\x18\x0b \x01(\x0e\x32(.temporal.enums.v1.WorkflowIdReusePolicy\x12\x13\n\x0bsignal_name\x18\x0c \x01(\t\x12\x32\n\x0csignal_input\x18\r \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x0f\n\x07\x63ontrol\x18\x0e \x01(\t\x12\x35\n\x0cretry_policy\x18\x0f \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x15\n\rcron_schedule\x18\x10 \x01(\t\x12&\n\x04memo\x18\x11 \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x12 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12*\n\x06header\x18\x13 \x01(\x0b\x32\x1a.temporal.common.v1.Header\":\n(SignalWithStartWorkflowExecutionResponse\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\xbb\x01\n\x1dResetWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12 \n\x18\x64\x65\x63ision_finish_event_id\x18\x04 \x01(\x03\x12\x12\n\nrequest_id\x18\x05 \x01(\t\"0\n\x1eResetWorkflowExecutionResponse\x12\x0e\n\x06run_id\x18\x01 \x01(\t\"\xca\x01\n!TerminateWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0e\n\x06reason\x18\x03 \x01(\t\x12-\n\x07\x64\x65tails\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x05 \x01(\t\"$\n\"TerminateWorkflowExecutionResponse\"\xbd\x02\n!ListOpenWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x19\n\x11maximum_page_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12>\n\x11start_time_filter\x18\x04 \x01(\x0b\x32#.temporal.filter.v1.StartTimeFilter\x12G\n\x10\x65xecution_filter\x18\x05 \x01(\x0b\x32+.temporal.filter.v1.WorkflowExecutionFilterH\x00\x12=\n\x0btype_filter\x18\x06 \x01(\x0b\x32&.temporal.filter.v1.WorkflowTypeFilterH\x00\x42\t\n\x07\x66ilters\"~\n\"ListOpenWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"\xfa\x02\n#ListClosedWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x19\n\x11maximum_page_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12>\n\x11start_time_filter\x18\x04 \x01(\x0b\x32#.temporal.filter.v1.StartTimeFilter\x12G\n\x10\x65xecution_filter\x18\x05 \x01(\x0b\x32+.temporal.filter.v1.WorkflowExecutionFilterH\x00\x12=\n\x0btype_filter\x18\x06 \x01(\x0b\x32&.temporal.filter.v1.WorkflowTypeFilterH\x00\x12\x39\n\rstatus_filter\x18\x07 \x01(\x0b\x32 .temporal.filter.v1.StatusFilterH\x00\x42\t\n\x07\x66ilters\"\x80\x01\n$ListClosedWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"m\n\x1dListWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\r\n\x05query\x18\x04 \x01(\t\"z\n\x1eListWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"u\n%ListArchivedWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\r\n\x05query\x18\x04 \x01(\t\"\x82\x01\n&ListArchivedWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"m\n\x1dScanWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\x0c\x12\r\n\x05query\x18\x04 \x01(\t\"z\n\x1eScanWorkflowExecutionsResponse\x12?\n\nexecutions\x18\x01 \x03(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\x0c\"B\n\x1e\x43ountWorkflowExecutionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\r\n\x05query\x18\x02 \x01(\t\"0\n\x1f\x43ountWorkflowExecutionsResponse\x12\r\n\x05\x63ount\x18\x01 \x01(\x03\"\x1c\n\x1aGetSearchAttributesRequest\"\xc1\x01\n\x1bGetSearchAttributesResponse\x12P\n\x04keys\x18\x01 \x03(\x0b\x32\x42.temporal.workflowservice.v1.GetSearchAttributesResponse.KeysEntry\x1aP\n\tKeysEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x32\n\x05value\x18\x02 \x01(\x0e\x32#.temporal.enums.v1.IndexedValueType:\x02\x38\x01\"\x82\x02\n RespondQueryTaskCompletedRequest\x12\x12\n\ntask_token\x18\x01 \x01(\x0c\x12:\n\x0e\x63ompleted_type\x18\x02 \x01(\x0e\x32\".temporal.enums.v1.QueryResultType\x12\x32\n\x0cquery_result\x18\x03 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x15\n\rerror_message\x18\x04 \x01(\t\x12\x43\n\x13worker_version_info\x18\x05 \x01(\x0b\x32&.temporal.version.v1.WorkerVersionInfo\"#\n!RespondQueryTaskCompletedResponse\"j\n\x1bResetStickyTaskQueueRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\"\x1e\n\x1cResetStickyTaskQueueResponse\"\xdd\x01\n\x14QueryWorkflowRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12/\n\x05query\x18\x03 \x01(\x0b\x32 .temporal.query.v1.WorkflowQuery\x12G\n\x16query_reject_condition\x18\x04 \x01(\x0e\x32\'.temporal.enums.v1.QueryRejectCondition\"\x85\x01\n\x15QueryWorkflowResponse\x12\x32\n\x0cquery_result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x38\n\x0equery_rejected\x18\x02 \x01(\x0b\x32 .temporal.query.v1.QueryRejected\"o\n DescribeWorkflowExecutionRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x38\n\texecution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\"\xcc\x02\n!DescribeWorkflowExecutionResponse\x12G\n\x10\x65xecution_config\x18\x01 \x01(\x0b\x32-.temporal.workflow.v1.WorkflowExecutionConfig\x12L\n\x17workflow_execution_info\x18\x02 \x01(\x0b\x32+.temporal.workflow.v1.WorkflowExecutionInfo\x12\x45\n\x12pending_activities\x18\x03 \x03(\x0b\x32).temporal.workflow.v1.PendingActivityInfo\x12I\n\x10pending_children\x18\x04 \x03(\x0b\x32/.temporal.workflow.v1.PendingChildExecutionInfo\"\xc1\x01\n\x18\x44\x65scribeTaskQueueRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x34\n\ntask_queue\x18\x02 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12\x39\n\x0ftask_queue_type\x18\x03 \x01(\x0e\x32 .temporal.enums.v1.TaskQueueType\x12!\n\x19include_task_queue_status\x18\x04 \x01(\x08\"\x92\x01\n\x19\x44\x65scribeTaskQueueResponse\x12\x32\n\x07pollers\x18\x01 \x03(\x0b\x32!.temporal.taskqueue.v1.PollerInfo\x12\x41\n\x11task_queue_status\x18\x02 \x01(\x0b\x32&.temporal.taskqueue.v1.TaskQueueStatus\"\x17\n\x15GetClusterInfoRequest\"c\n\x16GetClusterInfoResponse\x12I\n\x16supported_sdk_versions\x18\x01 \x01(\x0b\x32).temporal.version.v1.SupportedSDKVersions\"i\n\x1eListTaskQueuePartitionsRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x34\n\ntask_queue\x18\x02 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\"\xd7\x01\n\x1fListTaskQueuePartitionsResponse\x12Y\n\x1e\x61\x63tivity_task_queue_partitions\x18\x01 \x03(\x0b\x32\x31.temporal.taskqueue.v1.TaskQueuePartitionMetadata\x12Y\n\x1e\x64\x65\x63ision_task_queue_partitions\x18\x02 \x03(\x0b\x32\x31.temporal.taskqueue.v1.TaskQueuePartitionMetadataBz\n\x1eio.temporal.workflowservice.v1B\x14RequestResponseProtoP\x01Z@go.temporal.io/temporal-proto/workflowservice/v1;workflowserviceb\x06proto3'
   ,
-  dependencies=[temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_namespace__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_failed__cause__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_common__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_query__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_task__list__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_history_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_workflow_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_decision_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_failure_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_filter_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_namespace_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_query_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_replication_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_tasklist_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_version_dot_v1_dot_message__pb2.DESCRIPTOR,])
+  dependencies=[temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_namespace__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_failed__cause__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_common__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_query__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_task__queue__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_history_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_workflow_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_decision_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_failure_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_filter_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_namespace_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_query_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_replication_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_taskqueue_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_version_dot_v1_dot_message__pb2.DESCRIPTOR,])
 
 
 
@@ -75,8 +75,8 @@ _REGISTERNAMESPACEREQUEST_DATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1280,
-  serialized_end=1323,
+  serialized_start=1271,
+  serialized_end=1314,
 )
 
 _REGISTERNAMESPACEREQUEST = _descriptor.Descriptor(
@@ -164,7 +164,7 @@ _REGISTERNAMESPACEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='history_archival_u_r_i', full_name='temporal.workflowservice.v1.RegisterNamespaceRequest.history_archival_u_r_i', index=11,
+      name='history_archival_uri', full_name='temporal.workflowservice.v1.RegisterNamespaceRequest.history_archival_uri', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -178,7 +178,7 @@ _REGISTERNAMESPACEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='visibility_archival_u_r_i', full_name='temporal.workflowservice.v1.RegisterNamespaceRequest.visibility_archival_u_r_i', index=13,
+      name='visibility_archival_uri', full_name='temporal.workflowservice.v1.RegisterNamespaceRequest.visibility_archival_uri', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -196,8 +196,8 @@ _REGISTERNAMESPACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=679,
-  serialized_end=1323,
+  serialized_start=681,
+  serialized_end=1314,
 )
 
 
@@ -220,8 +220,8 @@ _REGISTERNAMESPACERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1325,
-  serialized_end=1352,
+  serialized_start=1316,
+  serialized_end=1343,
 )
 
 
@@ -258,8 +258,8 @@ _LISTNAMESPACESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1354,
-  serialized_end=1421,
+  serialized_start=1345,
+  serialized_end=1412,
 )
 
 
@@ -296,8 +296,8 @@ _LISTNAMESPACESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1423,
-  serialized_end=1548,
+  serialized_start=1414,
+  serialized_end=1539,
 )
 
 
@@ -334,8 +334,8 @@ _DESCRIBENAMESPACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1550,
-  serialized_end=1602,
+  serialized_start=1541,
+  serialized_end=1593,
 )
 
 
@@ -354,14 +354,14 @@ _DESCRIBENAMESPACERESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='configuration', full_name='temporal.workflowservice.v1.DescribeNamespaceResponse.configuration', index=1,
+      name='config', full_name='temporal.workflowservice.v1.DescribeNamespaceResponse.config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='replication_configuration', full_name='temporal.workflowservice.v1.DescribeNamespaceResponse.replication_configuration', index=2,
+      name='replication_config', full_name='temporal.workflowservice.v1.DescribeNamespaceResponse.replication_config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -393,8 +393,8 @@ _DESCRIBENAMESPACERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1605,
-  serialized_end=1914,
+  serialized_start=1596,
+  serialized_end=1877,
 )
 
 
@@ -413,21 +413,21 @@ _UPDATENAMESPACEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='updated_info', full_name='temporal.workflowservice.v1.UpdateNamespaceRequest.updated_info', index=1,
+      name='update_info', full_name='temporal.workflowservice.v1.UpdateNamespaceRequest.update_info', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='configuration', full_name='temporal.workflowservice.v1.UpdateNamespaceRequest.configuration', index=2,
+      name='config', full_name='temporal.workflowservice.v1.UpdateNamespaceRequest.config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='replication_configuration', full_name='temporal.workflowservice.v1.UpdateNamespaceRequest.replication_configuration', index=3,
+      name='replication_config', full_name='temporal.workflowservice.v1.UpdateNamespaceRequest.replication_config', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -459,8 +459,8 @@ _UPDATENAMESPACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1917,
-  serialized_end=2237,
+  serialized_start=1880,
+  serialized_end=2171,
 )
 
 
@@ -479,14 +479,14 @@ _UPDATENAMESPACERESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='configuration', full_name='temporal.workflowservice.v1.UpdateNamespaceResponse.configuration', index=1,
+      name='config', full_name='temporal.workflowservice.v1.UpdateNamespaceResponse.config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='replication_configuration', full_name='temporal.workflowservice.v1.UpdateNamespaceResponse.replication_configuration', index=2,
+      name='replication_config', full_name='temporal.workflowservice.v1.UpdateNamespaceResponse.replication_config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -518,8 +518,8 @@ _UPDATENAMESPACERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2240,
-  serialized_end=2547,
+  serialized_start=2174,
+  serialized_end=2453,
 )
 
 
@@ -556,8 +556,8 @@ _DEPRECATENAMESPACEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2549,
-  serialized_end=2614,
+  serialized_start=2455,
+  serialized_end=2520,
 )
 
 
@@ -580,8 +580,8 @@ _DEPRECATENAMESPACERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2616,
-  serialized_end=2644,
+  serialized_start=2522,
+  serialized_end=2550,
 )
 
 
@@ -614,7 +614,7 @@ _STARTWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflowservice.v1.StartWorkflowExecutionRequest.task_list', index=3,
+      name='task_queue', full_name='temporal.workflowservice.v1.StartWorkflowExecutionRequest.task_queue', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -716,8 +716,8 @@ _STARTWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2647,
-  serialized_end=3333,
+  serialized_start=2553,
+  serialized_end=3242,
 )
 
 
@@ -747,8 +747,8 @@ _STARTWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3335,
-  serialized_end=3383,
+  serialized_start=3244,
+  serialized_end=3292,
 )
 
 
@@ -820,8 +820,8 @@ _GETWORKFLOWEXECUTIONHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3386,
-  serialized_end=3680,
+  serialized_start=3295,
+  serialized_end=3589,
 )
 
 
@@ -872,8 +872,8 @@ _GETWORKFLOWEXECUTIONHISTORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3683,
-  serialized_end=3861,
+  serialized_start=3592,
+  serialized_end=3770,
 )
 
 
@@ -892,7 +892,7 @@ _POLLFORDECISIONTASKREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflowservice.v1.PollForDecisionTaskRequest.task_list', index=1,
+      name='task_queue', full_name='temporal.workflowservice.v1.PollForDecisionTaskRequest.task_queue', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -924,8 +924,8 @@ _POLLFORDECISIONTASKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3864,
-  serialized_end=4005,
+  serialized_start=3773,
+  serialized_end=3917,
 )
 
 
@@ -962,8 +962,8 @@ _POLLFORDECISIONTASKRESPONSE_QUERIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4624,
-  serialized_end=4704,
+  serialized_start=4539,
+  serialized_end=4619,
 )
 
 _POLLFORDECISIONTASKRESPONSE = _descriptor.Descriptor(
@@ -1044,7 +1044,7 @@ _POLLFORDECISIONTASKRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_execution_task_list', full_name='temporal.workflowservice.v1.PollForDecisionTaskResponse.workflow_execution_task_list', index=10,
+      name='workflow_execution_task_queue', full_name='temporal.workflowservice.v1.PollForDecisionTaskResponse.workflow_execution_task_queue', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1083,8 +1083,8 @@ _POLLFORDECISIONTASKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4008,
-  serialized_end=4704,
+  serialized_start=3920,
+  serialized_end=4619,
 )
 
 
@@ -1121,8 +1121,8 @@ _RESPONDDECISIONTASKCOMPLETEDREQUEST_QUERYRESULTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5117,
-  serialized_end=5208,
+  serialized_start=5033,
+  serialized_end=5124,
 )
 
 _RESPONDDECISIONTASKCOMPLETEDREQUEST = _descriptor.Descriptor(
@@ -1200,8 +1200,8 @@ _RESPONDDECISIONTASKCOMPLETEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4707,
-  serialized_end=5208,
+  serialized_start=4622,
+  serialized_end=5124,
 )
 
 
@@ -1231,8 +1231,8 @@ _RESPONDDECISIONTASKCOMPLETEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5210,
-  serialized_end=5329,
+  serialized_start=5126,
+  serialized_end=5245,
 )
 
 
@@ -1290,8 +1290,8 @@ _RESPONDDECISIONTASKFAILEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5332,
-  serialized_end=5535,
+  serialized_start=5248,
+  serialized_end=5451,
 )
 
 
@@ -1314,8 +1314,8 @@ _RESPONDDECISIONTASKFAILEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5537,
-  serialized_end=5572,
+  serialized_start=5453,
+  serialized_end=5488,
 )
 
 
@@ -1334,7 +1334,7 @@ _POLLFORACTIVITYTASKREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflowservice.v1.PollForActivityTaskRequest.task_list', index=1,
+      name='task_queue', full_name='temporal.workflowservice.v1.PollForActivityTaskRequest.task_queue', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1348,7 +1348,7 @@ _POLLFORACTIVITYTASKREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list_metadata', full_name='temporal.workflowservice.v1.PollForActivityTaskRequest.task_list_metadata', index=3,
+      name='task_queue_metadata', full_name='temporal.workflowservice.v1.PollForActivityTaskRequest.task_queue_metadata', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1366,8 +1366,8 @@ _POLLFORACTIVITYTASKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5575,
-  serialized_end=5759,
+  serialized_start=5491,
+  serialized_end=5681,
 )
 
 
@@ -1509,8 +1509,8 @@ _POLLFORACTIVITYTASKRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5762,
-  serialized_end=6478,
+  serialized_start=5684,
+  serialized_end=6400,
 )
 
 
@@ -1554,8 +1554,8 @@ _RECORDACTIVITYTASKHEARTBEATREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6480,
-  serialized_end=6601,
+  serialized_start=6402,
+  serialized_end=6523,
 )
 
 
@@ -1585,8 +1585,8 @@ _RECORDACTIVITYTASKHEARTBEATRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6603,
-  serialized_end=6666,
+  serialized_start=6525,
+  serialized_end=6588,
 )
 
 
@@ -1651,8 +1651,8 @@ _RECORDACTIVITYTASKHEARTBEATBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6669,
-  serialized_end=6851,
+  serialized_start=6591,
+  serialized_end=6773,
 )
 
 
@@ -1682,8 +1682,8 @@ _RECORDACTIVITYTASKHEARTBEATBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6853,
-  serialized_end=6920,
+  serialized_start=6775,
+  serialized_end=6842,
 )
 
 
@@ -1727,8 +1727,8 @@ _RESPONDACTIVITYTASKCOMPLETEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6922,
-  serialized_end=7043,
+  serialized_start=6844,
+  serialized_end=6965,
 )
 
 
@@ -1751,8 +1751,8 @@ _RESPONDACTIVITYTASKCOMPLETEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7045,
-  serialized_end=7083,
+  serialized_start=6967,
+  serialized_end=7005,
 )
 
 
@@ -1817,8 +1817,8 @@ _RESPONDACTIVITYTASKCOMPLETEDBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7086,
-  serialized_end=7268,
+  serialized_start=7008,
+  serialized_end=7190,
 )
 
 
@@ -1841,8 +1841,8 @@ _RESPONDACTIVITYTASKCOMPLETEDBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7270,
-  serialized_end=7312,
+  serialized_start=7192,
+  serialized_end=7234,
 )
 
 
@@ -1886,8 +1886,8 @@ _RESPONDACTIVITYTASKFAILEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7314,
-  serialized_end=7433,
+  serialized_start=7236,
+  serialized_end=7355,
 )
 
 
@@ -1910,8 +1910,8 @@ _RESPONDACTIVITYTASKFAILEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7435,
-  serialized_end=7470,
+  serialized_start=7357,
+  serialized_end=7392,
 )
 
 
@@ -1976,8 +1976,8 @@ _RESPONDACTIVITYTASKFAILEDBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7473,
-  serialized_end=7653,
+  serialized_start=7395,
+  serialized_end=7575,
 )
 
 
@@ -2000,8 +2000,8 @@ _RESPONDACTIVITYTASKFAILEDBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7655,
-  serialized_end=7694,
+  serialized_start=7577,
+  serialized_end=7616,
 )
 
 
@@ -2045,8 +2045,8 @@ _RESPONDACTIVITYTASKCANCELEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7696,
-  serialized_end=7817,
+  serialized_start=7618,
+  serialized_end=7739,
 )
 
 
@@ -2069,8 +2069,8 @@ _RESPONDACTIVITYTASKCANCELEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7819,
-  serialized_end=7856,
+  serialized_start=7741,
+  serialized_end=7778,
 )
 
 
@@ -2135,8 +2135,8 @@ _RESPONDACTIVITYTASKCANCELEDBYIDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7859,
-  serialized_end=8041,
+  serialized_start=7781,
+  serialized_end=7963,
 )
 
 
@@ -2159,8 +2159,8 @@ _RESPONDACTIVITYTASKCANCELEDBYIDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8043,
-  serialized_end=8084,
+  serialized_start=7965,
+  serialized_end=8006,
 )
 
 
@@ -2211,8 +2211,8 @@ _REQUESTCANCELWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8087,
-  serialized_end=8250,
+  serialized_start=8009,
+  serialized_end=8172,
 )
 
 
@@ -2235,8 +2235,8 @@ _REQUESTCANCELWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8252,
-  serialized_end=8292,
+  serialized_start=8174,
+  serialized_end=8214,
 )
 
 
@@ -2308,8 +2308,8 @@ _SIGNALWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8295,
-  serialized_end=8534,
+  serialized_start=8217,
+  serialized_end=8456,
 )
 
 
@@ -2332,8 +2332,8 @@ _SIGNALWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8536,
-  serialized_end=8569,
+  serialized_start=8458,
+  serialized_end=8491,
 )
 
 
@@ -2366,7 +2366,7 @@ _SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflowservice.v1.SignalWithStartWorkflowExecutionRequest.task_list', index=3,
+      name='task_queue', full_name='temporal.workflowservice.v1.SignalWithStartWorkflowExecutionRequest.task_queue', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2489,8 +2489,8 @@ _SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8572,
-  serialized_end=9358,
+  serialized_start=8494,
+  serialized_end=9283,
 )
 
 
@@ -2520,8 +2520,8 @@ _SIGNALWITHSTARTWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9360,
-  serialized_end=9418,
+  serialized_start=9285,
+  serialized_end=9343,
 )
 
 
@@ -2579,8 +2579,8 @@ _RESETWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9421,
-  serialized_end=9608,
+  serialized_start=9346,
+  serialized_end=9533,
 )
 
 
@@ -2610,8 +2610,8 @@ _RESETWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9610,
-  serialized_end=9658,
+  serialized_start=9535,
+  serialized_end=9583,
 )
 
 
@@ -2669,8 +2669,8 @@ _TERMINATEWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9661,
-  serialized_end=9863,
+  serialized_start=9586,
+  serialized_end=9788,
 )
 
 
@@ -2693,8 +2693,8 @@ _TERMINATEWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9865,
-  serialized_end=9901,
+  serialized_start=9790,
+  serialized_end=9826,
 )
 
 
@@ -2762,8 +2762,8 @@ _LISTOPENWORKFLOWEXECUTIONSREQUEST = _descriptor.Descriptor(
       name='filters', full_name='temporal.workflowservice.v1.ListOpenWorkflowExecutionsRequest.filters',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=9904,
-  serialized_end=10221,
+  serialized_start=9829,
+  serialized_end=10146,
 )
 
 
@@ -2800,8 +2800,8 @@ _LISTOPENWORKFLOWEXECUTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10223,
-  serialized_end=10349,
+  serialized_start=10148,
+  serialized_end=10274,
 )
 
 
@@ -2876,8 +2876,8 @@ _LISTCLOSEDWORKFLOWEXECUTIONSREQUEST = _descriptor.Descriptor(
       name='filters', full_name='temporal.workflowservice.v1.ListClosedWorkflowExecutionsRequest.filters',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=10352,
-  serialized_end=10730,
+  serialized_start=10277,
+  serialized_end=10655,
 )
 
 
@@ -2914,8 +2914,8 @@ _LISTCLOSEDWORKFLOWEXECUTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10733,
-  serialized_end=10861,
+  serialized_start=10658,
+  serialized_end=10786,
 )
 
 
@@ -2966,8 +2966,8 @@ _LISTWORKFLOWEXECUTIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10863,
-  serialized_end=10972,
+  serialized_start=10788,
+  serialized_end=10897,
 )
 
 
@@ -3004,8 +3004,8 @@ _LISTWORKFLOWEXECUTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10974,
-  serialized_end=11096,
+  serialized_start=10899,
+  serialized_end=11021,
 )
 
 
@@ -3056,8 +3056,8 @@ _LISTARCHIVEDWORKFLOWEXECUTIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11098,
-  serialized_end=11215,
+  serialized_start=11023,
+  serialized_end=11140,
 )
 
 
@@ -3094,8 +3094,8 @@ _LISTARCHIVEDWORKFLOWEXECUTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11218,
-  serialized_end=11348,
+  serialized_start=11143,
+  serialized_end=11273,
 )
 
 
@@ -3146,8 +3146,8 @@ _SCANWORKFLOWEXECUTIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11350,
-  serialized_end=11459,
+  serialized_start=11275,
+  serialized_end=11384,
 )
 
 
@@ -3184,8 +3184,8 @@ _SCANWORKFLOWEXECUTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11461,
-  serialized_end=11583,
+  serialized_start=11386,
+  serialized_end=11508,
 )
 
 
@@ -3222,8 +3222,8 @@ _COUNTWORKFLOWEXECUTIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11585,
-  serialized_end=11651,
+  serialized_start=11510,
+  serialized_end=11576,
 )
 
 
@@ -3253,8 +3253,8 @@ _COUNTWORKFLOWEXECUTIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11653,
-  serialized_end=11701,
+  serialized_start=11578,
+  serialized_end=11626,
 )
 
 
@@ -3277,8 +3277,8 @@ _GETSEARCHATTRIBUTESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11703,
-  serialized_end=11731,
+  serialized_start=11628,
+  serialized_end=11656,
 )
 
 
@@ -3315,8 +3315,8 @@ _GETSEARCHATTRIBUTESRESPONSE_KEYSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11847,
-  serialized_end=11927,
+  serialized_start=11772,
+  serialized_end=11852,
 )
 
 _GETSEARCHATTRIBUTESRESPONSE = _descriptor.Descriptor(
@@ -3345,8 +3345,8 @@ _GETSEARCHATTRIBUTESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11734,
-  serialized_end=11927,
+  serialized_start=11659,
+  serialized_end=11852,
 )
 
 
@@ -3404,8 +3404,8 @@ _RESPONDQUERYTASKCOMPLETEDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=11930,
-  serialized_end=12188,
+  serialized_start=11855,
+  serialized_end=12113,
 )
 
 
@@ -3428,27 +3428,27 @@ _RESPONDQUERYTASKCOMPLETEDRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12190,
-  serialized_end=12225,
+  serialized_start=12115,
+  serialized_end=12150,
 )
 
 
-_RESETSTICKYTASKLISTREQUEST = _descriptor.Descriptor(
-  name='ResetStickyTaskListRequest',
-  full_name='temporal.workflowservice.v1.ResetStickyTaskListRequest',
+_RESETSTICKYTASKQUEUEREQUEST = _descriptor.Descriptor(
+  name='ResetStickyTaskQueueRequest',
+  full_name='temporal.workflowservice.v1.ResetStickyTaskQueueRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='temporal.workflowservice.v1.ResetStickyTaskListRequest.namespace', index=0,
+      name='namespace', full_name='temporal.workflowservice.v1.ResetStickyTaskQueueRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='execution', full_name='temporal.workflowservice.v1.ResetStickyTaskListRequest.execution', index=1,
+      name='execution', full_name='temporal.workflowservice.v1.ResetStickyTaskQueueRequest.execution', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3466,14 +3466,14 @@ _RESETSTICKYTASKLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12227,
-  serialized_end=12332,
+  serialized_start=12152,
+  serialized_end=12258,
 )
 
 
-_RESETSTICKYTASKLISTRESPONSE = _descriptor.Descriptor(
-  name='ResetStickyTaskListResponse',
-  full_name='temporal.workflowservice.v1.ResetStickyTaskListResponse',
+_RESETSTICKYTASKQUEUERESPONSE = _descriptor.Descriptor(
+  name='ResetStickyTaskQueueResponse',
+  full_name='temporal.workflowservice.v1.ResetStickyTaskQueueResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -3490,8 +3490,8 @@ _RESETSTICKYTASKLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12334,
-  serialized_end=12363,
+  serialized_start=12260,
+  serialized_end=12290,
 )
 
 
@@ -3542,8 +3542,8 @@ _QUERYWORKFLOWREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12366,
-  serialized_end=12587,
+  serialized_start=12293,
+  serialized_end=12514,
 )
 
 
@@ -3580,8 +3580,8 @@ _QUERYWORKFLOWRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12590,
-  serialized_end=12723,
+  serialized_start=12517,
+  serialized_end=12650,
 )
 
 
@@ -3618,8 +3618,8 @@ _DESCRIBEWORKFLOWEXECUTIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12725,
-  serialized_end=12836,
+  serialized_start=12652,
+  serialized_end=12763,
 )
 
 
@@ -3631,7 +3631,7 @@ _DESCRIBEWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='execution_configuration', full_name='temporal.workflowservice.v1.DescribeWorkflowExecutionResponse.execution_configuration', index=0,
+      name='execution_config', full_name='temporal.workflowservice.v1.DescribeWorkflowExecutionResponse.execution_config', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3670,41 +3670,41 @@ _DESCRIBEWORKFLOWEXECUTIONRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=12839,
-  serialized_end=13185,
+  serialized_start=12766,
+  serialized_end=13098,
 )
 
 
-_DESCRIBETASKLISTREQUEST = _descriptor.Descriptor(
-  name='DescribeTaskListRequest',
-  full_name='temporal.workflowservice.v1.DescribeTaskListRequest',
+_DESCRIBETASKQUEUEREQUEST = _descriptor.Descriptor(
+  name='DescribeTaskQueueRequest',
+  full_name='temporal.workflowservice.v1.DescribeTaskQueueRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='temporal.workflowservice.v1.DescribeTaskListRequest.namespace', index=0,
+      name='namespace', full_name='temporal.workflowservice.v1.DescribeTaskQueueRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflowservice.v1.DescribeTaskListRequest.task_list', index=1,
+      name='task_queue', full_name='temporal.workflowservice.v1.DescribeTaskQueueRequest.task_queue', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list_type', full_name='temporal.workflowservice.v1.DescribeTaskListRequest.task_list_type', index=2,
+      name='task_queue_type', full_name='temporal.workflowservice.v1.DescribeTaskQueueRequest.task_queue_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='include_task_list_status', full_name='temporal.workflowservice.v1.DescribeTaskListRequest.include_task_list_status', index=3,
+      name='include_task_queue_status', full_name='temporal.workflowservice.v1.DescribeTaskQueueRequest.include_task_queue_status', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -3722,27 +3722,27 @@ _DESCRIBETASKLISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13188,
-  serialized_end=13374,
+  serialized_start=13101,
+  serialized_end=13294,
 )
 
 
-_DESCRIBETASKLISTRESPONSE = _descriptor.Descriptor(
-  name='DescribeTaskListResponse',
-  full_name='temporal.workflowservice.v1.DescribeTaskListResponse',
+_DESCRIBETASKQUEUERESPONSE = _descriptor.Descriptor(
+  name='DescribeTaskQueueResponse',
+  full_name='temporal.workflowservice.v1.DescribeTaskQueueResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pollers', full_name='temporal.workflowservice.v1.DescribeTaskListResponse.pollers', index=0,
+      name='pollers', full_name='temporal.workflowservice.v1.DescribeTaskQueueResponse.pollers', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list_status', full_name='temporal.workflowservice.v1.DescribeTaskListResponse.task_list_status', index=1,
+      name='task_queue_status', full_name='temporal.workflowservice.v1.DescribeTaskQueueResponse.task_queue_status', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3760,8 +3760,8 @@ _DESCRIBETASKLISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13377,
-  serialized_end=13518,
+  serialized_start=13297,
+  serialized_end=13443,
 )
 
 
@@ -3784,8 +3784,8 @@ _GETCLUSTERINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13520,
-  serialized_end=13543,
+  serialized_start=13445,
+  serialized_end=13468,
 )
 
 
@@ -3815,27 +3815,27 @@ _GETCLUSTERINFORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13545,
-  serialized_end=13644,
+  serialized_start=13470,
+  serialized_end=13569,
 )
 
 
-_LISTTASKLISTPARTITIONSREQUEST = _descriptor.Descriptor(
-  name='ListTaskListPartitionsRequest',
-  full_name='temporal.workflowservice.v1.ListTaskListPartitionsRequest',
+_LISTTASKQUEUEPARTITIONSREQUEST = _descriptor.Descriptor(
+  name='ListTaskQueuePartitionsRequest',
+  full_name='temporal.workflowservice.v1.ListTaskQueuePartitionsRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='temporal.workflowservice.v1.ListTaskListPartitionsRequest.namespace', index=0,
+      name='namespace', full_name='temporal.workflowservice.v1.ListTaskQueuePartitionsRequest.namespace', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflowservice.v1.ListTaskListPartitionsRequest.task_list', index=1,
+      name='task_queue', full_name='temporal.workflowservice.v1.ListTaskQueuePartitionsRequest.task_queue', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -3853,27 +3853,27 @@ _LISTTASKLISTPARTITIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13646,
-  serialized_end=13747,
+  serialized_start=13571,
+  serialized_end=13676,
 )
 
 
-_LISTTASKLISTPARTITIONSRESPONSE = _descriptor.Descriptor(
-  name='ListTaskListPartitionsResponse',
-  full_name='temporal.workflowservice.v1.ListTaskListPartitionsResponse',
+_LISTTASKQUEUEPARTITIONSRESPONSE = _descriptor.Descriptor(
+  name='ListTaskQueuePartitionsResponse',
+  full_name='temporal.workflowservice.v1.ListTaskQueuePartitionsResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='activity_task_list_partitions', full_name='temporal.workflowservice.v1.ListTaskListPartitionsResponse.activity_task_list_partitions', index=0,
+      name='activity_task_queue_partitions', full_name='temporal.workflowservice.v1.ListTaskQueuePartitionsResponse.activity_task_queue_partitions', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='decision_task_list_partitions', full_name='temporal.workflowservice.v1.ListTaskListPartitionsResponse.decision_task_list_partitions', index=1,
+      name='decision_task_queue_partitions', full_name='temporal.workflowservice.v1.ListTaskQueuePartitionsResponse.decision_task_queue_partitions', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -3891,27 +3891,27 @@ _LISTTASKLISTPARTITIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=13750,
-  serialized_end=13958,
+  serialized_start=13679,
+  serialized_end=13894,
 )
 
 _REGISTERNAMESPACEREQUEST_DATAENTRY.containing_type = _REGISTERNAMESPACEREQUEST
-_REGISTERNAMESPACEREQUEST.fields_by_name['clusters'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._CLUSTERREPLICATIONCONFIGURATION
+_REGISTERNAMESPACEREQUEST.fields_by_name['clusters'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._CLUSTERREPLICATIONCONFIG
 _REGISTERNAMESPACEREQUEST.fields_by_name['data'].message_type = _REGISTERNAMESPACEREQUEST_DATAENTRY
 _REGISTERNAMESPACEREQUEST.fields_by_name['history_archival_status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._ARCHIVALSTATUS
 _REGISTERNAMESPACEREQUEST.fields_by_name['visibility_archival_status'].enum_type = temporal_dot_enums_dot_v1_dot_namespace__pb2._ARCHIVALSTATUS
 _LISTNAMESPACESRESPONSE.fields_by_name['namespaces'].message_type = _DESCRIBENAMESPACERESPONSE
 _DESCRIBENAMESPACERESPONSE.fields_by_name['namespace_info'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACEINFO
-_DESCRIBENAMESPACERESPONSE.fields_by_name['configuration'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACECONFIGURATION
-_DESCRIBENAMESPACERESPONSE.fields_by_name['replication_configuration'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._NAMESPACEREPLICATIONCONFIGURATION
-_UPDATENAMESPACEREQUEST.fields_by_name['updated_info'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._UPDATENAMESPACEINFO
-_UPDATENAMESPACEREQUEST.fields_by_name['configuration'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACECONFIGURATION
-_UPDATENAMESPACEREQUEST.fields_by_name['replication_configuration'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._NAMESPACEREPLICATIONCONFIGURATION
+_DESCRIBENAMESPACERESPONSE.fields_by_name['config'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACECONFIG
+_DESCRIBENAMESPACERESPONSE.fields_by_name['replication_config'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._NAMESPACEREPLICATIONCONFIG
+_UPDATENAMESPACEREQUEST.fields_by_name['update_info'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._UPDATENAMESPACEINFO
+_UPDATENAMESPACEREQUEST.fields_by_name['config'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACECONFIG
+_UPDATENAMESPACEREQUEST.fields_by_name['replication_config'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._NAMESPACEREPLICATIONCONFIG
 _UPDATENAMESPACERESPONSE.fields_by_name['namespace_info'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACEINFO
-_UPDATENAMESPACERESPONSE.fields_by_name['configuration'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACECONFIGURATION
-_UPDATENAMESPACERESPONSE.fields_by_name['replication_configuration'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._NAMESPACEREPLICATIONCONFIGURATION
+_UPDATENAMESPACERESPONSE.fields_by_name['config'].message_type = temporal_dot_namespace_dot_v1_dot_message__pb2._NAMESPACECONFIG
+_UPDATENAMESPACERESPONSE.fields_by_name['replication_config'].message_type = temporal_dot_replication_dot_v1_dot_message__pb2._NAMESPACEREPLICATIONCONFIG
 _STARTWORKFLOWEXECUTIONREQUEST.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
-_STARTWORKFLOWEXECUTIONREQUEST.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_STARTWORKFLOWEXECUTIONREQUEST.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _STARTWORKFLOWEXECUTIONREQUEST.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _STARTWORKFLOWEXECUTIONREQUEST.fields_by_name['workflow_id_reuse_policy'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._WORKFLOWIDREUSEPOLICY
 _STARTWORKFLOWEXECUTIONREQUEST.fields_by_name['retry_policy'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._RETRYPOLICY
@@ -3922,25 +3922,25 @@ _GETWORKFLOWEXECUTIONHISTORYREQUEST.fields_by_name['execution'].message_type = t
 _GETWORKFLOWEXECUTIONHISTORYREQUEST.fields_by_name['history_event_filter_type'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._HISTORYEVENTFILTERTYPE
 _GETWORKFLOWEXECUTIONHISTORYRESPONSE.fields_by_name['history'].message_type = temporal_dot_history_dot_v1_dot_message__pb2._HISTORY
 _GETWORKFLOWEXECUTIONHISTORYRESPONSE.fields_by_name['raw_history'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._DATABLOB
-_POLLFORDECISIONTASKREQUEST.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_POLLFORDECISIONTASKREQUEST.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _POLLFORDECISIONTASKRESPONSE_QUERIESENTRY.fields_by_name['value'].message_type = temporal_dot_query_dot_v1_dot_message__pb2._WORKFLOWQUERY
 _POLLFORDECISIONTASKRESPONSE_QUERIESENTRY.containing_type = _POLLFORDECISIONTASKRESPONSE
 _POLLFORDECISIONTASKRESPONSE.fields_by_name['workflow_execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
 _POLLFORDECISIONTASKRESPONSE.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
 _POLLFORDECISIONTASKRESPONSE.fields_by_name['history'].message_type = temporal_dot_history_dot_v1_dot_message__pb2._HISTORY
 _POLLFORDECISIONTASKRESPONSE.fields_by_name['query'].message_type = temporal_dot_query_dot_v1_dot_message__pb2._WORKFLOWQUERY
-_POLLFORDECISIONTASKRESPONSE.fields_by_name['workflow_execution_task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_POLLFORDECISIONTASKRESPONSE.fields_by_name['workflow_execution_task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _POLLFORDECISIONTASKRESPONSE.fields_by_name['queries'].message_type = _POLLFORDECISIONTASKRESPONSE_QUERIESENTRY
 _RESPONDDECISIONTASKCOMPLETEDREQUEST_QUERYRESULTSENTRY.fields_by_name['value'].message_type = temporal_dot_query_dot_v1_dot_message__pb2._WORKFLOWQUERYRESULT
 _RESPONDDECISIONTASKCOMPLETEDREQUEST_QUERYRESULTSENTRY.containing_type = _RESPONDDECISIONTASKCOMPLETEDREQUEST
 _RESPONDDECISIONTASKCOMPLETEDREQUEST.fields_by_name['decisions'].message_type = temporal_dot_decision_dot_v1_dot_message__pb2._DECISION
-_RESPONDDECISIONTASKCOMPLETEDREQUEST.fields_by_name['sticky_attributes'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._STICKYEXECUTIONATTRIBUTES
+_RESPONDDECISIONTASKCOMPLETEDREQUEST.fields_by_name['sticky_attributes'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._STICKYEXECUTIONATTRIBUTES
 _RESPONDDECISIONTASKCOMPLETEDREQUEST.fields_by_name['query_results'].message_type = _RESPONDDECISIONTASKCOMPLETEDREQUEST_QUERYRESULTSENTRY
 _RESPONDDECISIONTASKCOMPLETEDRESPONSE.fields_by_name['decision_task'].message_type = _POLLFORDECISIONTASKRESPONSE
 _RESPONDDECISIONTASKFAILEDREQUEST.fields_by_name['cause'].enum_type = temporal_dot_enums_dot_v1_dot_failed__cause__pb2._DECISIONTASKFAILEDCAUSE
 _RESPONDDECISIONTASKFAILEDREQUEST.fields_by_name['failure'].message_type = temporal_dot_failure_dot_v1_dot_message__pb2._FAILURE
-_POLLFORACTIVITYTASKREQUEST.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
-_POLLFORACTIVITYTASKREQUEST.fields_by_name['task_list_metadata'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLISTMETADATA
+_POLLFORACTIVITYTASKREQUEST.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
+_POLLFORACTIVITYTASKREQUEST.fields_by_name['task_queue_metadata'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUEMETADATA
 _POLLFORACTIVITYTASKRESPONSE.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
 _POLLFORACTIVITYTASKRESPONSE.fields_by_name['workflow_execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
 _POLLFORACTIVITYTASKRESPONSE.fields_by_name['activity_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._ACTIVITYTYPE
@@ -3960,7 +3960,7 @@ _REQUESTCANCELWORKFLOWEXECUTIONREQUEST.fields_by_name['workflow_execution'].mess
 _SIGNALWORKFLOWEXECUTIONREQUEST.fields_by_name['workflow_execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
 _SIGNALWORKFLOWEXECUTIONREQUEST.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
-_SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST.fields_by_name['workflow_id_reuse_policy'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._WORKFLOWIDREUSEPOLICY
 _SIGNALWITHSTARTWORKFLOWEXECUTIONREQUEST.fields_by_name['signal_input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
@@ -4004,25 +4004,25 @@ _GETSEARCHATTRIBUTESRESPONSE.fields_by_name['keys'].message_type = _GETSEARCHATT
 _RESPONDQUERYTASKCOMPLETEDREQUEST.fields_by_name['completed_type'].enum_type = temporal_dot_enums_dot_v1_dot_query__pb2._QUERYRESULTTYPE
 _RESPONDQUERYTASKCOMPLETEDREQUEST.fields_by_name['query_result'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _RESPONDQUERYTASKCOMPLETEDREQUEST.fields_by_name['worker_version_info'].message_type = temporal_dot_version_dot_v1_dot_message__pb2._WORKERVERSIONINFO
-_RESETSTICKYTASKLISTREQUEST.fields_by_name['execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
+_RESETSTICKYTASKQUEUEREQUEST.fields_by_name['execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
 _QUERYWORKFLOWREQUEST.fields_by_name['execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
 _QUERYWORKFLOWREQUEST.fields_by_name['query'].message_type = temporal_dot_query_dot_v1_dot_message__pb2._WORKFLOWQUERY
 _QUERYWORKFLOWREQUEST.fields_by_name['query_reject_condition'].enum_type = temporal_dot_enums_dot_v1_dot_query__pb2._QUERYREJECTCONDITION
 _QUERYWORKFLOWRESPONSE.fields_by_name['query_result'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _QUERYWORKFLOWRESPONSE.fields_by_name['query_rejected'].message_type = temporal_dot_query_dot_v1_dot_message__pb2._QUERYREJECTED
 _DESCRIBEWORKFLOWEXECUTIONREQUEST.fields_by_name['execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
-_DESCRIBEWORKFLOWEXECUTIONRESPONSE.fields_by_name['execution_configuration'].message_type = temporal_dot_workflow_dot_v1_dot_message__pb2._WORKFLOWEXECUTIONCONFIGURATION
+_DESCRIBEWORKFLOWEXECUTIONRESPONSE.fields_by_name['execution_config'].message_type = temporal_dot_workflow_dot_v1_dot_message__pb2._WORKFLOWEXECUTIONCONFIG
 _DESCRIBEWORKFLOWEXECUTIONRESPONSE.fields_by_name['workflow_execution_info'].message_type = temporal_dot_workflow_dot_v1_dot_message__pb2._WORKFLOWEXECUTIONINFO
 _DESCRIBEWORKFLOWEXECUTIONRESPONSE.fields_by_name['pending_activities'].message_type = temporal_dot_workflow_dot_v1_dot_message__pb2._PENDINGACTIVITYINFO
 _DESCRIBEWORKFLOWEXECUTIONRESPONSE.fields_by_name['pending_children'].message_type = temporal_dot_workflow_dot_v1_dot_message__pb2._PENDINGCHILDEXECUTIONINFO
-_DESCRIBETASKLISTREQUEST.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
-_DESCRIBETASKLISTREQUEST.fields_by_name['task_list_type'].enum_type = temporal_dot_enums_dot_v1_dot_task__list__pb2._TASKLISTTYPE
-_DESCRIBETASKLISTRESPONSE.fields_by_name['pollers'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._POLLERINFO
-_DESCRIBETASKLISTRESPONSE.fields_by_name['task_list_status'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLISTSTATUS
+_DESCRIBETASKQUEUEREQUEST.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
+_DESCRIBETASKQUEUEREQUEST.fields_by_name['task_queue_type'].enum_type = temporal_dot_enums_dot_v1_dot_task__queue__pb2._TASKQUEUETYPE
+_DESCRIBETASKQUEUERESPONSE.fields_by_name['pollers'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._POLLERINFO
+_DESCRIBETASKQUEUERESPONSE.fields_by_name['task_queue_status'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUESTATUS
 _GETCLUSTERINFORESPONSE.fields_by_name['supported_sdk_versions'].message_type = temporal_dot_version_dot_v1_dot_message__pb2._SUPPORTEDSDKVERSIONS
-_LISTTASKLISTPARTITIONSREQUEST.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
-_LISTTASKLISTPARTITIONSRESPONSE.fields_by_name['activity_task_list_partitions'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLISTPARTITIONMETADATA
-_LISTTASKLISTPARTITIONSRESPONSE.fields_by_name['decision_task_list_partitions'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLISTPARTITIONMETADATA
+_LISTTASKQUEUEPARTITIONSREQUEST.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
+_LISTTASKQUEUEPARTITIONSRESPONSE.fields_by_name['activity_task_queue_partitions'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUEPARTITIONMETADATA
+_LISTTASKQUEUEPARTITIONSRESPONSE.fields_by_name['decision_task_queue_partitions'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUEPARTITIONMETADATA
 DESCRIPTOR.message_types_by_name['RegisterNamespaceRequest'] = _REGISTERNAMESPACEREQUEST
 DESCRIPTOR.message_types_by_name['RegisterNamespaceResponse'] = _REGISTERNAMESPACERESPONSE
 DESCRIPTOR.message_types_by_name['ListNamespacesRequest'] = _LISTNAMESPACESREQUEST
@@ -4087,18 +4087,18 @@ DESCRIPTOR.message_types_by_name['GetSearchAttributesRequest'] = _GETSEARCHATTRI
 DESCRIPTOR.message_types_by_name['GetSearchAttributesResponse'] = _GETSEARCHATTRIBUTESRESPONSE
 DESCRIPTOR.message_types_by_name['RespondQueryTaskCompletedRequest'] = _RESPONDQUERYTASKCOMPLETEDREQUEST
 DESCRIPTOR.message_types_by_name['RespondQueryTaskCompletedResponse'] = _RESPONDQUERYTASKCOMPLETEDRESPONSE
-DESCRIPTOR.message_types_by_name['ResetStickyTaskListRequest'] = _RESETSTICKYTASKLISTREQUEST
-DESCRIPTOR.message_types_by_name['ResetStickyTaskListResponse'] = _RESETSTICKYTASKLISTRESPONSE
+DESCRIPTOR.message_types_by_name['ResetStickyTaskQueueRequest'] = _RESETSTICKYTASKQUEUEREQUEST
+DESCRIPTOR.message_types_by_name['ResetStickyTaskQueueResponse'] = _RESETSTICKYTASKQUEUERESPONSE
 DESCRIPTOR.message_types_by_name['QueryWorkflowRequest'] = _QUERYWORKFLOWREQUEST
 DESCRIPTOR.message_types_by_name['QueryWorkflowResponse'] = _QUERYWORKFLOWRESPONSE
 DESCRIPTOR.message_types_by_name['DescribeWorkflowExecutionRequest'] = _DESCRIBEWORKFLOWEXECUTIONREQUEST
 DESCRIPTOR.message_types_by_name['DescribeWorkflowExecutionResponse'] = _DESCRIBEWORKFLOWEXECUTIONRESPONSE
-DESCRIPTOR.message_types_by_name['DescribeTaskListRequest'] = _DESCRIBETASKLISTREQUEST
-DESCRIPTOR.message_types_by_name['DescribeTaskListResponse'] = _DESCRIBETASKLISTRESPONSE
+DESCRIPTOR.message_types_by_name['DescribeTaskQueueRequest'] = _DESCRIBETASKQUEUEREQUEST
+DESCRIPTOR.message_types_by_name['DescribeTaskQueueResponse'] = _DESCRIBETASKQUEUERESPONSE
 DESCRIPTOR.message_types_by_name['GetClusterInfoRequest'] = _GETCLUSTERINFOREQUEST
 DESCRIPTOR.message_types_by_name['GetClusterInfoResponse'] = _GETCLUSTERINFORESPONSE
-DESCRIPTOR.message_types_by_name['ListTaskListPartitionsRequest'] = _LISTTASKLISTPARTITIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListTaskListPartitionsResponse'] = _LISTTASKLISTPARTITIONSRESPONSE
+DESCRIPTOR.message_types_by_name['ListTaskQueuePartitionsRequest'] = _LISTTASKQUEUEPARTITIONSREQUEST
+DESCRIPTOR.message_types_by_name['ListTaskQueuePartitionsResponse'] = _LISTTASKQUEUEPARTITIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 RegisterNamespaceRequest = _reflection.GeneratedProtocolMessageType('RegisterNamespaceRequest', (_message.Message,), {
@@ -4581,19 +4581,19 @@ RespondQueryTaskCompletedResponse = _reflection.GeneratedProtocolMessageType('Re
   })
 _sym_db.RegisterMessage(RespondQueryTaskCompletedResponse)
 
-ResetStickyTaskListRequest = _reflection.GeneratedProtocolMessageType('ResetStickyTaskListRequest', (_message.Message,), {
-  'DESCRIPTOR' : _RESETSTICKYTASKLISTREQUEST,
+ResetStickyTaskQueueRequest = _reflection.GeneratedProtocolMessageType('ResetStickyTaskQueueRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESETSTICKYTASKQUEUEREQUEST,
   '__module__' : 'temporal.workflowservice.v1.request_response_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ResetStickyTaskListRequest)
+  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ResetStickyTaskQueueRequest)
   })
-_sym_db.RegisterMessage(ResetStickyTaskListRequest)
+_sym_db.RegisterMessage(ResetStickyTaskQueueRequest)
 
-ResetStickyTaskListResponse = _reflection.GeneratedProtocolMessageType('ResetStickyTaskListResponse', (_message.Message,), {
-  'DESCRIPTOR' : _RESETSTICKYTASKLISTRESPONSE,
+ResetStickyTaskQueueResponse = _reflection.GeneratedProtocolMessageType('ResetStickyTaskQueueResponse', (_message.Message,), {
+  'DESCRIPTOR' : _RESETSTICKYTASKQUEUERESPONSE,
   '__module__' : 'temporal.workflowservice.v1.request_response_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ResetStickyTaskListResponse)
+  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ResetStickyTaskQueueResponse)
   })
-_sym_db.RegisterMessage(ResetStickyTaskListResponse)
+_sym_db.RegisterMessage(ResetStickyTaskQueueResponse)
 
 QueryWorkflowRequest = _reflection.GeneratedProtocolMessageType('QueryWorkflowRequest', (_message.Message,), {
   'DESCRIPTOR' : _QUERYWORKFLOWREQUEST,
@@ -4623,19 +4623,19 @@ DescribeWorkflowExecutionResponse = _reflection.GeneratedProtocolMessageType('De
   })
 _sym_db.RegisterMessage(DescribeWorkflowExecutionResponse)
 
-DescribeTaskListRequest = _reflection.GeneratedProtocolMessageType('DescribeTaskListRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBETASKLISTREQUEST,
+DescribeTaskQueueRequest = _reflection.GeneratedProtocolMessageType('DescribeTaskQueueRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBETASKQUEUEREQUEST,
   '__module__' : 'temporal.workflowservice.v1.request_response_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.DescribeTaskListRequest)
+  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.DescribeTaskQueueRequest)
   })
-_sym_db.RegisterMessage(DescribeTaskListRequest)
+_sym_db.RegisterMessage(DescribeTaskQueueRequest)
 
-DescribeTaskListResponse = _reflection.GeneratedProtocolMessageType('DescribeTaskListResponse', (_message.Message,), {
-  'DESCRIPTOR' : _DESCRIBETASKLISTRESPONSE,
+DescribeTaskQueueResponse = _reflection.GeneratedProtocolMessageType('DescribeTaskQueueResponse', (_message.Message,), {
+  'DESCRIPTOR' : _DESCRIBETASKQUEUERESPONSE,
   '__module__' : 'temporal.workflowservice.v1.request_response_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.DescribeTaskListResponse)
+  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.DescribeTaskQueueResponse)
   })
-_sym_db.RegisterMessage(DescribeTaskListResponse)
+_sym_db.RegisterMessage(DescribeTaskQueueResponse)
 
 GetClusterInfoRequest = _reflection.GeneratedProtocolMessageType('GetClusterInfoRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETCLUSTERINFOREQUEST,
@@ -4651,19 +4651,19 @@ GetClusterInfoResponse = _reflection.GeneratedProtocolMessageType('GetClusterInf
   })
 _sym_db.RegisterMessage(GetClusterInfoResponse)
 
-ListTaskListPartitionsRequest = _reflection.GeneratedProtocolMessageType('ListTaskListPartitionsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTTASKLISTPARTITIONSREQUEST,
+ListTaskQueuePartitionsRequest = _reflection.GeneratedProtocolMessageType('ListTaskQueuePartitionsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTASKQUEUEPARTITIONSREQUEST,
   '__module__' : 'temporal.workflowservice.v1.request_response_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ListTaskListPartitionsRequest)
+  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ListTaskQueuePartitionsRequest)
   })
-_sym_db.RegisterMessage(ListTaskListPartitionsRequest)
+_sym_db.RegisterMessage(ListTaskQueuePartitionsRequest)
 
-ListTaskListPartitionsResponse = _reflection.GeneratedProtocolMessageType('ListTaskListPartitionsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTTASKLISTPARTITIONSRESPONSE,
+ListTaskQueuePartitionsResponse = _reflection.GeneratedProtocolMessageType('ListTaskQueuePartitionsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTASKQUEUEPARTITIONSRESPONSE,
   '__module__' : 'temporal.workflowservice.v1.request_response_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ListTaskListPartitionsResponse)
+  # @@protoc_insertion_point(class_scope:temporal.workflowservice.v1.ListTaskQueuePartitionsResponse)
   })
-_sym_db.RegisterMessage(ListTaskListPartitionsResponse)
+_sym_db.RegisterMessage(ListTaskQueuePartitionsResponse)
 
 
 DESCRIPTOR._options = None

@@ -17,8 +17,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/version/v1/message.proto',
   package='temporal.version.v1',
   syntax='proto3',
-  serialized_options=b'\n\034io.temporal.proto.version.v1B\014MessageProtoP\001Z0go.temporal.io/temporal-proto/version/v1;version',
-  serialized_pb=b'\n!temporal/version/v1/message.proto\x12\x13temporal.version.v1\"8\n\x14SupportedSDKVersions\x12\x0e\n\x06go_sdk\x18\x01 \x01(\t\x12\x10\n\x08java_sdk\x18\x02 \x01(\t\"D\n\x11WorkerVersionInfo\x12\x16\n\x0eimplementation\x18\x01 \x01(\t\x12\x17\n\x0f\x66\x65\x61ture_version\x18\x02 \x01(\tB`\n\x1cio.temporal.proto.version.v1B\x0cMessageProtoP\x01Z0go.temporal.io/temporal-proto/version/v1;versionb\x06proto3'
+  serialized_options=b'\n\026io.temporal.version.v1B\014MessageProtoP\001Z0go.temporal.io/temporal-proto/version/v1;version',
+  serialized_pb=b'\n!temporal/version/v1/message.proto\x12\x13temporal.version.v1\"8\n\x14SupportedSDKVersions\x12\x0e\n\x06go_sdk\x18\x01 \x01(\t\x12\x10\n\x08java_sdk\x18\x02 \x01(\t\"D\n\x11WorkerVersionInfo\x12\x16\n\x0eimplementation\x18\x01 \x01(\t\x12\x17\n\x0f\x66\x65\x61ture_version\x18\x02 \x01(\tBZ\n\x16io.temporal.version.v1B\x0cMessageProtoP\x01Z0go.temporal.io/temporal-proto/version/v1;versionb\x06proto3'
 )
 
 

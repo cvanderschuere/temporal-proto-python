@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/enums/v1/common.proto',
   package='temporal.enums.v1',
   syntax='proto3',
-  serialized_options=b'\n\032io.temporal.proto.enums.v1B\013CommonProtoP\001Z,go.temporal.io/temporal-proto/enums/v1;enums',
-  serialized_pb=b'\n\x1etemporal/enums/v1/common.proto\x12\x11temporal.enums.v1*_\n\x0c\x45ncodingType\x12\x1d\n\x19\x45NCODING_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x45NCODING_TYPE_PROTO3\x10\x01\x12\x16\n\x12\x45NCODING_TYPE_JSON\x10\x02*\xee\x01\n\x10IndexedValueType\x12\"\n\x1eINDEXED_VALUE_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19INDEXED_VALUE_TYPE_STRING\x10\x01\x12\x1e\n\x1aINDEXED_VALUE_TYPE_KEYWORD\x10\x02\x12\x1a\n\x16INDEXED_VALUE_TYPE_INT\x10\x03\x12\x1d\n\x19INDEXED_VALUE_TYPE_DOUBLE\x10\x04\x12\x1b\n\x17INDEXED_VALUE_TYPE_BOOL\x10\x05\x12\x1f\n\x1bINDEXED_VALUE_TYPE_DATETIME\x10\x06\x42Y\n\x1aio.temporal.proto.enums.v1B\x0b\x43ommonProtoP\x01Z,go.temporal.io/temporal-proto/enums/v1;enumsb\x06proto3'
+  serialized_options=b'\n\024io.temporal.enums.v1B\013CommonProtoP\001Z,go.temporal.io/temporal-proto/enums/v1;enums',
+  serialized_pb=b'\n\x1etemporal/enums/v1/common.proto\x12\x11temporal.enums.v1*_\n\x0c\x45ncodingType\x12\x1d\n\x19\x45NCODING_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x45NCODING_TYPE_PROTO3\x10\x01\x12\x16\n\x12\x45NCODING_TYPE_JSON\x10\x02*\xee\x01\n\x10IndexedValueType\x12\"\n\x1eINDEXED_VALUE_TYPE_UNSPECIFIED\x10\x00\x12\x1d\n\x19INDEXED_VALUE_TYPE_STRING\x10\x01\x12\x1e\n\x1aINDEXED_VALUE_TYPE_KEYWORD\x10\x02\x12\x1a\n\x16INDEXED_VALUE_TYPE_INT\x10\x03\x12\x1d\n\x19INDEXED_VALUE_TYPE_DOUBLE\x10\x04\x12\x1b\n\x17INDEXED_VALUE_TYPE_BOOL\x10\x05\x12\x1f\n\x1bINDEXED_VALUE_TYPE_DATETIME\x10\x06\x42S\n\x14io.temporal.enums.v1B\x0b\x43ommonProtoP\x01Z,go.temporal.io/temporal-proto/enums/v1;enumsb\x06proto3'
 )
 
 _ENCODINGTYPE = _descriptor.EnumDescriptor(

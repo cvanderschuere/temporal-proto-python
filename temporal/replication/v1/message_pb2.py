@@ -17,22 +17,22 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/replication/v1/message.proto',
   package='temporal.replication.v1',
   syntax='proto3',
-  serialized_options=b'\n io.temporal.proto.replication.v1B\014MessageProtoP\001Z8go.temporal.io/temporal-proto/replication/v1;replication',
-  serialized_pb=b'\n%temporal/replication/v1/message.proto\x12\x17temporal.replication.v1\"7\n\x1f\x43lusterReplicationConfiguration\x12\x14\n\x0c\x63luster_name\x18\x01 \x01(\t\"\x8c\x01\n!NamespaceReplicationConfiguration\x12\x1b\n\x13\x61\x63tive_cluster_name\x18\x01 \x01(\t\x12J\n\x08\x63lusters\x18\x02 \x03(\x0b\x32\x38.temporal.replication.v1.ClusterReplicationConfigurationBl\n io.temporal.proto.replication.v1B\x0cMessageProtoP\x01Z8go.temporal.io/temporal-proto/replication/v1;replicationb\x06proto3'
+  serialized_options=b'\n\032io.temporal.replication.v1B\014MessageProtoP\001Z8go.temporal.io/temporal-proto/replication/v1;replication',
+  serialized_pb=b'\n%temporal/replication/v1/message.proto\x12\x17temporal.replication.v1\"0\n\x18\x43lusterReplicationConfig\x12\x14\n\x0c\x63luster_name\x18\x01 \x01(\t\"~\n\x1aNamespaceReplicationConfig\x12\x1b\n\x13\x61\x63tive_cluster_name\x18\x01 \x01(\t\x12\x43\n\x08\x63lusters\x18\x02 \x03(\x0b\x32\x31.temporal.replication.v1.ClusterReplicationConfigBf\n\x1aio.temporal.replication.v1B\x0cMessageProtoP\x01Z8go.temporal.io/temporal-proto/replication/v1;replicationb\x06proto3'
 )
 
 
 
 
-_CLUSTERREPLICATIONCONFIGURATION = _descriptor.Descriptor(
-  name='ClusterReplicationConfiguration',
-  full_name='temporal.replication.v1.ClusterReplicationConfiguration',
+_CLUSTERREPLICATIONCONFIG = _descriptor.Descriptor(
+  name='ClusterReplicationConfig',
+  full_name='temporal.replication.v1.ClusterReplicationConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cluster_name', full_name='temporal.replication.v1.ClusterReplicationConfiguration.cluster_name', index=0,
+      name='cluster_name', full_name='temporal.replication.v1.ClusterReplicationConfig.cluster_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -51,26 +51,26 @@ _CLUSTERREPLICATIONCONFIGURATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=66,
-  serialized_end=121,
+  serialized_end=114,
 )
 
 
-_NAMESPACEREPLICATIONCONFIGURATION = _descriptor.Descriptor(
-  name='NamespaceReplicationConfiguration',
-  full_name='temporal.replication.v1.NamespaceReplicationConfiguration',
+_NAMESPACEREPLICATIONCONFIG = _descriptor.Descriptor(
+  name='NamespaceReplicationConfig',
+  full_name='temporal.replication.v1.NamespaceReplicationConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='active_cluster_name', full_name='temporal.replication.v1.NamespaceReplicationConfiguration.active_cluster_name', index=0,
+      name='active_cluster_name', full_name='temporal.replication.v1.NamespaceReplicationConfig.active_cluster_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='clusters', full_name='temporal.replication.v1.NamespaceReplicationConfiguration.clusters', index=1,
+      name='clusters', full_name='temporal.replication.v1.NamespaceReplicationConfig.clusters', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -88,28 +88,28 @@ _NAMESPACEREPLICATIONCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=124,
-  serialized_end=264,
+  serialized_start=116,
+  serialized_end=242,
 )
 
-_NAMESPACEREPLICATIONCONFIGURATION.fields_by_name['clusters'].message_type = _CLUSTERREPLICATIONCONFIGURATION
-DESCRIPTOR.message_types_by_name['ClusterReplicationConfiguration'] = _CLUSTERREPLICATIONCONFIGURATION
-DESCRIPTOR.message_types_by_name['NamespaceReplicationConfiguration'] = _NAMESPACEREPLICATIONCONFIGURATION
+_NAMESPACEREPLICATIONCONFIG.fields_by_name['clusters'].message_type = _CLUSTERREPLICATIONCONFIG
+DESCRIPTOR.message_types_by_name['ClusterReplicationConfig'] = _CLUSTERREPLICATIONCONFIG
+DESCRIPTOR.message_types_by_name['NamespaceReplicationConfig'] = _NAMESPACEREPLICATIONCONFIG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-ClusterReplicationConfiguration = _reflection.GeneratedProtocolMessageType('ClusterReplicationConfiguration', (_message.Message,), {
-  'DESCRIPTOR' : _CLUSTERREPLICATIONCONFIGURATION,
+ClusterReplicationConfig = _reflection.GeneratedProtocolMessageType('ClusterReplicationConfig', (_message.Message,), {
+  'DESCRIPTOR' : _CLUSTERREPLICATIONCONFIG,
   '__module__' : 'temporal.replication.v1.message_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.replication.v1.ClusterReplicationConfiguration)
+  # @@protoc_insertion_point(class_scope:temporal.replication.v1.ClusterReplicationConfig)
   })
-_sym_db.RegisterMessage(ClusterReplicationConfiguration)
+_sym_db.RegisterMessage(ClusterReplicationConfig)
 
-NamespaceReplicationConfiguration = _reflection.GeneratedProtocolMessageType('NamespaceReplicationConfiguration', (_message.Message,), {
-  'DESCRIPTOR' : _NAMESPACEREPLICATIONCONFIGURATION,
+NamespaceReplicationConfig = _reflection.GeneratedProtocolMessageType('NamespaceReplicationConfig', (_message.Message,), {
+  'DESCRIPTOR' : _NAMESPACEREPLICATIONCONFIG,
   '__module__' : 'temporal.replication.v1.message_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.replication.v1.NamespaceReplicationConfiguration)
+  # @@protoc_insertion_point(class_scope:temporal.replication.v1.NamespaceReplicationConfig)
   })
-_sym_db.RegisterMessage(NamespaceReplicationConfiguration)
+_sym_db.RegisterMessage(NamespaceReplicationConfig)
 
 
 DESCRIPTOR._options = None

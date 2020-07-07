@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/enums/v1/namespace.proto',
   package='temporal.enums.v1',
   syntax='proto3',
-  serialized_options=b'\n\032io.temporal.proto.enums.v1B\016NamespaceProtoP\001Z,go.temporal.io/temporal-proto/enums/v1;enums',
-  serialized_pb=b'\n!temporal/enums/v1/namespace.proto\x12\x11temporal.enums.v1*\x93\x01\n\x0fNamespaceStatus\x12 \n\x1cNAMESPACE_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n\x1bNAMESPACE_STATUS_REGISTERED\x10\x01\x12\x1f\n\x1bNAMESPACE_STATUS_DEPRECATED\x10\x02\x12\x1c\n\x18NAMESPACE_STATUS_DELETED\x10\x03*l\n\x0e\x41rchivalStatus\x12\x1f\n\x1b\x41RCHIVAL_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x41RCHIVAL_STATUS_DISABLED\x10\x01\x12\x1b\n\x17\x41RCHIVAL_STATUS_ENABLED\x10\x02\x42\\\n\x1aio.temporal.proto.enums.v1B\x0eNamespaceProtoP\x01Z,go.temporal.io/temporal-proto/enums/v1;enumsb\x06proto3'
+  serialized_options=b'\n\024io.temporal.enums.v1B\016NamespaceProtoP\001Z,go.temporal.io/temporal-proto/enums/v1;enums',
+  serialized_pb=b'\n!temporal/enums/v1/namespace.proto\x12\x11temporal.enums.v1*\x93\x01\n\x0fNamespaceStatus\x12 \n\x1cNAMESPACE_STATUS_UNSPECIFIED\x10\x00\x12\x1f\n\x1bNAMESPACE_STATUS_REGISTERED\x10\x01\x12\x1f\n\x1bNAMESPACE_STATUS_DEPRECATED\x10\x02\x12\x1c\n\x18NAMESPACE_STATUS_DELETED\x10\x03*l\n\x0e\x41rchivalStatus\x12\x1f\n\x1b\x41RCHIVAL_STATUS_UNSPECIFIED\x10\x00\x12\x1c\n\x18\x41RCHIVAL_STATUS_DISABLED\x10\x01\x12\x1b\n\x17\x41RCHIVAL_STATUS_ENABLED\x10\x02\x42V\n\x14io.temporal.enums.v1B\x0eNamespaceProtoP\x01Z,go.temporal.io/temporal-proto/enums/v1;enumsb\x06proto3'
 )
 
 _NAMESPACESTATUS = _descriptor.EnumDescriptor(

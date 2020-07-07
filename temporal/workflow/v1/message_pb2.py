@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from temporal.enums.v1 import workflow_pb2 as temporal_dot_enums_dot_v1_dot_workflow__pb2
 from temporal.common.v1 import message_pb2 as temporal_dot_common_dot_v1_dot_message__pb2
 from temporal.failure.v1 import message_pb2 as temporal_dot_failure_dot_v1_dot_message__pb2
-from temporal.tasklist.v1 import message_pb2 as temporal_dot_tasklist_dot_v1_dot_message__pb2
+from temporal.taskqueue.v1 import message_pb2 as temporal_dot_taskqueue_dot_v1_dot_message__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
@@ -22,10 +22,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/workflow/v1/message.proto',
   package='temporal.workflow.v1',
   syntax='proto3',
-  serialized_options=b'\n\035io.temporal.proto.workflow.v1B\014MessageProtoP\001Z2go.temporal.io/temporal-proto/workflow/v1;workflow',
-  serialized_pb=b'\n\"temporal/workflow/v1/message.proto\x12\x14temporal.workflow.v1\x1a temporal/enums/v1/workflow.proto\x1a temporal/common/v1/message.proto\x1a!temporal/failure/v1/message.proto\x1a\"temporal/tasklist/v1/message.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xe7\x04\n\x15WorkflowExecutionInfo\x12\x38\n\texecution\x18\x01 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12.\n\x04type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12/\n\nstart_time\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\nclose_time\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x06status\x18\x05 \x01(\x0e\x32*.temporal.enums.v1.WorkflowExecutionStatus\x12\x16\n\x0ehistory_length\x18\x06 \x01(\x03\x12\x1b\n\x13parent_namespace_id\x18\x07 \x01(\t\x12?\n\x10parent_execution\x18\x08 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x16\n\x0e\x65xecution_time\x18\t \x01(\x03\x12&\n\x04memo\x18\n \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x0b \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12<\n\x11\x61uto_reset_points\x18\x0c \x01(\x0b\x32!.temporal.workflow.v1.ResetPoints\x12\x11\n\ttask_list\x18\r \x01(\t\"\xcc\x01\n\x1eWorkflowExecutionConfiguration\x12\x31\n\ttask_list\x18\x01 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12*\n\"workflow_execution_timeout_seconds\x18\x02 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x03 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x04 \x01(\x05\"\xce\x03\n\x13PendingActivityInfo\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\t\x12\x37\n\ractivity_type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.ActivityType\x12\x36\n\x05state\x18\x03 \x01(\x0e\x32\'.temporal.enums.v1.PendingActivityState\x12\x37\n\x11heartbeat_details\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12 \n\x18last_heartbeat_timestamp\x18\x05 \x01(\x03\x12\x1e\n\x16last_started_timestamp\x18\x06 \x01(\x03\x12\x0f\n\x07\x61ttempt\x18\x07 \x01(\x05\x12\x18\n\x10maximum_attempts\x18\x08 \x01(\x05\x12\x1b\n\x13scheduled_timestamp\x18\t \x01(\x03\x12\x1c\n\x14\x65xpiration_timestamp\x18\n \x01(\x03\x12\x32\n\x0clast_failure\x18\x0b \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x1c\n\x14last_worker_identity\x18\x0c \x01(\t\"\xb4\x01\n\x19PendingChildExecutionInfo\x12\x13\n\x0bworkflow_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\x12\x19\n\x11workflow_typ_name\x18\x03 \x01(\t\x12\x14\n\x0cinitiated_id\x18\x04 \x01(\x03\x12\x41\n\x13parent_close_policy\x18\x05 \x01(\x0e\x32$.temporal.enums.v1.ParentClosePolicy\"C\n\x0bResetPoints\x12\x34\n\x06points\x18\x01 \x03(\x0b\x32$.temporal.workflow.v1.ResetPointInfo\"\xa9\x01\n\x0eResetPointInfo\x12\x17\n\x0f\x62inary_checksum\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\x12#\n\x1b\x66irst_decision_completed_id\x18\x03 \x01(\x03\x12\x19\n\x11\x63reated_time_nano\x18\x04 \x01(\x03\x12\x1a\n\x12\x65xpiring_time_nano\x18\x05 \x01(\x03\x12\x12\n\nresettable\x18\x06 \x01(\x08\x42\x63\n\x1dio.temporal.proto.workflow.v1B\x0cMessageProtoP\x01Z2go.temporal.io/temporal-proto/workflow/v1;workflowb\x06proto3'
+  serialized_options=b'\n\027io.temporal.workflow.v1B\014MessageProtoP\001Z2go.temporal.io/temporal-proto/workflow/v1;workflow',
+  serialized_pb=b'\n\"temporal/workflow/v1/message.proto\x12\x14temporal.workflow.v1\x1a temporal/enums/v1/workflow.proto\x1a temporal/common/v1/message.proto\x1a!temporal/failure/v1/message.proto\x1a#temporal/taskqueue/v1/message.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xe8\x04\n\x15WorkflowExecutionInfo\x12\x38\n\texecution\x18\x01 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12.\n\x04type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12/\n\nstart_time\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\nclose_time\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x06status\x18\x05 \x01(\x0e\x32*.temporal.enums.v1.WorkflowExecutionStatus\x12\x16\n\x0ehistory_length\x18\x06 \x01(\x03\x12\x1b\n\x13parent_namespace_id\x18\x07 \x01(\t\x12?\n\x10parent_execution\x18\x08 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x16\n\x0e\x65xecution_time\x18\t \x01(\x03\x12&\n\x04memo\x18\n \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x0b \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12<\n\x11\x61uto_reset_points\x18\x0c \x01(\x0b\x32!.temporal.workflow.v1.ResetPoints\x12\x12\n\ntask_queue\x18\r \x01(\t\"\xc8\x01\n\x17WorkflowExecutionConfig\x12\x34\n\ntask_queue\x18\x01 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12*\n\"workflow_execution_timeout_seconds\x18\x02 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x03 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x04 \x01(\x05\"\xce\x03\n\x13PendingActivityInfo\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\t\x12\x37\n\ractivity_type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.ActivityType\x12\x36\n\x05state\x18\x03 \x01(\x0e\x32\'.temporal.enums.v1.PendingActivityState\x12\x37\n\x11heartbeat_details\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12 \n\x18last_heartbeat_timestamp\x18\x05 \x01(\x03\x12\x1e\n\x16last_started_timestamp\x18\x06 \x01(\x03\x12\x0f\n\x07\x61ttempt\x18\x07 \x01(\x05\x12\x18\n\x10maximum_attempts\x18\x08 \x01(\x05\x12\x1b\n\x13scheduled_timestamp\x18\t \x01(\x03\x12\x1c\n\x14\x65xpiration_timestamp\x18\n \x01(\x03\x12\x32\n\x0clast_failure\x18\x0b \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x1c\n\x14last_worker_identity\x18\x0c \x01(\t\"\xb5\x01\n\x19PendingChildExecutionInfo\x12\x13\n\x0bworkflow_id\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\x12\x1a\n\x12workflow_type_name\x18\x03 \x01(\t\x12\x14\n\x0cinitiated_id\x18\x04 \x01(\x03\x12\x41\n\x13parent_close_policy\x18\x05 \x01(\x0e\x32$.temporal.enums.v1.ParentClosePolicy\"C\n\x0bResetPoints\x12\x34\n\x06points\x18\x01 \x03(\x0b\x32$.temporal.workflow.v1.ResetPointInfo\"\xa6\x01\n\x0eResetPointInfo\x12\x17\n\x0f\x62inary_checksum\x18\x01 \x01(\t\x12\x0e\n\x06run_id\x18\x02 \x01(\t\x12#\n\x1b\x66irst_decision_completed_id\x18\x03 \x01(\x03\x12\x18\n\x10\x63reate_time_nano\x18\x04 \x01(\x03\x12\x18\n\x10\x65xpire_time_nano\x18\x05 \x01(\x03\x12\x12\n\nresettable\x18\x06 \x01(\x08\x42]\n\x17io.temporal.workflow.v1B\x0cMessageProtoP\x01Z2go.temporal.io/temporal-proto/workflow/v1;workflowb\x06proto3'
   ,
-  dependencies=[temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_failure_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_tasklist_dot_v1_dot_message__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
+  dependencies=[temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_failure_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_taskqueue_dot_v1_dot_message__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
 
 
@@ -122,7 +122,7 @@ _WORKFLOWEXECUTIONINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflow.v1.WorkflowExecutionInfo.task_list', index=12,
+      name='task_queue', full_name='temporal.workflow.v1.WorkflowExecutionInfo.task_queue', index=12,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -140,41 +140,41 @@ _WORKFLOWEXECUTIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=232,
-  serialized_end=847,
+  serialized_start=233,
+  serialized_end=849,
 )
 
 
-_WORKFLOWEXECUTIONCONFIGURATION = _descriptor.Descriptor(
-  name='WorkflowExecutionConfiguration',
-  full_name='temporal.workflow.v1.WorkflowExecutionConfiguration',
+_WORKFLOWEXECUTIONCONFIG = _descriptor.Descriptor(
+  name='WorkflowExecutionConfig',
+  full_name='temporal.workflow.v1.WorkflowExecutionConfig',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.workflow.v1.WorkflowExecutionConfiguration.task_list', index=0,
+      name='task_queue', full_name='temporal.workflow.v1.WorkflowExecutionConfig.task_queue', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_execution_timeout_seconds', full_name='temporal.workflow.v1.WorkflowExecutionConfiguration.workflow_execution_timeout_seconds', index=1,
+      name='workflow_execution_timeout_seconds', full_name='temporal.workflow.v1.WorkflowExecutionConfig.workflow_execution_timeout_seconds', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_run_timeout_seconds', full_name='temporal.workflow.v1.WorkflowExecutionConfiguration.workflow_run_timeout_seconds', index=2,
+      name='workflow_run_timeout_seconds', full_name='temporal.workflow.v1.WorkflowExecutionConfig.workflow_run_timeout_seconds', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_task_timeout_seconds', full_name='temporal.workflow.v1.WorkflowExecutionConfiguration.workflow_task_timeout_seconds', index=3,
+      name='workflow_task_timeout_seconds', full_name='temporal.workflow.v1.WorkflowExecutionConfig.workflow_task_timeout_seconds', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -192,8 +192,8 @@ _WORKFLOWEXECUTIONCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=850,
-  serialized_end=1054,
+  serialized_start=852,
+  serialized_end=1052,
 )
 
 
@@ -300,8 +300,8 @@ _PENDINGACTIVITYINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1057,
-  serialized_end=1519,
+  serialized_start=1055,
+  serialized_end=1517,
 )
 
 
@@ -327,7 +327,7 @@ _PENDINGCHILDEXECUTIONINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='workflow_typ_name', full_name='temporal.workflow.v1.PendingChildExecutionInfo.workflow_typ_name', index=2,
+      name='workflow_type_name', full_name='temporal.workflow.v1.PendingChildExecutionInfo.workflow_type_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -359,8 +359,8 @@ _PENDINGCHILDEXECUTIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1522,
-  serialized_end=1702,
+  serialized_start=1520,
+  serialized_end=1701,
 )
 
 
@@ -390,8 +390,8 @@ _RESETPOINTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1704,
-  serialized_end=1771,
+  serialized_start=1703,
+  serialized_end=1770,
 )
 
 
@@ -424,14 +424,14 @@ _RESETPOINTINFO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='created_time_nano', full_name='temporal.workflow.v1.ResetPointInfo.created_time_nano', index=3,
+      name='create_time_nano', full_name='temporal.workflow.v1.ResetPointInfo.create_time_nano', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='expiring_time_nano', full_name='temporal.workflow.v1.ResetPointInfo.expiring_time_nano', index=4,
+      name='expire_time_nano', full_name='temporal.workflow.v1.ResetPointInfo.expire_time_nano', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -456,8 +456,8 @@ _RESETPOINTINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1774,
-  serialized_end=1943,
+  serialized_start=1773,
+  serialized_end=1939,
 )
 
 _WORKFLOWEXECUTIONINFO.fields_by_name['execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
@@ -469,7 +469,7 @@ _WORKFLOWEXECUTIONINFO.fields_by_name['parent_execution'].message_type = tempora
 _WORKFLOWEXECUTIONINFO.fields_by_name['memo'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._MEMO
 _WORKFLOWEXECUTIONINFO.fields_by_name['search_attributes'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._SEARCHATTRIBUTES
 _WORKFLOWEXECUTIONINFO.fields_by_name['auto_reset_points'].message_type = _RESETPOINTS
-_WORKFLOWEXECUTIONCONFIGURATION.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_WORKFLOWEXECUTIONCONFIG.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _PENDINGACTIVITYINFO.fields_by_name['activity_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._ACTIVITYTYPE
 _PENDINGACTIVITYINFO.fields_by_name['state'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._PENDINGACTIVITYSTATE
 _PENDINGACTIVITYINFO.fields_by_name['heartbeat_details'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
@@ -477,7 +477,7 @@ _PENDINGACTIVITYINFO.fields_by_name['last_failure'].message_type = temporal_dot_
 _PENDINGCHILDEXECUTIONINFO.fields_by_name['parent_close_policy'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._PARENTCLOSEPOLICY
 _RESETPOINTS.fields_by_name['points'].message_type = _RESETPOINTINFO
 DESCRIPTOR.message_types_by_name['WorkflowExecutionInfo'] = _WORKFLOWEXECUTIONINFO
-DESCRIPTOR.message_types_by_name['WorkflowExecutionConfiguration'] = _WORKFLOWEXECUTIONCONFIGURATION
+DESCRIPTOR.message_types_by_name['WorkflowExecutionConfig'] = _WORKFLOWEXECUTIONCONFIG
 DESCRIPTOR.message_types_by_name['PendingActivityInfo'] = _PENDINGACTIVITYINFO
 DESCRIPTOR.message_types_by_name['PendingChildExecutionInfo'] = _PENDINGCHILDEXECUTIONINFO
 DESCRIPTOR.message_types_by_name['ResetPoints'] = _RESETPOINTS
@@ -491,12 +491,12 @@ WorkflowExecutionInfo = _reflection.GeneratedProtocolMessageType('WorkflowExecut
   })
 _sym_db.RegisterMessage(WorkflowExecutionInfo)
 
-WorkflowExecutionConfiguration = _reflection.GeneratedProtocolMessageType('WorkflowExecutionConfiguration', (_message.Message,), {
-  'DESCRIPTOR' : _WORKFLOWEXECUTIONCONFIGURATION,
+WorkflowExecutionConfig = _reflection.GeneratedProtocolMessageType('WorkflowExecutionConfig', (_message.Message,), {
+  'DESCRIPTOR' : _WORKFLOWEXECUTIONCONFIG,
   '__module__' : 'temporal.workflow.v1.message_pb2'
-  # @@protoc_insertion_point(class_scope:temporal.workflow.v1.WorkflowExecutionConfiguration)
+  # @@protoc_insertion_point(class_scope:temporal.workflow.v1.WorkflowExecutionConfig)
   })
-_sym_db.RegisterMessage(WorkflowExecutionConfiguration)
+_sym_db.RegisterMessage(WorkflowExecutionConfig)
 
 PendingActivityInfo = _reflection.GeneratedProtocolMessageType('PendingActivityInfo', (_message.Message,), {
   'DESCRIPTOR' : _PENDINGACTIVITYINFO,

@@ -17,17 +17,17 @@ from temporal.enums.v1 import workflow_pb2 as temporal_dot_enums_dot_v1_dot_work
 from temporal.common.v1 import message_pb2 as temporal_dot_common_dot_v1_dot_message__pb2
 from temporal.failure.v1 import message_pb2 as temporal_dot_failure_dot_v1_dot_message__pb2
 from temporal.workflow.v1 import message_pb2 as temporal_dot_workflow_dot_v1_dot_message__pb2
-from temporal.tasklist.v1 import message_pb2 as temporal_dot_tasklist_dot_v1_dot_message__pb2
+from temporal.taskqueue.v1 import message_pb2 as temporal_dot_taskqueue_dot_v1_dot_message__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/history/v1/message.proto',
   package='temporal.history.v1',
   syntax='proto3',
-  serialized_options=b'\n\034io.temporal.proto.history.v1B\014MessageProtoP\001Z0go.temporal.io/temporal-proto/history/v1;history',
-  serialized_pb=b'\n!temporal/history/v1/message.proto\x12\x13temporal.history.v1\x1a\"temporal/enums/v1/event_type.proto\x1a$temporal/enums/v1/failed_cause.proto\x1a temporal/enums/v1/workflow.proto\x1a temporal/common/v1/message.proto\x1a!temporal/failure/v1/message.proto\x1a\"temporal/workflow/v1/message.proto\x1a\"temporal/tasklist/v1/message.proto\"\x8e\t\n\'WorkflowExecutionStartedEventAttributes\x12\x37\n\rworkflow_type\x18\x01 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12!\n\x19parent_workflow_namespace\x18\x02 \x01(\t\x12H\n\x19parent_workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12!\n\x19parent_initiated_event_id\x18\x04 \x01(\x03\x12\x31\n\ttask_list\x18\x05 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12+\n\x05input\x18\x06 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x07 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x08 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\t \x01(\x05\x12\"\n\x1a\x63ontinued_execution_run_id\x18\n \x01(\t\x12<\n\tinitiator\x18\x0b \x01(\x0e\x32).temporal.enums.v1.ContinueAsNewInitiator\x12\x37\n\x11\x63ontinued_failure\x18\x0c \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12<\n\x16last_completion_result\x18\r \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12!\n\x19original_execution_run_id\x18\x0e \x01(\t\x12\x10\n\x08identity\x18\x0f \x01(\t\x12\x1e\n\x16\x66irst_execution_run_id\x18\x10 \x01(\t\x12\x35\n\x0cretry_policy\x18\x11 \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x0f\n\x07\x61ttempt\x18\x12 \x01(\x05\x12/\n\'workflow_execution_expiration_timestamp\x18\x13 \x01(\x03\x12\x15\n\rcron_schedule\x18\x14 \x01(\t\x12+\n#first_decision_task_backoff_seconds\x18\x15 \x01(\x05\x12&\n\x04memo\x18\x16 \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x17 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12\x41\n\x16prev_auto_reset_points\x18\x18 \x01(\x0b\x32!.temporal.workflow.v1.ResetPoints\x12*\n\x06header\x18\x19 \x01(\x0b\x32\x1a.temporal.common.v1.Header\"\x83\x01\n)WorkflowExecutionCompletedEventAttributes\x12,\n\x06result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\"\xb7\x01\n&WorkflowExecutionFailedEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x34\n\x0cretry_status\x18\x02 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\"`\n(WorkflowExecutionTimedOutEventAttributes\x12\x34\n\x0cretry_status\x18\x01 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xc9\x05\n.WorkflowExecutionContinuedAsNewEventAttributes\x12\x1c\n\x14new_execution_run_id\x18\x01 \x01(\t\x12\x37\n\rworkflow_type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x31\n\ttask_list\x18\x03 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12+\n\x05input\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12$\n\x1cworkflow_run_timeout_seconds\x18\x05 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x06 \x01(\x05\x12(\n decision_task_completed_event_id\x18\x07 \x01(\x03\x12)\n!backoff_start_interval_in_seconds\x18\x08 \x01(\x05\x12<\n\tinitiator\x18\t \x01(\x0e\x32).temporal.enums.v1.ContinueAsNewInitiator\x12-\n\x07\x66\x61ilure\x18\n \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12<\n\x16last_completion_result\x18\x0b \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\x06header\x18\x0c \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12&\n\x04memo\x18\r \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x0e \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\"\x92\x01\n$DecisionTaskScheduledEventAttributes\x12\x31\n\ttask_list\x18\x01 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12&\n\x1estart_to_close_timeout_seconds\x18\x02 \x01(\x05\x12\x0f\n\x07\x61ttempt\x18\x03 \x01(\x03\"f\n\"DecisionTaskStartedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x10\n\x08identity\x18\x02 \x01(\t\x12\x12\n\nrequest_id\x18\x03 \x01(\t\"\x87\x01\n$DecisionTaskCompletedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x17\n\x0f\x62inary_checksum\x18\x04 \x01(\t\"\x91\x01\n#DecisionTaskTimedOutEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12\x34\n\x0ctimeout_type\x18\x03 \x01(\x0e\x32\x1e.temporal.enums.v1.TimeoutType\"\xb3\x02\n!DecisionTaskFailedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12\x39\n\x05\x63\x61use\x18\x03 \x01(\x0e\x32*.temporal.enums.v1.DecisionTaskFailedCause\x12-\n\x07\x66\x61ilure\x18\x04 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x05 \x01(\t\x12\x13\n\x0b\x62\x61se_run_id\x18\x06 \x01(\t\x12\x12\n\nnew_run_id\x18\x07 \x01(\t\x12\x1a\n\x12\x66ork_event_version\x18\x08 \x01(\x03\x12\x17\n\x0f\x62inary_checksum\x18\t \x01(\t\"\x95\x04\n$ActivityTaskScheduledEventAttributes\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\t\x12\x37\n\ractivity_type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.ActivityType\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x31\n\ttask_list\x18\x04 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12*\n\x06header\x18\x05 \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12+\n\x05input\x18\x06 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12)\n!schedule_to_close_timeout_seconds\x18\x07 \x01(\x05\x12)\n!schedule_to_start_timeout_seconds\x18\x08 \x01(\x05\x12&\n\x1estart_to_close_timeout_seconds\x18\t \x01(\x05\x12!\n\x19heartbeat_timeout_seconds\x18\n \x01(\x05\x12(\n decision_task_completed_event_id\x18\x0b \x01(\x03\x12\x35\n\x0cretry_policy\x18\x0c \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\"\xab\x01\n\"ActivityTaskStartedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x10\n\x08identity\x18\x02 \x01(\t\x12\x12\n\nrequest_id\x18\x03 \x01(\t\x12\x0f\n\x07\x61ttempt\x18\x04 \x01(\x05\x12\x32\n\x0clast_failure\x18\x05 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\"\x9c\x01\n$ActivityTaskCompletedEventAttributes\x12,\n\x06result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x1a\n\x12scheduled_event_id\x18\x02 \x01(\x03\x12\x18\n\x10started_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\"\xd0\x01\n!ActivityTaskFailedEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x1a\n\x12scheduled_event_id\x18\x02 \x01(\x03\x12\x18\n\x10started_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\x12\x34\n\x0cretry_status\x18\x05 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xc0\x01\n#ActivityTaskTimedOutEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x1a\n\x12scheduled_event_id\x18\x02 \x01(\x03\x12\x18\n\x10started_event_id\x18\x03 \x01(\x03\x12\x34\n\x0cretry_status\x18\x04 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"r\n*ActivityTaskCancelRequestedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\"\xc6\x01\n#ActivityTaskCanceledEventAttributes\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12(\n latest_cancel_requested_event_id\x18\x02 \x01(\x03\x12\x1a\n\x12scheduled_event_id\x18\x03 \x01(\x03\x12\x18\n\x10started_event_id\x18\x04 \x01(\x03\x12\x10\n\x08identity\x18\x05 \x01(\t\"\x80\x01\n\x1bTimerStartedEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12%\n\x1dstart_to_fire_timeout_seconds\x18\x02 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\"G\n\x19TimerFiredEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\"\x86\x01\n\x1cTimerCanceledEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\"\x7f\n CancelTimerFailedEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12\r\n\x05\x63\x61use\x18\x02 \x01(\t\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\"\xc3\x01\n/WorkflowExecutionCancelRequestedEventAttributes\x12\r\n\x05\x63\x61use\x18\x01 \x01(\t\x12#\n\x1b\x65xternal_initiated_event_id\x18\x02 \x01(\x03\x12J\n\x1b\x65xternal_workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x10\n\x08identity\x18\x04 \x01(\t\"\x83\x01\n(WorkflowExecutionCanceledEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\"\xd9\x02\n\x1dMarkerRecordedEventAttributes\x12\x13\n\x0bmarker_name\x18\x01 \x01(\t\x12P\n\x07\x64\x65tails\x18\x02 \x03(\x0b\x32?.temporal.history.v1.MarkerRecordedEventAttributes.DetailsEntry\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\x12*\n\x06header\x18\x04 \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12-\n\x07\x66\x61ilure\x18\x05 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x1aL\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12+\n\x05value\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads:\x02\x38\x01\"~\n(WorkflowExecutionSignaledEventAttributes\x12\x13\n\x0bsignal_name\x18\x01 \x01(\t\x12+\n\x05input\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"}\n*WorkflowExecutionTerminatedEventAttributes\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"\xee\x01\n>RequestCancelExternalWorkflowExecutionInitiatedEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0f\n\x07\x63ontrol\x18\x04 \x01(\t\x12\x1b\n\x13\x63hild_workflow_only\x18\x05 \x01(\x08\"\xb8\x02\n;RequestCancelExternalWorkflowExecutionFailedEventAttributes\x12L\n\x05\x63\x61use\x18\x01 \x01(\x0e\x32=.temporal.enums.v1.CancelExternalWorkflowExecutionFailedCause\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x41\n\x12workflow_execution\x18\x04 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x0f\n\x07\x63ontrol\x18\x06 \x01(\t\"\xab\x01\n7ExternalWorkflowExecutionCancelRequestedEventAttributes\x12\x1a\n\x12initiated_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\"\xa9\x02\n7SignalExternalWorkflowExecutionInitiatedEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x13\n\x0bsignal_name\x18\x04 \x01(\t\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x0f\n\x07\x63ontrol\x18\x06 \x01(\t\x12\x1b\n\x13\x63hild_workflow_only\x18\x07 \x01(\x08\"\xb1\x02\n4SignalExternalWorkflowExecutionFailedEventAttributes\x12L\n\x05\x63\x61use\x18\x01 \x01(\x0e\x32=.temporal.enums.v1.SignalExternalWorkflowExecutionFailedCause\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x41\n\x12workflow_execution\x18\x04 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x0f\n\x07\x63ontrol\x18\x06 \x01(\t\"\xb5\x01\n0ExternalWorkflowExecutionSignaledEventAttributes\x12\x1a\n\x12initiated_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0f\n\x07\x63ontrol\x18\x04 \x01(\t\"\x9a\x01\n-UpsertWorkflowSearchAttributesEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12?\n\x11search_attributes\x18\x02 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\"\x9c\x06\n3StartChildWorkflowExecutionInitiatedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x31\n\ttask_list\x18\x04 \x01(\x0b\x32\x1e.temporal.tasklist.v1.TaskList\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x06 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x07 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x08 \x01(\x05\x12\x41\n\x13parent_close_policy\x18\t \x01(\x0e\x32$.temporal.enums.v1.ParentClosePolicy\x12\x0f\n\x07\x63ontrol\x18\n \x01(\t\x12(\n decision_task_completed_event_id\x18\x0b \x01(\x03\x12J\n\x18workflow_id_reuse_policy\x18\x0c \x01(\x0e\x32(.temporal.enums.v1.WorkflowIdReusePolicy\x12\x35\n\x0cretry_policy\x18\r \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x15\n\rcron_schedule\x18\x0e \x01(\t\x12*\n\x06header\x18\x0f \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12&\n\x04memo\x18\x10 \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x11 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\"\xb4\x02\n0StartChildWorkflowExecutionFailedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12H\n\x05\x63\x61use\x18\x04 \x01(\x0e\x32\x39.temporal.enums.v1.StartChildWorkflowExecutionFailedCause\x12\x0f\n\x07\x63ontrol\x18\x05 \x01(\t\x12\x1a\n\x12initiated_event_id\x18\x06 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x07 \x01(\x03\"\x85\x02\n,ChildWorkflowExecutionStartedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x1a\n\x12initiated_event_id\x18\x02 \x01(\x03\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12*\n\x06header\x18\x05 \x01(\x0b\x32\x1a.temporal.common.v1.Header\"\xa3\x02\n.ChildWorkflowExecutionCompletedEventAttributes\x12,\n\x06result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x18\n\x10started_event_id\x18\x06 \x01(\x03\"\xd7\x02\n+ChildWorkflowExecutionFailedEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x18\n\x10started_event_id\x18\x06 \x01(\x03\x12\x34\n\x0cretry_status\x18\x07 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xa3\x02\n-ChildWorkflowExecutionCanceledEventAttributes\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x18\n\x10started_event_id\x18\x06 \x01(\x03\"\xaa\x02\n-ChildWorkflowExecutionTimedOutEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x04 \x01(\x03\x12\x18\n\x10started_event_id\x18\x05 \x01(\x03\x12\x34\n\x0cretry_status\x18\x06 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xf6\x01\n/ChildWorkflowExecutionTerminatedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x04 \x01(\x03\x12\x18\n\x10started_event_id\x18\x05 \x01(\x03\"\xa7(\n\x0cHistoryEvent\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\x03\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x30\n\nevent_type\x18\x03 \x01(\x0e\x32\x1c.temporal.enums.v1.EventType\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x0f\n\x07task_id\x18\x05 \x01(\x03\x12s\n+workflow_execution_started_event_attributes\x18\x06 \x01(\x0b\x32<.temporal.history.v1.WorkflowExecutionStartedEventAttributesH\x00\x12w\n-workflow_execution_completed_event_attributes\x18\x07 \x01(\x0b\x32>.temporal.history.v1.WorkflowExecutionCompletedEventAttributesH\x00\x12q\n*workflow_execution_failed_event_attributes\x18\x08 \x01(\x0b\x32;.temporal.history.v1.WorkflowExecutionFailedEventAttributesH\x00\x12v\n-workflow_execution_timed_out_event_attributes\x18\t \x01(\x0b\x32=.temporal.history.v1.WorkflowExecutionTimedOutEventAttributesH\x00\x12m\n(decision_task_scheduled_event_attributes\x18\n \x01(\x0b\x32\x39.temporal.history.v1.DecisionTaskScheduledEventAttributesH\x00\x12i\n&decision_task_started_event_attributes\x18\x0b \x01(\x0b\x32\x37.temporal.history.v1.DecisionTaskStartedEventAttributesH\x00\x12m\n(decision_task_completed_event_attributes\x18\x0c \x01(\x0b\x32\x39.temporal.history.v1.DecisionTaskCompletedEventAttributesH\x00\x12l\n(decision_task_timed_out_event_attributes\x18\r \x01(\x0b\x32\x38.temporal.history.v1.DecisionTaskTimedOutEventAttributesH\x00\x12g\n%decision_task_failed_event_attributes\x18\x0e \x01(\x0b\x32\x36.temporal.history.v1.DecisionTaskFailedEventAttributesH\x00\x12m\n(activity_task_scheduled_event_attributes\x18\x0f \x01(\x0b\x32\x39.temporal.history.v1.ActivityTaskScheduledEventAttributesH\x00\x12i\n&activity_task_started_event_attributes\x18\x10 \x01(\x0b\x32\x37.temporal.history.v1.ActivityTaskStartedEventAttributesH\x00\x12m\n(activity_task_completed_event_attributes\x18\x11 \x01(\x0b\x32\x39.temporal.history.v1.ActivityTaskCompletedEventAttributesH\x00\x12g\n%activity_task_failed_event_attributes\x18\x12 \x01(\x0b\x32\x36.temporal.history.v1.ActivityTaskFailedEventAttributesH\x00\x12l\n(activity_task_timed_out_event_attributes\x18\x13 \x01(\x0b\x32\x38.temporal.history.v1.ActivityTaskTimedOutEventAttributesH\x00\x12Z\n\x1etimer_started_event_attributes\x18\x14 \x01(\x0b\x32\x30.temporal.history.v1.TimerStartedEventAttributesH\x00\x12V\n\x1ctimer_fired_event_attributes\x18\x15 \x01(\x0b\x32..temporal.history.v1.TimerFiredEventAttributesH\x00\x12z\n/activity_task_cancel_requested_event_attributes\x18\x16 \x01(\x0b\x32?.temporal.history.v1.ActivityTaskCancelRequestedEventAttributesH\x00\x12k\n\'activity_task_canceled_event_attributes\x18\x17 \x01(\x0b\x32\x38.temporal.history.v1.ActivityTaskCanceledEventAttributesH\x00\x12\\\n\x1ftimer_canceled_event_attributes\x18\x18 \x01(\x0b\x32\x31.temporal.history.v1.TimerCanceledEventAttributesH\x00\x12\x65\n$cancel_timer_failed_event_attributes\x18\x19 \x01(\x0b\x32\x35.temporal.history.v1.CancelTimerFailedEventAttributesH\x00\x12^\n marker_recorded_event_attributes\x18\x1a \x01(\x0b\x32\x32.temporal.history.v1.MarkerRecordedEventAttributesH\x00\x12u\n,workflow_execution_signaled_event_attributes\x18\x1b \x01(\x0b\x32=.temporal.history.v1.WorkflowExecutionSignaledEventAttributesH\x00\x12y\n.workflow_execution_terminated_event_attributes\x18\x1c \x01(\x0b\x32?.temporal.history.v1.WorkflowExecutionTerminatedEventAttributesH\x00\x12\x84\x01\n4workflow_execution_cancel_requested_event_attributes\x18\x1d \x01(\x0b\x32\x44.temporal.history.v1.WorkflowExecutionCancelRequestedEventAttributesH\x00\x12u\n,workflow_execution_canceled_event_attributes\x18\x1e \x01(\x0b\x32=.temporal.history.v1.WorkflowExecutionCanceledEventAttributesH\x00\x12\xa4\x01\nErequest_cancel_external_workflow_execution_initiated_event_attributes\x18\x1f \x01(\x0b\x32S.temporal.history.v1.RequestCancelExternalWorkflowExecutionInitiatedEventAttributesH\x00\x12\x9e\x01\nBrequest_cancel_external_workflow_execution_failed_event_attributes\x18  \x01(\x0b\x32P.temporal.history.v1.RequestCancelExternalWorkflowExecutionFailedEventAttributesH\x00\x12\x95\x01\n=external_workflow_execution_cancel_requested_event_attributes\x18! \x01(\x0b\x32L.temporal.history.v1.ExternalWorkflowExecutionCancelRequestedEventAttributesH\x00\x12\x83\x01\n4workflow_execution_continued_as_new_event_attributes\x18\" \x01(\x0b\x32\x43.temporal.history.v1.WorkflowExecutionContinuedAsNewEventAttributesH\x00\x12\x8d\x01\n9start_child_workflow_execution_initiated_event_attributes\x18# \x01(\x0b\x32H.temporal.history.v1.StartChildWorkflowExecutionInitiatedEventAttributesH\x00\x12\x87\x01\n6start_child_workflow_execution_failed_event_attributes\x18$ \x01(\x0b\x32\x45.temporal.history.v1.StartChildWorkflowExecutionFailedEventAttributesH\x00\x12~\n1child_workflow_execution_started_event_attributes\x18% \x01(\x0b\x32\x41.temporal.history.v1.ChildWorkflowExecutionStartedEventAttributesH\x00\x12\x82\x01\n3child_workflow_execution_completed_event_attributes\x18& \x01(\x0b\x32\x43.temporal.history.v1.ChildWorkflowExecutionCompletedEventAttributesH\x00\x12|\n0child_workflow_execution_failed_event_attributes\x18\' \x01(\x0b\x32@.temporal.history.v1.ChildWorkflowExecutionFailedEventAttributesH\x00\x12\x80\x01\n2child_workflow_execution_canceled_event_attributes\x18( \x01(\x0b\x32\x42.temporal.history.v1.ChildWorkflowExecutionCanceledEventAttributesH\x00\x12\x81\x01\n3child_workflow_execution_timed_out_event_attributes\x18) \x01(\x0b\x32\x42.temporal.history.v1.ChildWorkflowExecutionTimedOutEventAttributesH\x00\x12\x84\x01\n4child_workflow_execution_terminated_event_attributes\x18* \x01(\x0b\x32\x44.temporal.history.v1.ChildWorkflowExecutionTerminatedEventAttributesH\x00\x12\x95\x01\n=signal_external_workflow_execution_initiated_event_attributes\x18+ \x01(\x0b\x32L.temporal.history.v1.SignalExternalWorkflowExecutionInitiatedEventAttributesH\x00\x12\x8f\x01\n:signal_external_workflow_execution_failed_event_attributes\x18, \x01(\x0b\x32I.temporal.history.v1.SignalExternalWorkflowExecutionFailedEventAttributesH\x00\x12\x86\x01\n5external_workflow_execution_signaled_event_attributes\x18- \x01(\x0b\x32\x45.temporal.history.v1.ExternalWorkflowExecutionSignaledEventAttributesH\x00\x12\x80\x01\n2upsert_workflow_search_attributes_event_attributes\x18. \x01(\x0b\x32\x42.temporal.history.v1.UpsertWorkflowSearchAttributesEventAttributesH\x00\x42\x0c\n\nattributes\"<\n\x07History\x12\x31\n\x06\x65vents\x18\x01 \x03(\x0b\x32!.temporal.history.v1.HistoryEventB`\n\x1cio.temporal.proto.history.v1B\x0cMessageProtoP\x01Z0go.temporal.io/temporal-proto/history/v1;historyb\x06proto3'
+  serialized_options=b'\n\026io.temporal.history.v1B\014MessageProtoP\001Z0go.temporal.io/temporal-proto/history/v1;history',
+  serialized_pb=b'\n!temporal/history/v1/message.proto\x12\x13temporal.history.v1\x1a\"temporal/enums/v1/event_type.proto\x1a$temporal/enums/v1/failed_cause.proto\x1a temporal/enums/v1/workflow.proto\x1a temporal/common/v1/message.proto\x1a!temporal/failure/v1/message.proto\x1a\"temporal/workflow/v1/message.proto\x1a#temporal/taskqueue/v1/message.proto\"\x91\t\n\'WorkflowExecutionStartedEventAttributes\x12\x37\n\rworkflow_type\x18\x01 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12!\n\x19parent_workflow_namespace\x18\x02 \x01(\t\x12H\n\x19parent_workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12!\n\x19parent_initiated_event_id\x18\x04 \x01(\x03\x12\x34\n\ntask_queue\x18\x05 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12+\n\x05input\x18\x06 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x07 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x08 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\t \x01(\x05\x12\"\n\x1a\x63ontinued_execution_run_id\x18\n \x01(\t\x12<\n\tinitiator\x18\x0b \x01(\x0e\x32).temporal.enums.v1.ContinueAsNewInitiator\x12\x37\n\x11\x63ontinued_failure\x18\x0c \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12<\n\x16last_completion_result\x18\r \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12!\n\x19original_execution_run_id\x18\x0e \x01(\t\x12\x10\n\x08identity\x18\x0f \x01(\t\x12\x1e\n\x16\x66irst_execution_run_id\x18\x10 \x01(\t\x12\x35\n\x0cretry_policy\x18\x11 \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x0f\n\x07\x61ttempt\x18\x12 \x01(\x05\x12/\n\'workflow_execution_expiration_timestamp\x18\x13 \x01(\x03\x12\x15\n\rcron_schedule\x18\x14 \x01(\t\x12+\n#first_decision_task_backoff_seconds\x18\x15 \x01(\x05\x12&\n\x04memo\x18\x16 \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x17 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\x12\x41\n\x16prev_auto_reset_points\x18\x18 \x01(\x0b\x32!.temporal.workflow.v1.ResetPoints\x12*\n\x06header\x18\x19 \x01(\x0b\x32\x1a.temporal.common.v1.Header\"\x83\x01\n)WorkflowExecutionCompletedEventAttributes\x12,\n\x06result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\"\xb7\x01\n&WorkflowExecutionFailedEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x34\n\x0cretry_status\x18\x02 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\"`\n(WorkflowExecutionTimedOutEventAttributes\x12\x34\n\x0cretry_status\x18\x01 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xcc\x05\n.WorkflowExecutionContinuedAsNewEventAttributes\x12\x1c\n\x14new_execution_run_id\x18\x01 \x01(\t\x12\x37\n\rworkflow_type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x34\n\ntask_queue\x18\x03 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12+\n\x05input\x18\x04 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12$\n\x1cworkflow_run_timeout_seconds\x18\x05 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x06 \x01(\x05\x12(\n decision_task_completed_event_id\x18\x07 \x01(\x03\x12)\n!backoff_start_interval_in_seconds\x18\x08 \x01(\x05\x12<\n\tinitiator\x18\t \x01(\x0e\x32).temporal.enums.v1.ContinueAsNewInitiator\x12-\n\x07\x66\x61ilure\x18\n \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12<\n\x16last_completion_result\x18\x0b \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\x06header\x18\x0c \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12&\n\x04memo\x18\r \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x0e \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\"\x95\x01\n$DecisionTaskScheduledEventAttributes\x12\x34\n\ntask_queue\x18\x01 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12&\n\x1estart_to_close_timeout_seconds\x18\x02 \x01(\x05\x12\x0f\n\x07\x61ttempt\x18\x03 \x01(\x03\"f\n\"DecisionTaskStartedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x10\n\x08identity\x18\x02 \x01(\t\x12\x12\n\nrequest_id\x18\x03 \x01(\t\"\x87\x01\n$DecisionTaskCompletedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12\x10\n\x08identity\x18\x03 \x01(\t\x12\x17\n\x0f\x62inary_checksum\x18\x04 \x01(\t\"\x91\x01\n#DecisionTaskTimedOutEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12\x34\n\x0ctimeout_type\x18\x03 \x01(\x0e\x32\x1e.temporal.enums.v1.TimeoutType\"\xb3\x02\n!DecisionTaskFailedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12\x39\n\x05\x63\x61use\x18\x03 \x01(\x0e\x32*.temporal.enums.v1.DecisionTaskFailedCause\x12-\n\x07\x66\x61ilure\x18\x04 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x10\n\x08identity\x18\x05 \x01(\t\x12\x13\n\x0b\x62\x61se_run_id\x18\x06 \x01(\t\x12\x12\n\nnew_run_id\x18\x07 \x01(\t\x12\x1a\n\x12\x66ork_event_version\x18\x08 \x01(\x03\x12\x17\n\x0f\x62inary_checksum\x18\t \x01(\t\"\x98\x04\n$ActivityTaskScheduledEventAttributes\x12\x13\n\x0b\x61\x63tivity_id\x18\x01 \x01(\t\x12\x37\n\ractivity_type\x18\x02 \x01(\x0b\x32 .temporal.common.v1.ActivityType\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x34\n\ntask_queue\x18\x04 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12*\n\x06header\x18\x05 \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12+\n\x05input\x18\x06 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12)\n!schedule_to_close_timeout_seconds\x18\x07 \x01(\x05\x12)\n!schedule_to_start_timeout_seconds\x18\x08 \x01(\x05\x12&\n\x1estart_to_close_timeout_seconds\x18\t \x01(\x05\x12!\n\x19heartbeat_timeout_seconds\x18\n \x01(\x05\x12(\n decision_task_completed_event_id\x18\x0b \x01(\x03\x12\x35\n\x0cretry_policy\x18\x0c \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\"\xab\x01\n\"ActivityTaskStartedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12\x10\n\x08identity\x18\x02 \x01(\t\x12\x12\n\nrequest_id\x18\x03 \x01(\t\x12\x0f\n\x07\x61ttempt\x18\x04 \x01(\x05\x12\x32\n\x0clast_failure\x18\x05 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\"\x9c\x01\n$ActivityTaskCompletedEventAttributes\x12,\n\x06result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x1a\n\x12scheduled_event_id\x18\x02 \x01(\x03\x12\x18\n\x10started_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\"\xd0\x01\n!ActivityTaskFailedEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x1a\n\x12scheduled_event_id\x18\x02 \x01(\x03\x12\x18\n\x10started_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\x12\x34\n\x0cretry_status\x18\x05 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xc0\x01\n#ActivityTaskTimedOutEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x1a\n\x12scheduled_event_id\x18\x02 \x01(\x03\x12\x18\n\x10started_event_id\x18\x03 \x01(\x03\x12\x34\n\x0cretry_status\x18\x04 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"r\n*ActivityTaskCancelRequestedEventAttributes\x12\x1a\n\x12scheduled_event_id\x18\x01 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\"\xc6\x01\n#ActivityTaskCanceledEventAttributes\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12(\n latest_cancel_requested_event_id\x18\x02 \x01(\x03\x12\x1a\n\x12scheduled_event_id\x18\x03 \x01(\x03\x12\x18\n\x10started_event_id\x18\x04 \x01(\x03\x12\x10\n\x08identity\x18\x05 \x01(\t\"\x80\x01\n\x1bTimerStartedEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12%\n\x1dstart_to_fire_timeout_seconds\x18\x02 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\"G\n\x19TimerFiredEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\"\x86\x01\n\x1cTimerCanceledEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12\x18\n\x10started_event_id\x18\x02 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\"\x7f\n CancelTimerFailedEventAttributes\x12\x10\n\x08timer_id\x18\x01 \x01(\t\x12\r\n\x05\x63\x61use\x18\x02 \x01(\t\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\x12\x10\n\x08identity\x18\x04 \x01(\t\"\xc3\x01\n/WorkflowExecutionCancelRequestedEventAttributes\x12\r\n\x05\x63\x61use\x18\x01 \x01(\t\x12#\n\x1b\x65xternal_initiated_event_id\x18\x02 \x01(\x03\x12J\n\x1b\x65xternal_workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x10\n\x08identity\x18\x04 \x01(\t\"\x83\x01\n(WorkflowExecutionCanceledEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\"\xd9\x02\n\x1dMarkerRecordedEventAttributes\x12\x13\n\x0bmarker_name\x18\x01 \x01(\t\x12P\n\x07\x64\x65tails\x18\x02 \x03(\x0b\x32?.temporal.history.v1.MarkerRecordedEventAttributes.DetailsEntry\x12(\n decision_task_completed_event_id\x18\x03 \x01(\x03\x12*\n\x06header\x18\x04 \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12-\n\x07\x66\x61ilure\x18\x05 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x1aL\n\x0c\x44\x65tailsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12+\n\x05value\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads:\x02\x38\x01\"~\n(WorkflowExecutionSignaledEventAttributes\x12\x13\n\x0bsignal_name\x18\x01 \x01(\t\x12+\n\x05input\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"}\n*WorkflowExecutionTerminatedEventAttributes\x12\x0e\n\x06reason\x18\x01 \x01(\t\x12-\n\x07\x64\x65tails\x18\x02 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x10\n\x08identity\x18\x03 \x01(\t\"\xee\x01\n>RequestCancelExternalWorkflowExecutionInitiatedEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0f\n\x07\x63ontrol\x18\x04 \x01(\t\x12\x1b\n\x13\x63hild_workflow_only\x18\x05 \x01(\x08\"\xb8\x02\n;RequestCancelExternalWorkflowExecutionFailedEventAttributes\x12L\n\x05\x63\x61use\x18\x01 \x01(\x0e\x32=.temporal.enums.v1.CancelExternalWorkflowExecutionFailedCause\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x41\n\x12workflow_execution\x18\x04 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x0f\n\x07\x63ontrol\x18\x06 \x01(\t\"\xab\x01\n7ExternalWorkflowExecutionCancelRequestedEventAttributes\x12\x1a\n\x12initiated_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\"\xa9\x02\n7SignalExternalWorkflowExecutionInitiatedEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x13\n\x0bsignal_name\x18\x04 \x01(\t\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x0f\n\x07\x63ontrol\x18\x06 \x01(\t\x12\x1b\n\x13\x63hild_workflow_only\x18\x07 \x01(\x08\"\xb1\x02\n4SignalExternalWorkflowExecutionFailedEventAttributes\x12L\n\x05\x63\x61use\x18\x01 \x01(\x0e\x32=.temporal.enums.v1.SignalExternalWorkflowExecutionFailedCause\x12(\n decision_task_completed_event_id\x18\x02 \x01(\x03\x12\x11\n\tnamespace\x18\x03 \x01(\t\x12\x41\n\x12workflow_execution\x18\x04 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x0f\n\x07\x63ontrol\x18\x06 \x01(\t\"\xb5\x01\n0ExternalWorkflowExecutionSignaledEventAttributes\x12\x1a\n\x12initiated_event_id\x18\x01 \x01(\x03\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x0f\n\x07\x63ontrol\x18\x04 \x01(\t\"\x9a\x01\n-UpsertWorkflowSearchAttributesEventAttributes\x12(\n decision_task_completed_event_id\x18\x01 \x01(\x03\x12?\n\x11search_attributes\x18\x02 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\"\x9f\x06\n3StartChildWorkflowExecutionInitiatedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x34\n\ntask_queue\x18\x04 \x01(\x0b\x32 .temporal.taskqueue.v1.TaskQueue\x12+\n\x05input\x18\x05 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12*\n\"workflow_execution_timeout_seconds\x18\x06 \x01(\x05\x12$\n\x1cworkflow_run_timeout_seconds\x18\x07 \x01(\x05\x12%\n\x1dworkflow_task_timeout_seconds\x18\x08 \x01(\x05\x12\x41\n\x13parent_close_policy\x18\t \x01(\x0e\x32$.temporal.enums.v1.ParentClosePolicy\x12\x0f\n\x07\x63ontrol\x18\n \x01(\t\x12(\n decision_task_completed_event_id\x18\x0b \x01(\x03\x12J\n\x18workflow_id_reuse_policy\x18\x0c \x01(\x0e\x32(.temporal.enums.v1.WorkflowIdReusePolicy\x12\x35\n\x0cretry_policy\x18\r \x01(\x0b\x32\x1f.temporal.common.v1.RetryPolicy\x12\x15\n\rcron_schedule\x18\x0e \x01(\t\x12*\n\x06header\x18\x0f \x01(\x0b\x32\x1a.temporal.common.v1.Header\x12&\n\x04memo\x18\x10 \x01(\x0b\x32\x18.temporal.common.v1.Memo\x12?\n\x11search_attributes\x18\x11 \x01(\x0b\x32$.temporal.common.v1.SearchAttributes\"\xb4\x02\n0StartChildWorkflowExecutionFailedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x13\n\x0bworkflow_id\x18\x02 \x01(\t\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12H\n\x05\x63\x61use\x18\x04 \x01(\x0e\x32\x39.temporal.enums.v1.StartChildWorkflowExecutionFailedCause\x12\x0f\n\x07\x63ontrol\x18\x05 \x01(\t\x12\x1a\n\x12initiated_event_id\x18\x06 \x01(\x03\x12(\n decision_task_completed_event_id\x18\x07 \x01(\x03\"\x85\x02\n,ChildWorkflowExecutionStartedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x1a\n\x12initiated_event_id\x18\x02 \x01(\x03\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12*\n\x06header\x18\x05 \x01(\x0b\x32\x1a.temporal.common.v1.Header\"\xa3\x02\n.ChildWorkflowExecutionCompletedEventAttributes\x12,\n\x06result\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x18\n\x10started_event_id\x18\x06 \x01(\x03\"\xd7\x02\n+ChildWorkflowExecutionFailedEventAttributes\x12-\n\x07\x66\x61ilure\x18\x01 \x01(\x0b\x32\x1c.temporal.failure.v1.Failure\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x18\n\x10started_event_id\x18\x06 \x01(\x03\x12\x34\n\x0cretry_status\x18\x07 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xa3\x02\n-ChildWorkflowExecutionCanceledEventAttributes\x12-\n\x07\x64\x65tails\x18\x01 \x01(\x0b\x32\x1c.temporal.common.v1.Payloads\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x41\n\x12workflow_execution\x18\x03 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x04 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x05 \x01(\x03\x12\x18\n\x10started_event_id\x18\x06 \x01(\x03\"\xaa\x02\n-ChildWorkflowExecutionTimedOutEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x04 \x01(\x03\x12\x18\n\x10started_event_id\x18\x05 \x01(\x03\x12\x34\n\x0cretry_status\x18\x06 \x01(\x0e\x32\x1e.temporal.enums.v1.RetryStatus\"\xf6\x01\n/ChildWorkflowExecutionTerminatedEventAttributes\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x41\n\x12workflow_execution\x18\x02 \x01(\x0b\x32%.temporal.common.v1.WorkflowExecution\x12\x37\n\rworkflow_type\x18\x03 \x01(\x0b\x32 .temporal.common.v1.WorkflowType\x12\x1a\n\x12initiated_event_id\x18\x04 \x01(\x03\x12\x18\n\x10started_event_id\x18\x05 \x01(\x03\"\xa7(\n\x0cHistoryEvent\x12\x10\n\x08\x65vent_id\x18\x01 \x01(\x03\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x30\n\nevent_type\x18\x03 \x01(\x0e\x32\x1c.temporal.enums.v1.EventType\x12\x0f\n\x07version\x18\x04 \x01(\x03\x12\x0f\n\x07task_id\x18\x05 \x01(\x03\x12s\n+workflow_execution_started_event_attributes\x18\x06 \x01(\x0b\x32<.temporal.history.v1.WorkflowExecutionStartedEventAttributesH\x00\x12w\n-workflow_execution_completed_event_attributes\x18\x07 \x01(\x0b\x32>.temporal.history.v1.WorkflowExecutionCompletedEventAttributesH\x00\x12q\n*workflow_execution_failed_event_attributes\x18\x08 \x01(\x0b\x32;.temporal.history.v1.WorkflowExecutionFailedEventAttributesH\x00\x12v\n-workflow_execution_timed_out_event_attributes\x18\t \x01(\x0b\x32=.temporal.history.v1.WorkflowExecutionTimedOutEventAttributesH\x00\x12m\n(decision_task_scheduled_event_attributes\x18\n \x01(\x0b\x32\x39.temporal.history.v1.DecisionTaskScheduledEventAttributesH\x00\x12i\n&decision_task_started_event_attributes\x18\x0b \x01(\x0b\x32\x37.temporal.history.v1.DecisionTaskStartedEventAttributesH\x00\x12m\n(decision_task_completed_event_attributes\x18\x0c \x01(\x0b\x32\x39.temporal.history.v1.DecisionTaskCompletedEventAttributesH\x00\x12l\n(decision_task_timed_out_event_attributes\x18\r \x01(\x0b\x32\x38.temporal.history.v1.DecisionTaskTimedOutEventAttributesH\x00\x12g\n%decision_task_failed_event_attributes\x18\x0e \x01(\x0b\x32\x36.temporal.history.v1.DecisionTaskFailedEventAttributesH\x00\x12m\n(activity_task_scheduled_event_attributes\x18\x0f \x01(\x0b\x32\x39.temporal.history.v1.ActivityTaskScheduledEventAttributesH\x00\x12i\n&activity_task_started_event_attributes\x18\x10 \x01(\x0b\x32\x37.temporal.history.v1.ActivityTaskStartedEventAttributesH\x00\x12m\n(activity_task_completed_event_attributes\x18\x11 \x01(\x0b\x32\x39.temporal.history.v1.ActivityTaskCompletedEventAttributesH\x00\x12g\n%activity_task_failed_event_attributes\x18\x12 \x01(\x0b\x32\x36.temporal.history.v1.ActivityTaskFailedEventAttributesH\x00\x12l\n(activity_task_timed_out_event_attributes\x18\x13 \x01(\x0b\x32\x38.temporal.history.v1.ActivityTaskTimedOutEventAttributesH\x00\x12Z\n\x1etimer_started_event_attributes\x18\x14 \x01(\x0b\x32\x30.temporal.history.v1.TimerStartedEventAttributesH\x00\x12V\n\x1ctimer_fired_event_attributes\x18\x15 \x01(\x0b\x32..temporal.history.v1.TimerFiredEventAttributesH\x00\x12z\n/activity_task_cancel_requested_event_attributes\x18\x16 \x01(\x0b\x32?.temporal.history.v1.ActivityTaskCancelRequestedEventAttributesH\x00\x12k\n\'activity_task_canceled_event_attributes\x18\x17 \x01(\x0b\x32\x38.temporal.history.v1.ActivityTaskCanceledEventAttributesH\x00\x12\\\n\x1ftimer_canceled_event_attributes\x18\x18 \x01(\x0b\x32\x31.temporal.history.v1.TimerCanceledEventAttributesH\x00\x12\x65\n$cancel_timer_failed_event_attributes\x18\x19 \x01(\x0b\x32\x35.temporal.history.v1.CancelTimerFailedEventAttributesH\x00\x12^\n marker_recorded_event_attributes\x18\x1a \x01(\x0b\x32\x32.temporal.history.v1.MarkerRecordedEventAttributesH\x00\x12u\n,workflow_execution_signaled_event_attributes\x18\x1b \x01(\x0b\x32=.temporal.history.v1.WorkflowExecutionSignaledEventAttributesH\x00\x12y\n.workflow_execution_terminated_event_attributes\x18\x1c \x01(\x0b\x32?.temporal.history.v1.WorkflowExecutionTerminatedEventAttributesH\x00\x12\x84\x01\n4workflow_execution_cancel_requested_event_attributes\x18\x1d \x01(\x0b\x32\x44.temporal.history.v1.WorkflowExecutionCancelRequestedEventAttributesH\x00\x12u\n,workflow_execution_canceled_event_attributes\x18\x1e \x01(\x0b\x32=.temporal.history.v1.WorkflowExecutionCanceledEventAttributesH\x00\x12\xa4\x01\nErequest_cancel_external_workflow_execution_initiated_event_attributes\x18\x1f \x01(\x0b\x32S.temporal.history.v1.RequestCancelExternalWorkflowExecutionInitiatedEventAttributesH\x00\x12\x9e\x01\nBrequest_cancel_external_workflow_execution_failed_event_attributes\x18  \x01(\x0b\x32P.temporal.history.v1.RequestCancelExternalWorkflowExecutionFailedEventAttributesH\x00\x12\x95\x01\n=external_workflow_execution_cancel_requested_event_attributes\x18! \x01(\x0b\x32L.temporal.history.v1.ExternalWorkflowExecutionCancelRequestedEventAttributesH\x00\x12\x83\x01\n4workflow_execution_continued_as_new_event_attributes\x18\" \x01(\x0b\x32\x43.temporal.history.v1.WorkflowExecutionContinuedAsNewEventAttributesH\x00\x12\x8d\x01\n9start_child_workflow_execution_initiated_event_attributes\x18# \x01(\x0b\x32H.temporal.history.v1.StartChildWorkflowExecutionInitiatedEventAttributesH\x00\x12\x87\x01\n6start_child_workflow_execution_failed_event_attributes\x18$ \x01(\x0b\x32\x45.temporal.history.v1.StartChildWorkflowExecutionFailedEventAttributesH\x00\x12~\n1child_workflow_execution_started_event_attributes\x18% \x01(\x0b\x32\x41.temporal.history.v1.ChildWorkflowExecutionStartedEventAttributesH\x00\x12\x82\x01\n3child_workflow_execution_completed_event_attributes\x18& \x01(\x0b\x32\x43.temporal.history.v1.ChildWorkflowExecutionCompletedEventAttributesH\x00\x12|\n0child_workflow_execution_failed_event_attributes\x18\' \x01(\x0b\x32@.temporal.history.v1.ChildWorkflowExecutionFailedEventAttributesH\x00\x12\x80\x01\n2child_workflow_execution_canceled_event_attributes\x18( \x01(\x0b\x32\x42.temporal.history.v1.ChildWorkflowExecutionCanceledEventAttributesH\x00\x12\x81\x01\n3child_workflow_execution_timed_out_event_attributes\x18) \x01(\x0b\x32\x42.temporal.history.v1.ChildWorkflowExecutionTimedOutEventAttributesH\x00\x12\x84\x01\n4child_workflow_execution_terminated_event_attributes\x18* \x01(\x0b\x32\x44.temporal.history.v1.ChildWorkflowExecutionTerminatedEventAttributesH\x00\x12\x95\x01\n=signal_external_workflow_execution_initiated_event_attributes\x18+ \x01(\x0b\x32L.temporal.history.v1.SignalExternalWorkflowExecutionInitiatedEventAttributesH\x00\x12\x8f\x01\n:signal_external_workflow_execution_failed_event_attributes\x18, \x01(\x0b\x32I.temporal.history.v1.SignalExternalWorkflowExecutionFailedEventAttributesH\x00\x12\x86\x01\n5external_workflow_execution_signaled_event_attributes\x18- \x01(\x0b\x32\x45.temporal.history.v1.ExternalWorkflowExecutionSignaledEventAttributesH\x00\x12\x80\x01\n2upsert_workflow_search_attributes_event_attributes\x18. \x01(\x0b\x32\x42.temporal.history.v1.UpsertWorkflowSearchAttributesEventAttributesH\x00\x42\x0c\n\nattributes\"<\n\x07History\x12\x31\n\x06\x65vents\x18\x01 \x03(\x0b\x32!.temporal.history.v1.HistoryEventBZ\n\x16io.temporal.history.v1B\x0cMessageProtoP\x01Z0go.temporal.io/temporal-proto/history/v1;historyb\x06proto3'
   ,
-  dependencies=[temporal_dot_enums_dot_v1_dot_event__type__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_failed__cause__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_failure_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_workflow_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_tasklist_dot_v1_dot_message__pb2.DESCRIPTOR,])
+  dependencies=[temporal_dot_enums_dot_v1_dot_event__type__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_failed__cause__pb2.DESCRIPTOR,temporal_dot_enums_dot_v1_dot_workflow__pb2.DESCRIPTOR,temporal_dot_common_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_failure_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_workflow_dot_v1_dot_message__pb2.DESCRIPTOR,temporal_dot_taskqueue_dot_v1_dot_message__pb2.DESCRIPTOR,])
 
 
 
@@ -68,7 +68,7 @@ _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.history.v1.WorkflowExecutionStartedEventAttributes.task_list', index=4,
+      name='task_queue', full_name='temporal.history.v1.WorkflowExecutionStartedEventAttributes.task_queue', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -226,8 +226,8 @@ _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=1474,
+  serialized_start=309,
+  serialized_end=1478,
 )
 
 
@@ -264,8 +264,8 @@ _WORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1477,
-  serialized_end=1608,
+  serialized_start=1481,
+  serialized_end=1612,
 )
 
 
@@ -309,8 +309,8 @@ _WORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1611,
-  serialized_end=1794,
+  serialized_start=1615,
+  serialized_end=1798,
 )
 
 
@@ -340,8 +340,8 @@ _WORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1796,
-  serialized_end=1892,
+  serialized_start=1800,
+  serialized_end=1896,
 )
 
 
@@ -367,7 +367,7 @@ _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.history.v1.WorkflowExecutionContinuedAsNewEventAttributes.task_list', index=2,
+      name='task_queue', full_name='temporal.history.v1.WorkflowExecutionContinuedAsNewEventAttributes.task_queue', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -462,8 +462,8 @@ _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1895,
-  serialized_end=2608,
+  serialized_start=1899,
+  serialized_end=2615,
 )
 
 
@@ -475,7 +475,7 @@ _DECISIONTASKSCHEDULEDEVENTATTRIBUTES = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.history.v1.DecisionTaskScheduledEventAttributes.task_list', index=0,
+      name='task_queue', full_name='temporal.history.v1.DecisionTaskScheduledEventAttributes.task_queue', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -507,8 +507,8 @@ _DECISIONTASKSCHEDULEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2611,
-  serialized_end=2757,
+  serialized_start=2618,
+  serialized_end=2767,
 )
 
 
@@ -552,8 +552,8 @@ _DECISIONTASKSTARTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2759,
-  serialized_end=2861,
+  serialized_start=2769,
+  serialized_end=2871,
 )
 
 
@@ -604,8 +604,8 @@ _DECISIONTASKCOMPLETEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2864,
-  serialized_end=2999,
+  serialized_start=2874,
+  serialized_end=3009,
 )
 
 
@@ -649,8 +649,8 @@ _DECISIONTASKTIMEDOUTEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3002,
-  serialized_end=3147,
+  serialized_start=3012,
+  serialized_end=3157,
 )
 
 
@@ -736,8 +736,8 @@ _DECISIONTASKFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3150,
-  serialized_end=3457,
+  serialized_start=3160,
+  serialized_end=3467,
 )
 
 
@@ -770,7 +770,7 @@ _ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.history.v1.ActivityTaskScheduledEventAttributes.task_list', index=3,
+      name='task_queue', full_name='temporal.history.v1.ActivityTaskScheduledEventAttributes.task_queue', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -844,8 +844,8 @@ _ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3460,
-  serialized_end=3993,
+  serialized_start=3470,
+  serialized_end=4006,
 )
 
 
@@ -903,8 +903,8 @@ _ACTIVITYTASKSTARTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3996,
-  serialized_end=4167,
+  serialized_start=4009,
+  serialized_end=4180,
 )
 
 
@@ -955,8 +955,8 @@ _ACTIVITYTASKCOMPLETEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4170,
-  serialized_end=4326,
+  serialized_start=4183,
+  serialized_end=4339,
 )
 
 
@@ -1014,8 +1014,8 @@ _ACTIVITYTASKFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4329,
-  serialized_end=4537,
+  serialized_start=4342,
+  serialized_end=4550,
 )
 
 
@@ -1066,8 +1066,8 @@ _ACTIVITYTASKTIMEDOUTEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4540,
-  serialized_end=4732,
+  serialized_start=4553,
+  serialized_end=4745,
 )
 
 
@@ -1104,8 +1104,8 @@ _ACTIVITYTASKCANCELREQUESTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4734,
-  serialized_end=4848,
+  serialized_start=4747,
+  serialized_end=4861,
 )
 
 
@@ -1163,8 +1163,8 @@ _ACTIVITYTASKCANCELEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4851,
-  serialized_end=5049,
+  serialized_start=4864,
+  serialized_end=5062,
 )
 
 
@@ -1208,8 +1208,8 @@ _TIMERSTARTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5052,
-  serialized_end=5180,
+  serialized_start=5065,
+  serialized_end=5193,
 )
 
 
@@ -1246,8 +1246,8 @@ _TIMERFIREDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5182,
-  serialized_end=5253,
+  serialized_start=5195,
+  serialized_end=5266,
 )
 
 
@@ -1298,8 +1298,8 @@ _TIMERCANCELEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5256,
-  serialized_end=5390,
+  serialized_start=5269,
+  serialized_end=5403,
 )
 
 
@@ -1350,8 +1350,8 @@ _CANCELTIMERFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5392,
-  serialized_end=5519,
+  serialized_start=5405,
+  serialized_end=5532,
 )
 
 
@@ -1402,8 +1402,8 @@ _WORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5522,
-  serialized_end=5717,
+  serialized_start=5535,
+  serialized_end=5730,
 )
 
 
@@ -1440,8 +1440,8 @@ _WORKFLOWEXECUTIONCANCELEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5720,
-  serialized_end=5851,
+  serialized_start=5733,
+  serialized_end=5864,
 )
 
 
@@ -1478,8 +1478,8 @@ _MARKERRECORDEDEVENTATTRIBUTES_DETAILSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6123,
-  serialized_end=6199,
+  serialized_start=6136,
+  serialized_end=6212,
 )
 
 _MARKERRECORDEDEVENTATTRIBUTES = _descriptor.Descriptor(
@@ -1536,8 +1536,8 @@ _MARKERRECORDEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5854,
-  serialized_end=6199,
+  serialized_start=5867,
+  serialized_end=6212,
 )
 
 
@@ -1581,8 +1581,8 @@ _WORKFLOWEXECUTIONSIGNALEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6201,
-  serialized_end=6327,
+  serialized_start=6214,
+  serialized_end=6340,
 )
 
 
@@ -1626,8 +1626,8 @@ _WORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6329,
-  serialized_end=6454,
+  serialized_start=6342,
+  serialized_end=6467,
 )
 
 
@@ -1685,8 +1685,8 @@ _REQUESTCANCELEXTERNALWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES = _descriptor.De
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6457,
-  serialized_end=6695,
+  serialized_start=6470,
+  serialized_end=6708,
 )
 
 
@@ -1751,8 +1751,8 @@ _REQUESTCANCELEXTERNALWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES = _descriptor.Descr
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6698,
-  serialized_end=7010,
+  serialized_start=6711,
+  serialized_end=7023,
 )
 
 
@@ -1796,8 +1796,8 @@ _EXTERNALWORKFLOWEXECUTIONCANCELREQUESTEDEVENTATTRIBUTES = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7013,
-  serialized_end=7184,
+  serialized_start=7026,
+  serialized_end=7197,
 )
 
 
@@ -1869,8 +1869,8 @@ _SIGNALEXTERNALWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7187,
-  serialized_end=7484,
+  serialized_start=7200,
+  serialized_end=7497,
 )
 
 
@@ -1935,8 +1935,8 @@ _SIGNALEXTERNALWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7487,
-  serialized_end=7792,
+  serialized_start=7500,
+  serialized_end=7805,
 )
 
 
@@ -1987,8 +1987,8 @@ _EXTERNALWORKFLOWEXECUTIONSIGNALEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7795,
-  serialized_end=7976,
+  serialized_start=7808,
+  serialized_end=7989,
 )
 
 
@@ -2025,8 +2025,8 @@ _UPSERTWORKFLOWSEARCHATTRIBUTESEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7979,
-  serialized_end=8133,
+  serialized_start=7992,
+  serialized_end=8146,
 )
 
 
@@ -2059,7 +2059,7 @@ _STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='task_list', full_name='temporal.history.v1.StartChildWorkflowExecutionInitiatedEventAttributes.task_list', index=3,
+      name='task_queue', full_name='temporal.history.v1.StartChildWorkflowExecutionInitiatedEventAttributes.task_queue', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2168,8 +2168,8 @@ _STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8136,
-  serialized_end=8932,
+  serialized_start=8149,
+  serialized_end=8948,
 )
 
 
@@ -2241,8 +2241,8 @@ _STARTCHILDWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8935,
-  serialized_end=9243,
+  serialized_start=8951,
+  serialized_end=9259,
 )
 
 
@@ -2300,8 +2300,8 @@ _CHILDWORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9246,
-  serialized_end=9507,
+  serialized_start=9262,
+  serialized_end=9523,
 )
 
 
@@ -2366,8 +2366,8 @@ _CHILDWORKFLOWEXECUTIONCOMPLETEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9510,
-  serialized_end=9801,
+  serialized_start=9526,
+  serialized_end=9817,
 )
 
 
@@ -2439,8 +2439,8 @@ _CHILDWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9804,
-  serialized_end=10147,
+  serialized_start=9820,
+  serialized_end=10163,
 )
 
 
@@ -2505,8 +2505,8 @@ _CHILDWORKFLOWEXECUTIONCANCELEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10150,
-  serialized_end=10441,
+  serialized_start=10166,
+  serialized_end=10457,
 )
 
 
@@ -2571,8 +2571,8 @@ _CHILDWORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10444,
-  serialized_end=10742,
+  serialized_start=10460,
+  serialized_end=10758,
 )
 
 
@@ -2630,8 +2630,8 @@ _CHILDWORKFLOWEXECUTIONTERMINATEDEVENTATTRIBUTES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10745,
-  serialized_end=10991,
+  serialized_start=10761,
+  serialized_end=11007,
 )
 
 
@@ -2979,8 +2979,8 @@ _HISTORYEVENT = _descriptor.Descriptor(
       name='attributes', full_name='temporal.history.v1.HistoryEvent.attributes',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=10994,
-  serialized_end=16153,
+  serialized_start=11010,
+  serialized_end=16169,
 )
 
 
@@ -3010,13 +3010,13 @@ _HISTORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=16155,
-  serialized_end=16215,
+  serialized_start=16171,
+  serialized_end=16231,
 )
 
 _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
 _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['parent_workflow_execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
-_WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['initiator'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._CONTINUEASNEWINITIATOR
 _WORKFLOWEXECUTIONSTARTEDEVENTATTRIBUTES.fields_by_name['continued_failure'].message_type = temporal_dot_failure_dot_v1_dot_message__pb2._FAILURE
@@ -3031,7 +3031,7 @@ _WORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES.fields_by_name['failure'].message_type =
 _WORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES.fields_by_name['retry_status'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._RETRYSTATUS
 _WORKFLOWEXECUTIONTIMEDOUTEVENTATTRIBUTES.fields_by_name['retry_status'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._RETRYSTATUS
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
-_WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['initiator'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._CONTINUEASNEWINITIATOR
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['failure'].message_type = temporal_dot_failure_dot_v1_dot_message__pb2._FAILURE
@@ -3039,12 +3039,12 @@ _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['last_completion_
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['header'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._HEADER
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['memo'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._MEMO
 _WORKFLOWEXECUTIONCONTINUEDASNEWEVENTATTRIBUTES.fields_by_name['search_attributes'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._SEARCHATTRIBUTES
-_DECISIONTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_DECISIONTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _DECISIONTASKTIMEDOUTEVENTATTRIBUTES.fields_by_name['timeout_type'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._TIMEOUTTYPE
 _DECISIONTASKFAILEDEVENTATTRIBUTES.fields_by_name['cause'].enum_type = temporal_dot_enums_dot_v1_dot_failed__cause__pb2._DECISIONTASKFAILEDCAUSE
 _DECISIONTASKFAILEDEVENTATTRIBUTES.fields_by_name['failure'].message_type = temporal_dot_failure_dot_v1_dot_message__pb2._FAILURE
 _ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['activity_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._ACTIVITYTYPE
-_ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['header'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._HEADER
 _ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _ACTIVITYTASKSCHEDULEDEVENTATTRIBUTES.fields_by_name['retry_policy'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._RETRYPOLICY
@@ -3075,7 +3075,7 @@ _SIGNALEXTERNALWORKFLOWEXECUTIONFAILEDEVENTATTRIBUTES.fields_by_name['workflow_e
 _EXTERNALWORKFLOWEXECUTIONSIGNALEDEVENTATTRIBUTES.fields_by_name['workflow_execution'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWEXECUTION
 _UPSERTWORKFLOWSEARCHATTRIBUTESEVENTATTRIBUTES.fields_by_name['search_attributes'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._SEARCHATTRIBUTES
 _STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES.fields_by_name['workflow_type'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._WORKFLOWTYPE
-_STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES.fields_by_name['task_list'].message_type = temporal_dot_tasklist_dot_v1_dot_message__pb2._TASKLIST
+_STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES.fields_by_name['task_queue'].message_type = temporal_dot_taskqueue_dot_v1_dot_message__pb2._TASKQUEUE
 _STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES.fields_by_name['input'].message_type = temporal_dot_common_dot_v1_dot_message__pb2._PAYLOADS
 _STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES.fields_by_name['parent_close_policy'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._PARENTCLOSEPOLICY
 _STARTCHILDWORKFLOWEXECUTIONINITIATEDEVENTATTRIBUTES.fields_by_name['workflow_id_reuse_policy'].enum_type = temporal_dot_enums_dot_v1_dot_workflow__pb2._WORKFLOWIDREUSEPOLICY

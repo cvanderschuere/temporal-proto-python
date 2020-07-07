@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='temporal/enums/v1/query.proto',
   package='temporal.enums.v1',
   syntax='proto3',
-  serialized_options=b'\n\032io.temporal.proto.enums.v1B\nQueryProtoP\001Z,go.temporal.io/temporal-proto/enums/v1;enums',
-  serialized_pb=b'\n\x1dtemporal/enums/v1/query.proto\x12\x11temporal.enums.v1*r\n\x0fQueryResultType\x12!\n\x1dQUERY_RESULT_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n\x1aQUERY_RESULT_TYPE_ANSWERED\x10\x01\x12\x1c\n\x18QUERY_RESULT_TYPE_FAILED\x10\x02*\x95\x01\n\x14QueryRejectCondition\x12&\n\"QUERY_REJECT_CONDITION_UNSPECIFIED\x10\x00\x12#\n\x1fQUERY_REJECT_CONDITION_NOT_OPEN\x10\x01\x12\x30\n,QUERY_REJECT_CONDITION_NOT_COMPLETED_CLEANLY\x10\x02*\x8a\x01\n\x15QueryConsistencyLevel\x12\'\n#QUERY_CONSISTENCY_LEVEL_UNSPECIFIED\x10\x00\x12$\n QUERY_CONSISTENCY_LEVEL_EVENTUAL\x10\x01\x12\"\n\x1eQUERY_CONSISTENCY_LEVEL_STRONG\x10\x02\x42X\n\x1aio.temporal.proto.enums.v1B\nQueryProtoP\x01Z,go.temporal.io/temporal-proto/enums/v1;enumsb\x06proto3'
+  serialized_options=b'\n\024io.temporal.enums.v1B\nQueryProtoP\001Z,go.temporal.io/temporal-proto/enums/v1;enums',
+  serialized_pb=b'\n\x1dtemporal/enums/v1/query.proto\x12\x11temporal.enums.v1*r\n\x0fQueryResultType\x12!\n\x1dQUERY_RESULT_TYPE_UNSPECIFIED\x10\x00\x12\x1e\n\x1aQUERY_RESULT_TYPE_ANSWERED\x10\x01\x12\x1c\n\x18QUERY_RESULT_TYPE_FAILED\x10\x02*\x95\x01\n\x14QueryRejectCondition\x12&\n\"QUERY_REJECT_CONDITION_UNSPECIFIED\x10\x00\x12#\n\x1fQUERY_REJECT_CONDITION_NOT_OPEN\x10\x01\x12\x30\n,QUERY_REJECT_CONDITION_NOT_COMPLETED_CLEANLY\x10\x02\x42R\n\x14io.temporal.enums.v1B\nQueryProtoP\x01Z,go.temporal.io/temporal-proto/enums/v1;enumsb\x06proto3'
 )
 
 _QUERYRESULTTYPE = _descriptor.EnumDescriptor(
@@ -76,47 +76,16 @@ _QUERYREJECTCONDITION = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_QUERYREJECTCONDITION)
 
 QueryRejectCondition = enum_type_wrapper.EnumTypeWrapper(_QUERYREJECTCONDITION)
-_QUERYCONSISTENCYLEVEL = _descriptor.EnumDescriptor(
-  name='QueryConsistencyLevel',
-  full_name='temporal.enums.v1.QueryConsistencyLevel',
-  filename=None,
-  file=DESCRIPTOR,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='QUERY_CONSISTENCY_LEVEL_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='QUERY_CONSISTENCY_LEVEL_EVENTUAL', index=1, number=1,
-      serialized_options=None,
-      type=None),
-    _descriptor.EnumValueDescriptor(
-      name='QUERY_CONSISTENCY_LEVEL_STRONG', index=2, number=2,
-      serialized_options=None,
-      type=None),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=321,
-  serialized_end=459,
-)
-_sym_db.RegisterEnumDescriptor(_QUERYCONSISTENCYLEVEL)
-
-QueryConsistencyLevel = enum_type_wrapper.EnumTypeWrapper(_QUERYCONSISTENCYLEVEL)
 QUERY_RESULT_TYPE_UNSPECIFIED = 0
 QUERY_RESULT_TYPE_ANSWERED = 1
 QUERY_RESULT_TYPE_FAILED = 2
 QUERY_REJECT_CONDITION_UNSPECIFIED = 0
 QUERY_REJECT_CONDITION_NOT_OPEN = 1
 QUERY_REJECT_CONDITION_NOT_COMPLETED_CLEANLY = 2
-QUERY_CONSISTENCY_LEVEL_UNSPECIFIED = 0
-QUERY_CONSISTENCY_LEVEL_EVENTUAL = 1
-QUERY_CONSISTENCY_LEVEL_STRONG = 2
 
 
 DESCRIPTOR.enum_types_by_name['QueryResultType'] = _QUERYRESULTTYPE
 DESCRIPTOR.enum_types_by_name['QueryRejectCondition'] = _QUERYREJECTCONDITION
-DESCRIPTOR.enum_types_by_name['QueryConsistencyLevel'] = _QUERYCONSISTENCYLEVEL
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
